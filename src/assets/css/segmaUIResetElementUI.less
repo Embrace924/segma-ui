@@ -1,0 +1,409 @@
+@B10: #e6f1ff;
+@B20: #bdd9ff;
+@B30: #8fb9f7;
+@B40: #6394eb;
+@B50: #3a70df;
+@B60: #2752b8;
+@B70: #173891;
+@B80: #0c226b;
+@B90: #071345;
+
+@R10: #ffdbcf;
+@R20: #ffb9a6;
+@R30: #f79079;
+@R40: #eb654d;
+@R50: #df3a25;
+@R60: #b82316;
+@R70: #91110a;
+@R80: #6b0402;
+@R90: #450102;
+
+@G10: #deffe8;
+@G20: #acf2c5;
+@G30: #7ee6a6;
+@G40: #55d98c;
+@G50: #2fcd77;
+@G60: #1ea660;
+@G70: #11804a;
+@G80: #075934;
+@G90: #04331f;
+
+@Y10: #fff5e0;
+@Y20: #ffe5b8;
+@Y30: #ffd28f;
+@Y40: #ffbd66;
+@Y50: #fba13b;
+@Y60: #d47e28;
+@Y70: #ad5e18;
+@Y80: #87410c;
+@Y90: #612b08;
+.segma-input, .segma-select {
+
+    /*input size  开始*/
+    .segma-xs {
+        margin-bottom: 8px;
+        .el-input__inner {
+            height: 24px;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .el-input__icon {
+            line-height: 24px;
+        }
+    }
+    .segma-s {
+        margin-bottom: 12px;
+        .el-input__inner {
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+        }
+        .el-input__icon {
+            line-height: 32px;
+        }
+    }
+    .segma-m {
+        margin-bottom: 16px;
+        .el-input__inner {
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .el-input__icon {
+            line-height: 40px;
+        }
+    }
+    .segma-l {
+        margin-bottom: 20px;
+        .el-input__inner {
+            height: 52px;
+            line-height: 52px;
+            font-size: 16px;
+        }
+        .el-input__icon {
+            line-height: 52px;
+        }
+    }
+    /*input size  结束*/
+
+    /*disabled样式   开始*/
+    .el-input.is-disabled {
+        .el-input__inner {
+            color: rgba(0, 0, 0, 0.5);
+            border: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+    /*disabled样式   结束*/
+
+    /*默认提示语颜色  开始*/
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+    input:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+    input::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+    /*默认提示语颜色  结束*/
+}
+
+.segma-input-number {
+
+    /*  size  开始*/
+    .segma-xs {
+        line-height: 22px;
+        margin-bottom: 8px;
+
+        .el-input__inner {
+            height: 24px;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .el-input__icon {
+            line-height: 24px;
+        }
+    }
+    .segma-s {
+        line-height: 30px;
+        margin-bottom: 12px;
+
+        .el-input__inner {
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+        }
+        .el-input__icon {
+            line-height: 32px;
+        }
+    }
+    .segma-m {
+        line-height: 38px;
+        margin-bottom: 16px;
+        .el-input__inner {
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .el-input__icon {
+            line-height: 40px;
+        }
+    }
+
+    .el-input-number__increase, .el-input-number__decrease {
+        .el-icon-plus {
+            font-weight: bold;
+        }
+    }
+    .el-input-number__increase:hover, .el-input-number__decrease:hover {
+        background-color: #e7f0fe;
+    }
+}
+
+/*input 内边距  开始*/
+.el-input__inner {
+    padding: 0 12px;
+}
+
+.el-input--prefix {
+    .el-input__inner {
+        padding-left: 30px;
+    }
+}
+
+/*input 内边距  结束*/
+
+/* button 开始*/
+.segma-button {
+    .segma-xs {
+        height: 24px;
+        line-height: 24px;
+        margin-bottom: 14px;
+    }
+    .segma-s {
+        height: 32px;
+        line-height: 32px;
+        margin-bottom: 14px;
+    }
+    .segma-m {
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+    .b50-btn {
+        .primary {
+            color: #ffffff;
+            background-color: @B50;
+            border-color: @B50;
+            &:hover {
+                background-color: @B40;
+                border-color: @B40;
+            }
+            &:active {
+                background-color: @B60;
+                border-color: @B60;
+            }
+        }
+        .secondary {
+            color: @B50;
+            background-color: #ffffff;
+            border-color: @B50;
+            &:hover {
+                color: @B40;
+                background-color: @B10;
+                border-color: @B40;
+            }
+            &:active {
+                color: @B60;
+                background-color: @B20;
+                border-color: @B60;
+            }
+        }
+        .subtle {
+            color: @B50;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            &:hover {
+                color: @B40;
+                background-color: @B10;
+                border-color: @B10;
+            }
+            &:active {
+                color: @B60;
+                background-color: @B20;
+                border-color: @B20;
+            }
+        }
+        .loading {
+            color: @B50;
+            background-color: #ffffff;
+            border-color: @B50;
+        }
+    }
+    .r50-btn {
+        .primary {
+            color: #ffffff;
+            background-color: @R50;
+            border-color: @R50;
+            &:hover {
+                background-color: @R40;
+                border-color: @R40;
+            }
+            &:active {
+                background-color: @R60;
+                border-color: @R60;
+            }
+        }
+        .secondary {
+            color: @R50;
+            background-color: #ffffff;
+            border-color: @R50;
+            &:hover {
+                color: @R40;
+                background-color: @R10;
+                border-color: @R40;
+            }
+            &:active {
+                color: @R60;
+                background-color: @R20;
+                border-color: @R60;
+            }
+        }
+        .subtle {
+            color: @R50;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            &:hover {
+                color: @R40;
+                background-color: @R10;
+                border-color: @R10;
+            }
+            &:active {
+                color: @R60;
+                background-color: @R20;
+                border-color: @R20;
+            }
+        }
+        .loading {
+            color: @R50;
+            background-color: #ffffff;
+            border-color: @R50;
+        }
+    }
+    .g50-btn {
+        .primary {
+            color: #ffffff;
+            background-color: @G50;
+            border-color: @G50;
+            &:hover {
+                background-color: @G40;
+                border-color: @G40;
+            }
+            &:active {
+                background-color: @G60;
+                border-color: @G60;
+            }
+        }
+        .secondary {
+            color: @G50;
+            background-color: #ffffff;
+            border-color: @G50;
+            &:hover {
+                color: @G40;
+                background-color: @G10;
+                border-color: @G40;
+            }
+            &:active {
+                color: @G60;
+                background-color: @G20;
+                border-color: @G60;
+            }
+        }
+        .subtle {
+            color: @G50;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            &:hover {
+                color: @G40;
+                background-color: @G10;
+                border-color: @G10;
+            }
+            &:active {
+                color: @G60;
+                background-color: @G20;
+                border-color: @G20;
+            }
+        }
+        .loading {
+            color: @G50;
+            background-color: #ffffff;
+            border-color: @G50;
+        }
+    }
+    .y50-btn {
+        .primary {
+            color: #ffffff;
+            background-color: @Y50;
+            border-color: @Y50;
+            &:hover {
+                background-color: @Y40;
+                border-color: @Y40;
+            }
+            &:active {
+                background-color: @Y60;
+                border-color: @Y60;
+            }
+        }
+        .secondary {
+            color: @Y50;
+            background-color: #ffffff;
+            border-color: @Y50;
+            &:hover {
+                color: @Y40;
+                background-color: @Y10;
+                border-color: @Y40;
+            }
+            &:active {
+                color: @Y60;
+                background-color: @Y20;
+                border-color: @Y60;
+            }
+        }
+        .subtle {
+            color: @Y50;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            &:hover {
+                color: @Y40;
+                background-color: @Y10;
+                border-color: @Y10;
+            }
+            &:active {
+                color: @Y60;
+                background-color: @Y20;
+                border-color: @Y20;
+            }
+        }
+        .loading {
+            color: @Y50;
+            background-color: #ffffff;
+            border-color: @Y50;
+        }
+    }
+    .disabled {
+        color: #ffffff;
+        background-color: #cccccc;
+        border-color: #cccccc;
+    }
+
+}
+
+/* button 结束*/
