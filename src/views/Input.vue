@@ -39,4 +39,7 @@ export default {
        lang="less">
 @import "../assets/css/segmaUIResetElementUI";
 
+.segma-input {
+    width: 230px;
+}
 </style>
