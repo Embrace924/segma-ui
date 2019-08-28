@@ -37,373 +37,543 @@
 @Y70: #ad5e18;
 @Y80: #87410c;
 @Y90: #612b08;
-.segma-input, .segma-select {
 
-    /*input size  开始*/
+//.element-rewrite {
+.el-input__inner:focus {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+//输入框和下拉框的input
+.segma-input, .segma-select {
+    /* input size  开始 */
     .segma-xs {
-        margin-bottom: 8px;
         .el-input__inner {
             height: 24px;
-            line-height: 24px;
             font-size: 14px;
+            line-height: 22px;
         }
+
         .el-input__icon {
-            line-height: 24px;
+            line-height: 22px;
         }
     }
+
     .segma-s {
-        margin-bottom: 12px;
         .el-input__inner {
             height: 32px;
-            line-height: 32px;
             font-size: 14px;
+            line-height: 30px;
         }
+
         .el-input__icon {
-            line-height: 32px;
+            line-height: 30px;
         }
     }
+
     .segma-m {
-        margin-bottom: 16px;
         .el-input__inner {
             height: 40px;
-            line-height: 40px;
             font-size: 16px;
+            line-height: 38px;
         }
+
         .el-input__icon {
-            line-height: 40px;
+            line-height: 38px;
         }
     }
+
     .segma-l {
-        margin-bottom: 20px;
         .el-input__inner {
             height: 52px;
-            line-height: 52px;
             font-size: 16px;
+            line-height: 50px;
         }
+
         .el-input__icon {
-            line-height: 52px;
+            line-height: 50px;
         }
     }
-    /*input size  结束*/
 
-    /*disabled样式   开始*/
+    /* input size  结束 */
+
+    /* disabled样式   开始 */
     .el-input.is-disabled {
         .el-input__inner {
-            color: #a6a6a6;
             border: #e5e5e5;
+            color: #a6a6a6;
             background-color: #f5f5f5;
         }
     }
-    /*disabled样式   结束*/
 
-    /*默认提示语颜色  开始*/
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: rgba(0, 0, 0, 0.5);
-        opacity: 1;
-    }
+    /* disabled样式   结束 */
+
+    /* 默认提示语颜色  开始 */
     ::-moz-placeholder { /* Mozilla Firefox 19+ */
         color: rgba(0, 0, 0, 0.5);
         opacity: 1;
     }
-    input:-ms-input-placeholder {
+
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
         color: rgba(0, 0, 0, 0.5);
         opacity: 1;
     }
+
     input::-webkit-input-placeholder {
         color: rgba(0, 0, 0, 0.5);
         opacity: 1;
     }
-    /*默认提示语颜色  结束*/
+
+    input:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    /* 默认提示语颜色  结束 */
 }
 
-.segma-input-number {
-
-    /*  size  开始*/
-    .segma-xs {
-        line-height: 22px;
-        margin-bottom: 8px;
-
-        .el-input__inner {
-            height: 24px;
-            line-height: 24px;
-            font-size: 14px;
-        }
-        .el-input__icon {
-            line-height: 24px;
-        }
-    }
-    .segma-s {
-        line-height: 30px;
-        margin-bottom: 12px;
-
-        .el-input__inner {
-            height: 32px;
-            line-height: 32px;
-            font-size: 14px;
-        }
-        .el-input__icon {
-            line-height: 32px;
-        }
-    }
-    .segma-m {
-        line-height: 38px;
-        margin-bottom: 16px;
-        .el-input__inner {
-            height: 40px;
-            line-height: 40px;
-            font-size: 16px;
-        }
-        .el-input__icon {
-            line-height: 40px;
-        }
-    }
-
-    .el-input-number__increase, .el-input-number__decrease {
-        .el-icon-plus {
-            font-weight: bold;
-        }
-    }
-    .el-input-number__increase:hover, .el-input-number__decrease:hover {
-        background-color: #e7f0fe;
-    }
-}
-
-/*input 内边距  开始*/
-.el-input__inner {
-    padding: 0 12px;
-}
-
-.el-input--prefix {
-    .el-input__inner {
-        padding-left: 30px;
-    }
-}
-
-/*input 内边距  结束*/
-
-/* button 开始*/
+/* button   */
 .segma-button {
     .segma-xs {
         height: 24px;
-        line-height: 24px;
-        margin-bottom: 14px;
+        line-height: 22px;
     }
+
     .segma-s {
         height: 32px;
-        line-height: 32px;
-        margin-bottom: 14px;
+        line-height: 30px;
     }
+
     .segma-m {
         height: 40px;
-        line-height: 40px;
-        margin-bottom: 16px;
+        line-height: 38px;
     }
+
     .b50-btn {
         .primary {
+            border-color: @B50;
             color: #ffffff;
             background-color: @B50;
-            border-color: @B50;
-            &:hover {
-                background-color: @B40;
-                border-color: @B40;
-            }
-            &:active {
-                background-color: @B60;
-                border-color: @B60;
-            }
         }
+
         .secondary {
+            border-color: @B50;
             color: @B50;
             background-color: #ffffff;
-            border-color: @B50;
-            &:hover {
-                color: @B40;
-                background-color: @B10;
-                border-color: @B40;
-            }
-            &:active {
-                color: @B60;
-                background-color: @B20;
-                border-color: @B60;
-            }
         }
+
         .subtle {
-            color: @B50;
-            background-color: #ffffff;
             border-color: #ffffff;
-            &:hover {
-                color: @B40;
-                background-color: @B10;
-                border-color: @B10;
-            }
-            &:active {
-                color: @B60;
-                background-color: @B20;
-                border-color: @B20;
-            }
-        }
-        .loading {
             color: @B50;
             background-color: #ffffff;
+        }
+
+        .loading {
             border-color: @B50;
+            color: @B50;
+            background-color: #ffffff;
         }
     }
+
     .r50-btn {
         .primary {
+            border-color: @R50;
             color: #ffffff;
             background-color: @R50;
-            border-color: @R50;
-            &:hover {
-                background-color: @R40;
-                border-color: @R40;
-            }
-            &:active {
-                background-color: @R60;
-                border-color: @R60;
-            }
         }
+
         .secondary {
+            border-color: @R50;
             color: @R50;
             background-color: #ffffff;
-            border-color: @R50;
-            &:hover {
-                color: @R40;
-                background-color: @R10;
-                border-color: @R40;
-            }
-            &:active {
-                color: @R60;
-                background-color: @R20;
-                border-color: @R60;
-            }
         }
+
         .subtle {
-            color: @R50;
-            background-color: #ffffff;
             border-color: #ffffff;
-            &:hover {
-                color: @R40;
-                background-color: @R10;
-                border-color: @R10;
-            }
-            &:active {
-                color: @R60;
-                background-color: @R20;
-                border-color: @R20;
-            }
-        }
-        .loading {
             color: @R50;
             background-color: #ffffff;
+        }
+
+        .loading {
             border-color: @R50;
+            color: @R50;
+            background-color: #ffffff;
         }
     }
+
     .g50-btn {
         .primary {
+            border-color: @G50;
             color: #ffffff;
             background-color: @G50;
-            border-color: @G50;
-            &:hover {
-                background-color: @G40;
-                border-color: @G40;
-            }
-            &:active {
-                background-color: @G60;
-                border-color: @G60;
-            }
         }
+
         .secondary {
+            border-color: @G50;
             color: @G50;
             background-color: #ffffff;
-            border-color: @G50;
-            &:hover {
-                color: @G40;
-                background-color: @G10;
-                border-color: @G40;
-            }
-            &:active {
-                color: @G60;
-                background-color: @G20;
-                border-color: @G60;
-            }
         }
+
         .subtle {
-            color: @G50;
-            background-color: #ffffff;
             border-color: #ffffff;
-            &:hover {
-                color: @G40;
-                background-color: @G10;
-                border-color: @G10;
-            }
-            &:active {
-                color: @G60;
-                background-color: @G20;
-                border-color: @G20;
-            }
-        }
-        .loading {
             color: @G50;
             background-color: #ffffff;
+        }
+
+        .loading {
             border-color: @G50;
+            color: @G50;
+            background-color: #ffffff;
         }
     }
+
     .y50-btn {
         .primary {
+            border-color: @Y50;
             color: #ffffff;
             background-color: @Y50;
-            border-color: @Y50;
-            &:hover {
-                background-color: @Y40;
-                border-color: @Y40;
-            }
-            &:active {
-                background-color: @Y60;
-                border-color: @Y60;
-            }
         }
+
         .secondary {
+            border-color: @Y50;
             color: @Y50;
             background-color: #ffffff;
-            border-color: @Y50;
-            &:hover {
-                color: @Y40;
-                background-color: @Y10;
-                border-color: @Y40;
-            }
-            &:active {
-                color: @Y60;
-                background-color: @Y20;
-                border-color: @Y60;
-            }
         }
+
         .subtle {
-            color: @Y50;
-            background-color: #ffffff;
             border-color: #ffffff;
-            &:hover {
-                color: @Y40;
-                background-color: @Y10;
-                border-color: @Y10;
-            }
-            &:active {
-                color: @Y60;
-                background-color: @Y20;
-                border-color: @Y20;
-            }
-        }
-        .loading {
             color: @Y50;
             background-color: #ffffff;
+        }
+
+        .loading {
             border-color: @Y50;
+            color: @Y50;
+            background-color: #ffffff;
         }
     }
+
+    .b50-btn .primary:hover {
+        border-color: @B40;
+        background-color: @B40;
+    }
+
+    .b50-btn .primary:active {
+        border-color: @B60;
+        background-color: @B60;
+    }
+
+    .b50-btn .secondary:hover {
+        border-color: @B40;
+        color: @B40;
+        background-color: @B10;
+    }
+
+    .b50-btn .secondary:active {
+        border-color: @B60;
+        color: @B60;
+        background-color: @B20;
+    }
+
+    .b50-btn .subtle:hover {
+        border-color: @B10;
+        color: @B40;
+        background-color: @B10;
+    }
+
+    .b50-btn .subtle:active {
+        border-color: @B20;
+        color: @B60;
+        background-color: @B20;
+    }
+
+    .r50-btn .primary:hover {
+        border-color: @R40;
+        background-color: @R40;
+    }
+
+    .r50-btn .primary:active {
+        border-color: @R60;
+        background-color: @R60;
+    }
+
+    .r50-btn .secondary:hover {
+        border-color: @R40;
+        color: @R40;
+        background-color: @R10;
+    }
+
+    .r50-btn .secondary:active {
+        border-color: @R60;
+        color: @R60;
+        background-color: @R20;
+    }
+
+    .r50-btn .subtle:hover {
+        border-color: @R10;
+        color: @R40;
+        background-color: @R10;
+    }
+
+    .r50-btn .subtle:active {
+        border-color: @R20;
+        color: @R60;
+        background-color: @R20;
+    }
+
+    .g50-btn .primary:hover {
+        border-color: @G40;
+        background-color: @G40;
+    }
+
+    .g50-btn .primary:active {
+        border-color: @G60;
+        background-color: @G60;
+    }
+
+    .g50-btn .secondary:active {
+        border-color: @G60;
+        color: @G60;
+        background-color: @G20;
+    }
+
+    .g50-btn .secondary:hover {
+        border-color: @G40;
+        color: @G40;
+        background-color: @G10;
+    }
+
+    .g50-btn .subtle :active {
+        border-color: @G20;
+        color: @G60;
+        background-color: @G20;
+    }
+
+    .g50-btn .subtle :hover {
+        border-color: @G10;
+        color: @G40;
+        background-color: @G10;
+    }
+
+    .y50-btn .primary:active {
+        border-color: @Y60;
+        background-color: @Y60;
+    }
+
+    .y50-btn .primary:hover {
+        border-color: @Y40;
+        background-color: @Y40;
+    }
+
+    .y50-btn .secondary :active {
+        border-color: @Y60;
+        color: @Y60;
+        background-color: @Y20;
+    }
+
+    .y50-btn .secondary :hover {
+        border-color: @Y40;
+        color: @Y40;
+        background-color: @Y10;
+    }
+
+    .y50-btn .subtle:active {
+        border-color: @Y20;
+        color: @Y60;
+        background-color: @Y20;
+    }
+
+    .y50-btn .subtle:hover {
+        border-color: @Y10;
+        color: @Y40;
+        background-color: @Y10;
+    }
+
     .disabled {
+        border-color: #cccccc;
         color: #ffffff;
         background-color: #cccccc;
-        border-color: #cccccc;
     }
-
 }
 
-/* button 结束*/
+.segma-table {
+    .el-table {
+        border-radius: 4px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .el-table--border th, .el-table--border td {
+        border-right: 1px solid #e5e5e5;
+    }
+
+    .el-table td, .el-table th {
+        padding: 11px 5px;
+        text-align: left;
+    }
+
+    .el-table th, .el-table thead tr {
+        font-size: 14px;
+        text-align: left;
+        color: #7f7f7f;
+    }
+
+    .el-table tr th {
+        padding: 15px 5px;
+    }
+
+    .el-table tr .is-leaf {
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #ffffff;
+    }
+
+    .el-table td {
+        font-weight: 400;
+        color: #383838;
+    }
+
+    .el-table--striped .el-table__body tr.el-table__row--striped td {
+        background-color: #f5f5f5;
+    }
+}
+
+/* 翻页器 */
+.segma-pagination {
+    .el-pagination {
+        margin-top: 20px;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .el-pagination button:disabled {
+        background-color: #ebebeb !important;
+    }
+
+    .btn-prev, .segma-s .btn-next, .segma-s .el-pager li {
+        border: 1px solid #dadada;
+        border-radius: 4px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    .segma-s .btn-prev, .segma-s .btn-next, .segma-s .el-pager li {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+
+    .segma-m .btn-prev, .segma-m .btn-next, .segma-m .el-pager li {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .el-pagination .is-background .el-pager li:not(.disabled).active:hover {
+        color: #ffffff;
+    }
+}
+
+.segma-dialog {
+    .el-dialog {
+        overflow: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 0 !important;
+        margin-right: 48px;
+        margin-bottom: 48px;
+        margin-left: 48px;
+        border-radius: 5px;
+        max-height: calc(100% - 98px);
+        transform: translate(-50%, -50%);
+
+        .el-dialog__header {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 13px 20px;
+            text-align: center;
+
+            .el-dialog__title {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .el-dialog__headerbtn {
+                i {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .el-dialog__body {
+            padding: 16px;
+        }
+
+        .el-dialog__footer {
+            padding: 0 16px 16px 16px;
+        }
+    }
+
+    .segma-s {
+        .el-dialog {
+            width: 460px;
+            min-height: 168px;
+        }
+    }
+
+    .segma-m {
+        .el-dialog {
+            width: 600px;
+        }
+    }
+
+    .segma-l {
+        .el-dialog {
+            width: 800px;
+        }
+    }
+
+    .segma-xl {
+        .el-dialog {
+            width: 1200px;
+        }
+    }
+}
+
+.segma-message {
+    .el-message-box__btns {
+        .el-button {
+            height: 32px;
+            line-height: 30px;
+            color: #ffffff;
+        }
+
+        .el-button--default {
+            color: @B50;
+
+            &:hover {
+                border-color: @B40;
+                background-color: @B10;
+            }
+
+            &:active {
+                border-color: @B60;
+                background-color: @B60;
+            }
+        }
+
+        .el-button--primary {
+            color: #ffffff;
+
+            &:hover {
+                border-color: @B40;
+                background-color: @B40;
+            }
+
+            &:active {
+                border-color: @B60;
+                background-color: @B60;
+            }
+        }
+    }
+}
+
+//}

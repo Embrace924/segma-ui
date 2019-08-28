@@ -22,12 +22,12 @@
 
 /* Transition
 -------------------------- */
-$--all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
+$--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $--fade-linear-transition: opacity 200ms linear !default;
 $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
-$--border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
-$--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$--border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 
 /* Color
 -------------------------- */
@@ -109,9 +109,9 @@ $--border-radius-zero: 0 !default;
 
 // Box-shadow
 /// boxShadow|1|Shadow|1
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
 // boxShadow|1|Shadow|1
-$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12) !default;
 /// boxShadow|1|Shadow|1
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
@@ -143,6 +143,7 @@ $--font-line-height-primary: 24px !default;
 /// fontLineHeight|1|Line Height|2
 $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbbbbb !default;
+
 /* Size
 -------------------------- */
 $--size-base: 14px !default;
@@ -530,7 +531,7 @@ $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 0px !default;
+$--button-padding-vertical: 0 !default;
 /// padding||Spacing|3
 $--button-padding-horizontal: 20px !default;
 
@@ -539,24 +540,24 @@ $--button-medium-font-size: $--font-size-base !default;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 0px !default;
+$--button-medium-padding-vertical: 0 !default;
 /// padding||Spacing|3
-$--button-medium-padding-horizontal: 20px !default;
+$--button-medium-padding-horizontal: 16px !default;
 
 /// fontSize||Font|1
 $--button-small-font-size: 14px !default;
 $--button-small-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-small-padding-vertical:0px !default;
+$--button-small-padding-vertical: 0 !default;
 /// padding||Spacing|3
-$--button-small-padding-horizontal: 20px !default;
+$--button-small-padding-horizontal: 12px !default;
 /// fontSize||Font|1
 $--button-mini-font-size: 14px !default;
 $--button-mini-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-mini-padding-vertical: 0px !default;
+$--button-mini-padding-vertical: 0 !default;
 /// padding||Spacing|3
-$--button-mini-padding-horizontal: 20px !default;
+$--button-mini-padding-horizontal: 8px !default;
 
 /// color||Color|0
 $--button-default-font-color: $--color-primary !default;
@@ -653,7 +654,7 @@ $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 /// color||Color|0
 $--table-header-background-color: $--color-white !default;
-$--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
+$--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 
 /* Pagination
 -------------------------- */
@@ -760,7 +761,7 @@ $--badge-padding: 6px !default;
 $--badge-size: 18px !default;
 
 /* Card
---------------------------*/
+-------------------------- */
 /// color||Color|0
 $--card-border-color: $--border-color-lighter !default;
 $--card-border-radius: 4px !default;
@@ -768,7 +769,7 @@ $--card-border-radius: 4px !default;
 $--card-padding: 20px !default;
 
 /* Slider
---------------------------*/
+-------------------------- */
 /// color||Color|0
 $--slider-main-background-color: $--color-primary !default;
 /// color||Color|0
@@ -785,14 +786,13 @@ $--slider-button-size: 16px !default;
 $--slider-button-wrapper-size: 36px !default;
 $--slider-button-wrapper-offset: -15px !default;
 
-/* Steps
---------------------------*/
+/* Steps------------------------- */
 $--steps-border-color: $--disabled-border-base !default;
 $--steps-border-radius: 4px !default;
 $--steps-padding: 20px !default;
 
 /* Menu
---------------------------*/
+-------------------------- */
 /// fontSize||Font|1
 $--menu-item-font-size: $--font-size-base !default;
 /// color||Color|0
@@ -802,7 +802,7 @@ $--menu-background-color: $--color-white !default;
 $--menu-item-hover-fill: $--color-primary-light-9 !default;
 
 /* Rate
---------------------------*/
+-------------------------- */
 $--rate-height: 20px !default;
 /// fontSize||Font|1
 $--rate-font-size: $--font-size-base !default;
@@ -813,7 +813,7 @@ $--rate-icon-margin: 6px !default;
 $--rate-icon-color: $--color-text-placeholder !default;
 
 /* DatePicker
---------------------------*/
+-------------------------- */
 $--datepicker-font-color: $--color-text-checked !default;
 /// color|1|Color|0
 $--datepicker-off-font-color: $--color-text-placeholder !default;
@@ -833,19 +833,19 @@ $--datepicker-hover-font-color: $--color-primary !default;
 $--datepicker-cell-hover-color: #ffffff !default;
 
 /* Loading
---------------------------*/
+-------------------------- */
 /// height||Other|4
 $--loading-spinner-size: 42px !default;
 /// height||Other|4
 $--loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
---------------------------*/
-$--scrollbar-background-color: rgba($--color-text-secondary, .3) !default;
-$--scrollbar-hover-background-color: rgba($--color-text-secondary, .5) !default;
+-------------------------- */
+$--scrollbar-background-color: rgba($--color-text-secondary, 0.3) !default;
+$--scrollbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default;
 
 /* Carousel
---------------------------*/
+-------------------------- */
 /// fontSize||Font|1
 $--carousel-arrow-font-size: 12px !default;
 $--carousel-arrow-size: 36px !default;
@@ -860,7 +860,7 @@ $--carousel-indicator-padding-vertical: 12px !default;
 $--carousel-indicator-out-color: $--border-color-hover !default;
 
 /* Collapse
---------------------------*/
+-------------------------- */
 /// color||Color|0
 $--collapse-border-color: $--border-color-lighter !default;
 /// height||Other|4
@@ -878,8 +878,7 @@ $--collapse-content-font-size: 13px !default;
 /// color||Color|0
 $--collapse-content-font-color: $--color-text-primary !default;
 
-/* Transfer
---------------------------*/
+/* Transfer------------------------- */
 $--transfer-border-color: $--border-color-lighter !default;
 $--transfer-border-radius: $--border-radius-base !default;
 /// height||Other|4
@@ -898,25 +897,25 @@ $--transfer-item-height: 30px !default;
 $--transfer-filter-height: 32px !default;
 
 /* Header
-  --------------------------*/
+  -------------------------- */
 $--header-padding: 0 20px !default;
 
 /* Footer
---------------------------*/
+-------------------------- */
 $--footer-padding: 0 20px !default;
 
 /* Main
---------------------------*/
+-------------------------- */
 $--main-padding: 20px !default;
 
 /* Timeline
---------------------------*/
+--------------------------  */
 $--timeline-node-size-normal: 12px !default;
 $--timeline-node-size-large: 14px !default;
 $--timeline-node-color: $--border-color-light !default;
 
 /* Backtop
---------------------------*/
+-------------------------- */
 /// color||Color|0
 $--backtop-background-color: $--color-white !default;
 /// color||Color|0
@@ -925,7 +924,7 @@ $--backtop-font-color: $--color-primary !default;
 $--backtop-hover-background-color: $--border-color-extra-light !default;
 
 /* Link
---------------------------*/
+-------------------------- */
 /// fontSize||Font|1
 $--link-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
@@ -946,8 +945,9 @@ $--link-warning-font-color: $--color-warning !default;
 $--link-danger-font-color: $--color-danger !default;
 /// color||Color|0
 $--link-info-font-color: $--color-info !default;
+
 /* Calendar
---------------------------*/
+-------------------------- */
 /// border||Other|4
 $--calendar-border: $--table-border !default;
 /// color||Other|4
@@ -955,7 +955,7 @@ $--calendar-selected-background-color: #f2f8fe !default;
 $--calendar-cell-width: 85px !default;
 
 /* Avatar
---------------------------*/
+-------------------------- */
 /// color||Color|0
 $--avatar-font-color: #ffffff !default;
 /// color||Color|0
@@ -974,30 +974,30 @@ $--avatar-medium-size: 36px !default;
 $--avatar-small-size: 28px !default;
 
 /* Break-point
---------------------------*/
+-------------------------- */
 $--sm: 768px !default;
 $--md: 992px !default;
 $--lg: 1200px !default;
 $--xl: 1920px !default;
 
 $--breakpoints: (
-        'xs' : (max-width: $--sm - 1),
-        'sm' : (min-width: $--sm),
-        'md' : (min-width: $--md),
-        'lg' : (min-width: $--lg),
-        'xl' : (min-width: $--xl)
+    'xs' : (max-width: $--sm - 1),
+    'sm' : (min-width: $--sm),
+    'md' : (min-width: $--md),
+    'lg' : (min-width: $--lg),
+    'xl' : (min-width: $--xl)
 );
 
 $--breakpoints-spec: (
-        'xs-only' : (max-width: $--sm - 1),
-        'sm-and-up' : (min-width: $--sm),
-        'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
-        'sm-and-down': (max-width: $--md - 1),
-        'md-and-up' : (min-width: $--md),
-        'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
-        'md-and-down': (max-width: $--lg - 1),
-        'lg-and-up' : (min-width: $--lg),
-        'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
-        'lg-and-down': (max-width: $--xl - 1),
-        'xl-only' : (min-width: $--xl),
+    'xs-only' : (max-width: $--sm - 1),
+    'sm-and-up' : (min-width: $--sm),
+    'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+    'sm-and-down': (max-width: $--md - 1),
+    'md-and-up' : (min-width: $--md),
+    'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+    'md-and-down': (max-width: $--lg - 1),
+    'lg-and-up' : (min-width: $--lg),
+    'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+    'lg-and-down': (max-width: $--xl - 1),
+    'xl-only' : (min-width: $--xl),
 );
