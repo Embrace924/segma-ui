@@ -66,6 +66,7 @@ export default {
             yData: [],
             //chart的id
             chartBoxList: []
+
         }
     },
     computed: {
@@ -104,80 +105,7 @@ export default {
 
             ]
         },
-        allLine() {
-            return [
-                [
-                    2.0,
-                    4.9,
-                    1.0,
-                    23.2,
-                    15.6,
-                    16.7,
-                    35.6,
-                    62.2,
-                    32.6,
-                    20.0,
-                    6.4,
-                    3.3
-                ],
-                [
-                    1.0,
-                    4.9,
-                    1.0,
-                    13.2,
-                    15.6,
-                    16.7,
-                    15.6,
-                    12.2,
-                    12.6,
-                    20.0,
-                    6.4,
-                    3.3
-                ],
-                [
-                    2.6,
-                    5.9,
-                    9.0,
-                    26.4,
-                    28.7,
-                    70.7,
-                    175.6,
-                    182.2,
-                    48.7,
-                    18.8,
-                    6.0,
-                    2.3
-                ],
-                [
-                    2.0,
-                    2.2,
-                    3.3,
-                    4.5,
-                    6.3,
-                    10.2,
-                    20.3,
-                    23.4,
-                    23.0,
-                    16.5,
-                    12.0,
-                    6.2
-                ],
-                [
-                    2.0,
-                    2.2,
-                    3.3,
-                    4.5,
-                    6.3,
-                    10.2,
-                    20.3,
-                    23.4,
-                    23.0,
-                    16.5,
-                    12.0,
-                    6.2
-                ]
-            ]
-        },
+
         xData() {
             return [
                 '1月',
@@ -193,10 +121,16 @@ export default {
                 '11月',
                 '12月'
             ]
+        },
+
+        maxYaxisLength() {
+            if (this.chartBoxList.length === 0) return 0
+            return this.yData.reduce((max, ele) => {
+                return max > ele.data.length ? max : ele.data.length
+            }, 1)
         }
     },
     mounted() {
-        // this.init()
         this.addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data: this.generateRandomArr() })
     },
     methods: {
@@ -222,7 +156,7 @@ export default {
          */
         addChart(id, data) {
             this.chartBoxList.push({ id: id })
-            var option = {
+            let option = {
                 id: id,
                 legend: {
                     type: 'scroll',
@@ -276,6 +210,23 @@ export default {
                     }
                 ]
             };
+
+            //增加空白y轴，对其最近一个y坐标
+
+            if (this.maxYaxisLength > 1 && this.chartBoxList.length > 1) {
+                for (let i = 0; i <= this.maxYaxisLength - 2; i++) {
+                    option.yAxis.push({
+                        type: 'value',
+                        name: 'NO_NAME',
+                        min: 0,
+                        max: 250,
+                        position: 'left',
+                        show: false,
+                        offset: (i + 1) * 30
+                    })
+
+                }
+            }
             this.$nextTick(() => {
                 let chart = echarts.init(document.getElementById(id));
                 chart.setOption(option)
@@ -283,9 +234,6 @@ export default {
                 this.yData.push({ id, data: [{ name: data.name, data: data.data, show: true }] })
                 chart.group = 'group1';
                 echarts.connect('group1');
-                chart.on('click', function(parma) {
-                    console.log(parma)
-                })
             })
 
         },
@@ -297,7 +245,8 @@ export default {
         addLine(id, data) {
             let currOption = this.optionData.find(e => e.id === id)
             let yData = this.yData.find(e => e.id === id)
-            currOption.yAxis.push({
+            let index = currOption.yAxis.findIndex(e => e.show === false)
+            let pushYData = {
                 type: 'value',
                 name: data.name,
                 min: 0,
@@ -305,7 +254,13 @@ export default {
                 position: 'left',
                 show: true,
                 offset: yData.data.length * 30
-            })
+            }
+            if (index >= 0) {
+                currOption.yAxis.splice(index, 1, pushYData)
+            } else {
+                currOption.yAxis.push(pushYData)
+                this.resetYAxis(id)
+            }
             currOption.series.push({
                 name: data.name,
                 type: 'line',
@@ -316,13 +271,12 @@ export default {
                 let chartInstance = echarts.init(this.$refs[id][0]);
                 chartInstance.setOption(currOption)
             }
-            this.resetYAxis(id)
         },
         resetYAxis(id) {
-            this.chartBoxList.forEach((e, index) => {
+            this.chartBoxList.forEach(e => {
+                let currOption = this.optionData.find(p => p.id === e.id)
                 if (e.id !== id) {
                     let chartInstance = echarts.init(this.$refs[e.id][0]);
-                    let currOption = this.optionData.find(p => p.id === e.id)
                     currOption.yAxis.push({
                         type: 'value',
                         name: 'NO_NAME',
@@ -333,7 +287,6 @@ export default {
                         offset: currOption.yAxis.length * 30
                     })
                     chartInstance.setOption(currOption)
-
                 }
             })
         },
@@ -366,27 +319,32 @@ export default {
             let chartInstance = echarts.init(this.$refs[id][0]);
             let currOption = this.optionData.find(e => e.id === id)
             let yData = this.yData.find(e => e.id === id)
+            //判断是否为最后一根线，是最后一根线后判断是否是最后一个图
             if (yData.data.length <= 1) {
                 this.chartBoxList = this.chartBoxList.reduce((arr, e) => {
                     e.id !== id && arr.push(e)
                     return arr
-                }, [])
+                }, []);
                 return
             }
+
+
             currOption.series = currOption.series.reduce((arr, e) => {
-                e.name !== name && arr.push(e)
+                e.name !== name && arr.push(e);
                 return arr
-            }, [])
+            }, []);
             currOption.yAxis = currOption.yAxis.reduce((arr, e) => {
-                e.name !== name && arr.push(e)
+                e.name !== name && arr.push(e);
                 return arr
-            }, [])
+            }, []);
             yData.data = yData.data.reduce((arr, e) => {
-                console.log(name, e.name)
-                e.name !== name && arr.push(e)
+                e.name !== name && arr.push(e);
                 return arr
-            }, [])
+            }, []);
             chartInstance.setOption(currOption, true)
+        },
+        dealYAxis() {
+
         }
     }
 }

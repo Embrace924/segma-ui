@@ -12,6 +12,8 @@
             <router-link to="/InputNumber">InputNumber</router-link>
             |
             <router-link to="/Button">Button</router-link>
+            |
+            <router-link to="/hello">hello</router-link>
         </div>
         <router-view class="segma-ui" />
     </div>
