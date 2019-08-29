@@ -101,12 +101,12 @@ export default {
     watch: {
         yData: {
             handler(val) {
+                this.hasSameYaxisLength = false
                 this.maxYaxisLength = val.reduce((max, ele) => {
                     if (max === ele.data.length) {
                         this.hasSameYaxisLength = true
                         return max
                     }
-                    this.hasSameYaxisLength = false
                     return max > ele.data.length ? max : ele.data.length
                 }, 1)
             },
@@ -344,12 +344,12 @@ export default {
             let { maxYaxisLength, hasSameYaxisLength, optionData } = this
             let currOption = optionData.find(p => p.id === id)
             let currLength = currOption.series.length
+            console.log(currLength, maxYaxisLength, !hasSameYaxisLength)
             if (currLength === maxYaxisLength && !hasSameYaxisLength) {
                 this.chartBoxList.forEach(e => {
                     if (e.id === id) return
                     let currOption = optionData.find(p => p.id === e.id);
                     let chartInstance = echarts.init(this.$refs[e.id][0]);
-
                     currOption.yAxis.splice(maxYaxisLength - 1, 1);
                     chartInstance.setOption(currOption, true);
                 })
