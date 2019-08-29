@@ -23,7 +23,7 @@
                                       @click="lengendShow(item.id,ele.name,!ele.show)"></span>
                                 <span class="legend-name">{{ele.name}}</span>
                                 <span class="legend-del"
-                                      @click="delLegend(item.id,ele.name)">x</span>
+                                      @click="delLegend(item.id,ele.name,index)">x</span>
                             </div>
                         </div>
                     </template>
@@ -45,28 +45,18 @@ export default {
     data() {
         return {
             chartList: [],
-            addLineData: [
-                2.0,
-                1.9,
-                2.0,
-                13.2,
-                35.6,
-                26.7,
-                35.6,
-                62.2,
-                32.6,
-                20.0,
-                6.4,
-                8.3
-            ],
             chartIndex: 0,
             //setOption的数据
             optionData: [],
             //setOption的series的data数据
             yData: [],
             //chart的id
-            chartBoxList: []
-
+            chartBoxList: [],
+            //有相同y轴个数且显示出来
+            hasSameYaxisLength: false,
+            //最长y轴个数
+            maxYaxisLength: 1,
+            xData: []
         }
     },
     computed: {
@@ -104,33 +94,27 @@ export default {
                 '#ba2a08'
 
             ]
-        },
+        }
 
-        xData() {
-            return [
-                '1月',
-                '2月',
-                '3月',
-                '4月',
-                '5月',
-                '6月',
-                '7月',
-                '8月',
-                '9月',
-                '10月',
-                '11月',
-                '12月'
-            ]
-        },
 
-        maxYaxisLength() {
-            if (this.chartBoxList.length === 0) return 0
-            return this.yData.reduce((max, ele) => {
-                return max > ele.data.length ? max : ele.data.length
-            }, 1)
+    },
+    watch: {
+        yData: {
+            handler(val) {
+                this.maxYaxisLength = val.reduce((max, ele) => {
+                    if (max === ele.data.length) {
+                        this.hasSameYaxisLength = true
+                        return max
+                    }
+                    this.hasSameYaxisLength = false
+                    return max > ele.data.length ? max : ele.data.length
+                }, 1)
+            },
+            deep: true
         }
     },
     mounted() {
+        this.setXdata(1000)
         this.addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data: this.generateRandomArr() })
     },
     methods: {
@@ -141,13 +125,18 @@ export default {
          * @param max 最大值
          * @returns {Array}
          */
-        generateRandomArr(n = 12, min = 0, max = 250) {
+        generateRandomArr(n = 1000, min = 0, max = 250) {
             var arr = [];
             for (var i = 0; i < n; i++) {
                 var random = Math.floor(Math.random() * (max - min + 1) + min);
                 arr.push(random);
             }
             return arr;
+        },
+        setXdata(n) {
+            for (var i = 0; i < n; i++) {
+                this.xData.push(`${i}天`)
+            }
         },
         /**
          * 新增echarts图
@@ -212,7 +201,6 @@ export default {
             };
 
             //增加空白y轴，对其最近一个y坐标
-
             if (this.maxYaxisLength > 1 && this.chartBoxList.length > 1) {
                 for (let i = 0; i <= this.maxYaxisLength - 2; i++) {
                     option.yAxis.push({
@@ -259,7 +247,7 @@ export default {
                 currOption.yAxis.splice(index, 1, pushYData)
             } else {
                 currOption.yAxis.push(pushYData)
-                this.resetYAxis(id)
+                this.addOtherYAxis(id)
             }
             currOption.series.push({
                 name: data.name,
@@ -272,7 +260,7 @@ export default {
                 chartInstance.setOption(currOption)
             }
         },
-        resetYAxis(id) {
+        addOtherYAxis(id) {
             this.chartBoxList.forEach(e => {
                 let currOption = this.optionData.find(p => p.id === e.id)
                 if (e.id !== id) {
@@ -299,7 +287,6 @@ export default {
         lengendShow(id, name, show) {
             let yData = this.yData.find(e => e.id === id).data
             let data = yData.find(e => e.name === name)
-            console.log(data)
             data.show = show
             let chart = echarts.init(this.$refs[id][0])
             chart.dispatchAction({
@@ -314,7 +301,7 @@ export default {
          * @param id
          * @param name
          */
-        delLegend(id, name) {
+        delLegend(id, name, delIndex) {
             if (!this.$refs[id][0]) return
             let chartInstance = echarts.init(this.$refs[id][0]);
             let currOption = this.optionData.find(e => e.id === id)
@@ -327,13 +314,17 @@ export default {
                 }, []);
                 return
             }
-
-
+            //删除当前图的最末尾一个y轴的时候判断其他y轴应该如何处理
+            if (this.chartBoxList.length > 1) {
+                currOption = this.delOtherYAxis(id)
+            }
             currOption.series = currOption.series.reduce((arr, e) => {
                 e.name !== name && arr.push(e);
                 return arr
             }, []);
-            currOption.yAxis = currOption.yAxis.reduce((arr, e) => {
+            currOption.yAxis = currOption.yAxis.reduce((arr, e, index) => {
+                //删除一条数据后 该图该数据后面的y轴offset值应该分别向前走30px
+                e.offset = index > delIndex ? e.offset - 30 : e.offset
                 e.name !== name && arr.push(e);
                 return arr
             }, []);
@@ -343,7 +334,37 @@ export default {
             }, []);
             chartInstance.setOption(currOption, true)
         },
-        dealYAxis() {
+        /**
+         * 删除当前图的y轴的时候判断其他y轴应该如何处理
+         * if    1.如果是y轴最多且唯一的图 删掉自己的一个线的同时，其他图必然存在空y轴  删掉其他图的空y
+         * else  2.如果是y轴最多且不唯一的图 或者不是y轴最多的图 删掉一个自己的线的同时删除该y轴的数据，且加入一个空y轴占位
+         * @param id
+         */
+        delOtherYAxis(id) {
+            let { maxYaxisLength, hasSameYaxisLength, optionData } = this
+            let currOption = optionData.find(p => p.id === id)
+            let currLength = currOption.series.length
+            if (currLength === maxYaxisLength && !hasSameYaxisLength) {
+                this.chartBoxList.forEach(e => {
+                    if (e.id === id) return
+                    let currOption = optionData.find(p => p.id === e.id);
+                    let chartInstance = echarts.init(this.$refs[e.id][0]);
+
+                    currOption.yAxis.splice(maxYaxisLength - 1, 1);
+                    chartInstance.setOption(currOption, true);
+                })
+            } else {
+                currOption.yAxis.push({
+                    type: 'value',
+                    name: 'NO_NAME',
+                    min: 0,
+                    max: 250,
+                    position: 'left',
+                    show: false,
+                    offset: currLength * 30
+                })
+            }
+            return currOption
 
         }
     }
