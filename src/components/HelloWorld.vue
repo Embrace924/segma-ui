@@ -7,40 +7,41 @@
             <el-input v-model="chartIndex" />
             <el-button @click="addLine(chartBoxList[chartIndex].id,{name:`name${Math.random()}`,data:generateRandomArr()})">addLine</el-button>
         </div>
-        <div class="chart-box">
-            <div class="box"
-                 v-for="item in chartBoxList">
-                <div class="chart"
-                     :id="item.id"
-                     :ref="item.id"></div>
-                <div class="legend-self">
-                    <template v-if="yData">
-                        <div v-for="item in yData.filter(e=>e.id===item.id)">
-                            <div v-for="(ele,index) in item.data"
-                                 class="legend">
-                                <span class="legend-box"
-                                      :style="{backgroundColor:ele.show?colors[index]:'#dddddd'}"
-                                      @click="lengendShow(item.id,ele.name,!ele.show)"></span>
-                                <span class="legend-name">{{ele.name}}</span>
-                                <span class="legend-del"
-                                      @click="delLegend(item.id,ele.name,index)">x</span>
-                            </div>
-                        </div>
-                    </template>
+        <div class="chart-board">
+            <div class="chart-box">
+                <div class="box"
+                     v-for="item in chartBoxList">
+                    <transition name="fade">
+                        <chart-div :ID="item.id"
+                                   :xData="xData"
+                                   :yData="yData.find(e=>e.id===item.id)"
+                                   :optionData="optionData.find(e => e.id === item.id)"
+                                   @lengendShow="lengendShow"
+                                   @delLegend="delLegend"
+                                   @changexAxis="changexAxis"></chart-div>
+                    </transition>
                 </div>
             </div>
-
         </div>
+        <div class="bottom-xAxis"
+             ref="xAxisData"
+             :style="{marginLeft:`${maxYaxisLength*29}px`,width:`calc(${xAxisWidth} - ${Number(maxYaxisLength) * 30}px)`}">
+        </div>
+        <div class="xAxis-box"
+             ref="xAxisDatazoom"></div>
     </div>
 </template>
 
 <script>
-import echarts from './../plugins/echarts'
+import echarts from './../plugins/echarts';
+import _debounce from 'lodash/debounce';
+import ChartDiv from './ChartDiv';
+import Vue from 'vue';
 
 export default {
     name: 'HelloWorld',
-    props: {
-        msg: String
+    components: {
+        ChartDiv
     },
     data() {
         return {
@@ -56,8 +57,10 @@ export default {
             hasSameYaxisLength: false,
             //最长y轴个数
             maxYaxisLength: 1,
-            xData: []
-        }
+            xData: [],
+            xAxisWidth: 'calc(100% - 100px - 150px - 20px - 10px - 30px)',
+            xAxisDataChart: ''
+        };
     },
     computed: {
         colors() {
@@ -93,29 +96,33 @@ export default {
                 '#d21b6c',
                 '#ba2a08'
 
-            ]
+            ];
         }
-
 
     },
     watch: {
+        maxYaxisLength() {
+            this.xAxisDataChart.resize();
+        },
         yData: {
             handler(val) {
-                this.hasSameYaxisLength = false
+                this.hasSameYaxisLength = false;
                 this.maxYaxisLength = val.reduce((max, ele) => {
                     if (max === ele.data.length) {
-                        this.hasSameYaxisLength = true
-                        return max
+                        this.hasSameYaxisLength = true;
+                        return max;
                     }
-                    return max > ele.data.length ? max : ele.data.length
-                }, 1)
+                    return max > ele.data.length ? max : ele.data.length;
+                }, 1);
             },
             deep: true
         }
     },
     mounted() {
-        this.setXdata(1000)
-        this.addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data: this.generateRandomArr() })
+        this.setXdata(1000);
+        this.addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data: this.generateRandomArr() });
+        this.setDataZoom();
+        this.setDataXaxis();
     },
     methods: {
         /**
@@ -126,16 +133,20 @@ export default {
          * @returns {Array}
          */
         generateRandomArr(n = 1000, min = 0, max = 250) {
-            var arr = [];
-            for (var i = 0; i < n; i++) {
-                var random = Math.floor(Math.random() * (max - min + 1) + min);
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                let random = Math.floor(Math.random() * (max - min + 1) + min);
                 arr.push(random);
             }
             return arr;
         },
+        /**
+         * 随机生成x数据
+         * @param n 长度
+         **/
         setXdata(n) {
-            for (var i = 0; i < n; i++) {
-                this.xData.push(`${i}天`)
+            for (let i = 0; i < n; i++) {
+                this.xData.push(`${i}天`);
             }
         },
         /**
@@ -144,7 +155,7 @@ export default {
          * @param data
          */
         addChart(id, data) {
-            this.chartBoxList.push({ id: id })
+            this.chartBoxList.push({ id: id });
             let option = {
                 id: id,
                 legend: {
@@ -155,31 +166,41 @@ export default {
                     orient: 'vertical',
                     show: false
                 },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        }
+                    }
+                },
                 color: this.colors,
                 tooltip: {
                     trigger: 'axis',
                     position: 'right'
                 },
                 grid: {
-                    right: 10,
-                    left: 1,
+                    right: '50px',
+                    left: 0,
                     top: 5,
                     bottom: 5,
                     containLabel: true
                 },
-                xAxis: [
-                    {
-                        type: 'category',
-                        axisTick: {
-                            alignWithLabel: true
-                        },
-                        axisLabel: {
-                            show: false,
-                            formatter: '{value} ml'
-                        },
-                        data: this.xData
-                    }
-                ],
+                xAxis: {
+                    type: 'category',
+                    axisTick: {
+                        show: false
+                    },
+                    axisLabel: {
+                        show: false,
+                        formatter: '{value} ml'
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    data: []
+                }
+                ,
                 yAxis: [
                     {
                         name: data.name,
@@ -195,7 +216,7 @@ export default {
                     {
                         name: data.name,
                         type: 'line',
-                        data: data.data
+                        data: []
                     }
                 ]
             };
@@ -211,19 +232,11 @@ export default {
                         position: 'left',
                         show: false,
                         offset: (i + 1) * 30
-                    })
-
+                    });
                 }
             }
-            this.$nextTick(() => {
-                let chart = echarts.init(document.getElementById(id));
-                chart.setOption(option)
-                this.optionData.push(option)
-                this.yData.push({ id, data: [{ name: data.name, data: data.data, show: true }] })
-                chart.group = 'group1';
-                echarts.connect('group1');
-            })
-
+            this.optionData.push(option);
+            this.yData.push({ id, data: [{ name: data.name, data: data.data, show: true }] });
         },
         /**
          * 往图新增线
@@ -231,9 +244,9 @@ export default {
          * @param data
          */
         addLine(id, data) {
-            let currOption = this.optionData.find(e => e.id === id)
-            let yData = this.yData.find(e => e.id === id)
-            let index = currOption.yAxis.findIndex(e => e.show === false)
+            let currOption = this.optionData.find(e => e.id === id);
+            let yData = this.yData.find(e => e.id === id);
+            let index = currOption.yAxis.findIndex(e => e.show === false);
             let pushYData = {
                 type: 'value',
                 name: data.name,
@@ -242,29 +255,28 @@ export default {
                 position: 'left',
                 show: true,
                 offset: yData.data.length * 30
-            }
+            };
             if (index >= 0) {
-                currOption.yAxis.splice(index, 1, pushYData)
+                currOption.yAxis.splice(index, 1, pushYData);
             } else {
-                currOption.yAxis.push(pushYData)
-                this.addOtherYAxis(id)
+                currOption.yAxis.push(pushYData);
+                this.addOtherYAxis(id);
             }
             currOption.series.push({
                 name: data.name,
                 type: 'line',
                 data: data.data
-            })
-            yData.data.push({ name: data.name, data: data.data, show: true })
-            if (this.$refs[id][0]) {
-                let chartInstance = echarts.init(this.$refs[id][0]);
-                chartInstance.setOption(currOption)
-            }
+            });
+            yData.data.push({ name: data.name, data: data.data, show: true });
+
         },
+        /**
+         *给其他图加空白y轴
+         * */
         addOtherYAxis(id) {
             this.chartBoxList.forEach(e => {
-                let currOption = this.optionData.find(p => p.id === e.id)
+                let currOption = this.optionData.find(p => p.id === e.id);
                 if (e.id !== id) {
-                    let chartInstance = echarts.init(this.$refs[e.id][0]);
                     currOption.yAxis.push({
                         type: 'value',
                         name: 'NO_NAME',
@@ -273,10 +285,9 @@ export default {
                         position: 'left',
                         show: false,
                         offset: currOption.yAxis.length * 30
-                    })
-                    chartInstance.setOption(currOption)
+                    });
                 }
-            })
+            });
         },
         /**
          * 控制图例展示
@@ -285,16 +296,9 @@ export default {
          * @param show
          */
         lengendShow(id, name, show) {
-            let yData = this.yData.find(e => e.id === id).data
-            let data = yData.find(e => e.name === name)
-            data.show = show
-            let chart = echarts.init(this.$refs[id][0])
-            chart.dispatchAction({
-                type: 'legendToggleSelect',
-                // 图例名称
-                name: name
-            })
-
+            let yData = this.yData.find(e => e.id === id).data;
+            let data = yData.find(e => e.name === name);
+            data.show = show;
         },
         /**
          * 点击删除点
@@ -302,37 +306,41 @@ export default {
          * @param name
          */
         delLegend(id, name, delIndex) {
-            if (!this.$refs[id][0]) return
-            let chartInstance = echarts.init(this.$refs[id][0]);
-            let currOption = this.optionData.find(e => e.id === id)
-            let yData = this.yData.find(e => e.id === id)
+            let currOption = this.optionData.find(e => e.id === id);
+            let yData = this.yData.find(e => e.id === id);
+            let currOptionIndex = this.optionData.findIndex(e => e.id === id);
+            let yDataIndex = this.yData.findIndex(e => e.id === id);
             //判断是否为最后一根线，是最后一根线后判断是否是最后一个图
             if (yData.data.length <= 1) {
                 this.chartBoxList = this.chartBoxList.reduce((arr, e) => {
-                    e.id !== id && arr.push(e)
-                    return arr
+                    e.id !== id && arr.push(e);
+                    return arr;
                 }, []);
-                return
+                if (this.chartBoxList.length === 0) {
+                    this.optionData.splice(0, 1);
+                }
+                return;
             }
             //删除当前图的最末尾一个y轴的时候判断其他y轴应该如何处理
             if (this.chartBoxList.length > 1) {
-                currOption = this.delOtherYAxis(id)
+                currOption = this.delOtherYAxis(id);
             }
             currOption.series = currOption.series.reduce((arr, e) => {
                 e.name !== name && arr.push(e);
-                return arr
+                return arr;
             }, []);
             currOption.yAxis = currOption.yAxis.reduce((arr, e, index) => {
                 //删除一条数据后 该图该数据后面的y轴offset值应该分别向前走30px
-                e.offset = index > delIndex ? e.offset - 30 : e.offset
+                e.offset = index > delIndex ? e.offset - 30 : e.offset;
                 e.name !== name && arr.push(e);
-                return arr
+                return arr;
             }, []);
             yData.data = yData.data.reduce((arr, e) => {
                 e.name !== name && arr.push(e);
-                return arr
+                return arr;
             }, []);
-            chartInstance.setOption(currOption, true)
+            this.optionData.splice(currOptionIndex, 1, currOption);
+            this.yData.splice(yDataIndex, 1, yData);
         },
         /**
          * 删除当前图的y轴的时候判断其他y轴应该如何处理
@@ -341,18 +349,16 @@ export default {
          * @param id
          */
         delOtherYAxis(id) {
-            let { maxYaxisLength, hasSameYaxisLength, optionData } = this
-            let currOption = optionData.find(p => p.id === id)
-            let currLength = currOption.series.length
-            console.log(currLength, maxYaxisLength, !hasSameYaxisLength)
+            let { maxYaxisLength, hasSameYaxisLength, optionData } = this;
+            let currOption = optionData.find(p => p.id === id);
+            let currLength = currOption.series.length;
+            console.log(currLength, maxYaxisLength, !hasSameYaxisLength);
             if (currLength === maxYaxisLength && !hasSameYaxisLength) {
                 this.chartBoxList.forEach(e => {
-                    if (e.id === id) return
+                    if (e.id === id) return;
                     let currOption = optionData.find(p => p.id === e.id);
-                    let chartInstance = echarts.init(this.$refs[e.id][0]);
                     currOption.yAxis.splice(maxYaxisLength - 1, 1);
-                    chartInstance.setOption(currOption, true);
-                })
+                });
             } else {
                 currOption.yAxis.push({
                     type: 'value',
@@ -362,18 +368,157 @@ export default {
                     position: 'left',
                     show: false,
                     offset: currLength * 30
-                })
+                });
             }
-            return currOption
+            return currOption;
+
+        },
+        /**
+         * toolbox 框选数据放大局部 请求新的数据
+         * @param startValue
+         * @param endValue
+         */
+        changexAxis(startValue, endValue) {
+            console.log(startValue, endValue);
+        },
+        setDataXaxis() {
+            this.xAxisDataChart = echarts.init(this.$refs.xAxisData);
+            let option = {
+                grid: {
+                    left: 0,
+                    right: 0,
+                    top: 1
+                },
+                xAxis: {
+                    type: 'category',
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLabel: {
+                        // show: false,
+                        formatter: '{value} ml'
+                    },
+                    data: this.xData
+                },
+                yAxis: {
+                    type: 'value',
+                    boundaryGap: [
+                        0,
+                        '100%'
+                    ]
+                },
+                series: [
+                    {
+                        name: '模拟数据',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        sampling: 'average',
+                        itemStyle: {
+                            color: 'rgb(255, 70, 131,0)'
+                        },
+                        data: this.xData
+                    }
+                ]
+            };
+            this.xAxisDataChart.setOption(option);
+            window.addEventListener("resize", () => {
+                this.xAxisDataChart.resize();
+            });
+        },
+        setDataZoom() {
+            let base = +new Date(1968, 9, 3);
+            let oneDay = 24 * 3600 * 1000;
+            let date = [];
+            let data = [Math.random() * 300];
+            for (let i = 1; i < 20000; i++) {
+                let now = new Date(base += oneDay);
+                date.push([
+                    now.getFullYear(),
+                    now.getMonth() + 1,
+                    now.getDate()
+                ].join('/'));
+                data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+            }
+            let myChart = echarts.init(this.$refs.xAxisDatazoom);
+            let option = {
+                grid: {
+                    left: 10,
+                    right: 10,
+                    top: 10
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    show: false,
+                    data: date
+                },
+                yAxis: {
+                    type: 'value',
+                    show: false,
+                    boundaryGap: [
+                        0,
+                        '100%'
+                    ]
+                },
+                dataZoom: [
+                    {
+                        throttle: 1000,
+                        realtime: false,
+                        start: 0,
+                        end: 10,
+                        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                        handleSize: '80%',
+                        handleStyle: {
+                            color: '#fff',
+                            shadowBlur: 3,
+                            shadowColor: 'rgba(0, 0, 0, 0.6)',
+                            shadowOffsetX: 2,
+                            shadowOffsetY: 2
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: '模拟数据',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        show: false,
+                        sampling: 'average',
+                        itemStyle: {
+                            color: 'rgb(255, 70, 131,0)'
+                        },
+                        data: data
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            window.addEventListener("resize", () => {
+                myChart.resize();
+            });
+            let tstart = '';
+            let tend = '';
+            myChart.on('datazoom', (params) => {
+                let opt = myChart.getOption();
+                let dz = opt.dataZoom[0];
+                tstart = opt.xAxis[0].data[dz.startValue];
+                tend = opt.xAxis[0].data[dz.endValue];
+                console.log(2, tstart, tend);
+            });
+
 
         }
     }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped
        lang="less">
+.hello {
+    width: 90%;
+}
 
 .addChart {
     width: 100%;
@@ -391,56 +536,44 @@ export default {
     }
 }
 
-.chart-box {
-    width: 90%;
+.chart-board {
+    width: 100%;
     height: 600px;
     overflow: auto;
     border: 1px solid #3a70df;
-    .box {
-        width: 100%;
-        height: 200px;
-        margin: 20px 0;
-        display: flex;
-        position: relative;
-        .legend-self {
-            width: 150px;
-            height: calc(100% - 10px);
-            position: absolute;
-            right: 0;
-            .legend {
-                width: 100%;
-                height: 12px;
-                line-height: 12px;
-                margin-bottom: 5px;
-                align-items: center;
-                display: flex;
-                justify-content: flex-start;
-                cursor: pointer;
-                .legend-name {
-                    display: inline-block;
-                    font-size: 12px;
-                    width: 120px;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-
-                }
-                .legend-box {
-                    display: inline-block;
-                    width: 10px;
-                    height: 10px;
-                    margin-right: 3px;
-                }
-            }
-
+    .chart-box {
+        width: calc(100% - 100px);
+        .box {
+            width: 100%;
         }
-        .chart {
-            width: calc(100% - 150px - 20px);
-            height: 100%;
-        }
-
     }
+
 }
 
+.bottom-xAxis {
+    /*width: calc(100% - 100px - 150px - 20px - 30px);*/
+    margin-left: 30px;
+    height: 60px;
+    border: 1px solid #3a70df;
+    display: flex;
+    justify-content: space-between;
+}
 
+.xAxis-box {
+    width: 100%;
+    height: 60px;
+    overflow: auto;
+    border: 1px solid #3a70df;
+}
+
+//整个过渡中，给她应用的样式
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+
+//定义组件过渡开始时的状态
+//定义离开过渡状态的结束状态
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+    opacity: 0
+}
 </style>
