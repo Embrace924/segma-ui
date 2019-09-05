@@ -9,7 +9,8 @@
                     <span class="legend-box"
                           :style="{backgroundColor:ele.show?colors[index]:'#dddddd'}"
                           @click="lengendShow(ID,ele.name,!ele.show)"></span>
-                <span class="legend-name">{{ele.name}}</span>
+                <span class="legend-name"
+                      @click="lengendShow(ID,ele.name,!ele.show)">{{ele.name}}</span>
                 <span class="legend-del"
                       @click="delLegend(ID,ele.name,index)">x</span>
             </div>
@@ -18,17 +19,13 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
     props: {
         ID: {
             type: String,
             default: ''
-        },
-        xData: {
-            type: Array,
-            default: () => {
-                return [];
-            }
         },
         yData: {
             type: Object,
@@ -49,6 +46,7 @@ export default {
         };
     },
     computed: {
+        ...mapState(['xData']),
         colors() {
             return [
                 '#5793f3',
@@ -91,7 +89,8 @@ export default {
             let option = this.optionData;
             option.xAxis.data = this.xData;
             option.series.map(e => {
-                e.data = this.yData.data.find(p => p.name === e.name).data;
+                let yData = this.yData.data.find(p => p.name === e.name);
+                e.data = yData.data;
                 return e;
             });
             return option;
@@ -116,14 +115,13 @@ export default {
             this.$nextTick(() => {
                 this.myChart = echarts.init(document.getElementById(this.ID));
                 this.myChart.setOption(this.option);
-                window.addEventListener("resize", () => {
-                    this.myChart.resize();
-                });
                 this.myChart.group = 'group1';
                 echarts.connect('group1');
                 this.myChart.on('datazoom', (params) => {
                     this.$emit('changexAxis', params.startValue, params.endValue);
-                    console.log(params);
+                });
+                window.addEventListener("resize", () => {
+                    this.myChart.resize();
                 });
             });
         },
@@ -134,6 +132,12 @@ export default {
          **/
         resetOption() {
             this.myChart.setOption(this.option, true);
+            //重新setOption 隐藏的图例会被消失
+            this.yData.data.forEach((e) => {
+                if (!e.show) {
+                    this.lengendShow(this.ID, e.name, false);
+                }
+            });
         },
         /**
          * 切换图例
@@ -146,6 +150,7 @@ export default {
                 type: 'legendToggleSelect',
                 name: name                // 图例名称
             });
+
             this.$emit('lengendShow', id, name, show);
         },
         /**

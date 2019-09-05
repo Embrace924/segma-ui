@@ -1,11 +1,11 @@
 <template>
     <div class="hello">
         <div class="addChart">
-            <el-button @click="addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data:generateRandomArr()})">addChart</el-button>
+            <el-button @click="addLine({id:`box-${Math.random()}`, name: `name${Math.random()}`})">addChart</el-button>
         </div>
         <div class="addLine">
             <el-input v-model="chartIndex" />
-            <el-button @click="addLine(chartBoxList[chartIndex].id,{name:`name${Math.random()}`,data:generateRandomArr()})">addLine</el-button>
+            <el-button @click="addLine({id:chartBoxList[chartIndex].id,name:`name${Math.random()}`})">addLine</el-button>
         </div>
         <div class="chart-board">
             <div class="chart-box">
@@ -36,7 +36,7 @@
 import echarts from './../plugins/echarts';
 import _debounce from 'lodash/debounce';
 import ChartDiv from './ChartDiv';
-import Vue from 'vue';
+import { mapState, mapMutations, mapActions } from 'vuex';
 
 export default {
     name: 'HelloWorld',
@@ -45,24 +45,23 @@ export default {
     },
     data() {
         return {
-            chartList: [],
             chartIndex: 0,
-            //setOption的数据
-            optionData: [],
-            //setOption的series的data数据
-            yData: [],
-            //chart的id
-            chartBoxList: [],
-            //有相同y轴个数且显示出来
-            hasSameYaxisLength: false,
-            //最长y轴个数
-            maxYaxisLength: 1,
-            xData: [],
-            xAxisWidth: 'calc(100% - 100px - 150px - 20px - 10px - 30px)',
-            xAxisDataChart: ''
+            xAxisDataChart: '',
+
         };
     },
     computed: {
+        ...mapState([
+            'chartBoxList',
+            'optionData',
+            'yData',
+            'xData',
+            'xAxisWidth',
+            //有相同y轴个数且显示出来
+            'hasSameYaxisLength',
+            //最长y轴个数
+            'maxYaxisLength'
+        ]),
         colors() {
             return [
                 '#5793f3',
@@ -98,7 +97,6 @@ export default {
 
             ];
         }
-
     },
     watch: {
         maxYaxisLength() {
@@ -106,25 +104,42 @@ export default {
         },
         yData: {
             handler(val) {
-                this.hasSameYaxisLength = false;
-                this.maxYaxisLength = val.reduce((max, ele) => {
+                console.log(val)
+                let hasSameYaxisLength = false;
+                let maxYaxisLength = val.reduce((max, ele) => {
                     if (max === ele.data.length) {
-                        this.hasSameYaxisLength = true;
+                        hasSameYaxisLength = true;
                         return max;
                     }
                     return max > ele.data.length ? max : ele.data.length;
                 }, 1);
+                this.setMaxYaxisLength(maxYaxisLength)
+                this.setHasSameYaxisLength(hasSameYaxisLength)
             },
             deep: true
         }
     },
     mounted() {
-        this.setXdata(1000);
-        this.addChart(`chart-name${Math.random()}`, { name: `name${Math.random()}`, data: this.generateRandomArr() });
+        this.getXData(1000);
+        this.addLine({ id: `chart-name${Math.random()}`, name: `name${Math.random()}` });
         this.setDataZoom();
         this.setDataXaxis();
     },
     methods: {
+        ...mapMutations([
+            'setChartBoxList',
+            'setOptionData',
+            'setYData',
+            'setXData',
+            'setMaxYaxisLength',
+            'setHasSameYaxisLength'
+
+        ]),
+        ...mapActions([
+            'getXData',
+            'addLine',
+            'getLineData'
+        ]),
         /**
          * 随机生成数据
          * @param n 长度
@@ -132,7 +147,7 @@ export default {
          * @param max 最大值
          * @returns {Array}
          */
-        generateRandomArr(n = 1000, min = 0, max = 250) {
+        generateRandomArr(n = 300, min = 0, max = 250) {
             let arr = [];
             for (let i = 0; i < n; i++) {
                 let random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -140,136 +155,121 @@ export default {
             }
             return arr;
         },
-        /**
-         * 随机生成x数据
-         * @param n 长度
-         **/
-        setXdata(n) {
-            for (let i = 0; i < n; i++) {
-                this.xData.push(`${i}天`);
-            }
-        },
+
         /**
          * 新增echarts图
          * @param id
          * @param data
          */
-        addChart(id, data) {
-            this.chartBoxList.push({ id: id });
-            let option = {
-                id: id,
-                legend: {
-                    type: 'scroll',
-                    right: 10,
-                    itemWidth: 10,
-                    itemHeight: 10,
-                    orient: 'vertical',
-                    show: false
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        }
-                    }
-                },
-                color: this.colors,
-                tooltip: {
-                    trigger: 'axis',
-                    position: 'right'
-                },
-                grid: {
-                    right: '50px',
-                    left: 0,
-                    top: 5,
-                    bottom: 5,
-                    containLabel: true
-                },
-                xAxis: {
-                    type: 'category',
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        show: false,
-                        formatter: '{value} ml'
-                    },
-                    axisLine: {
-                        show: false
-                    },
-                    data: []
-                }
-                ,
-                yAxis: [
-                    {
-                        name: data.name,
-                        type: 'value',
-                        min: 0,
-                        max: 250,
-                        position: 'left',
-                        offset: 0
-
-                    }
-                ],
-                series: [
-                    {
-                        name: data.name,
-                        type: 'line',
-                        data: []
-                    }
-                ]
-            };
-
-            //增加空白y轴，对其最近一个y坐标
-            if (this.maxYaxisLength > 1 && this.chartBoxList.length > 1) {
-                for (let i = 0; i <= this.maxYaxisLength - 2; i++) {
-                    option.yAxis.push({
-                        type: 'value',
-                        name: 'NO_NAME',
-                        min: 0,
-                        max: 250,
-                        position: 'left',
-                        show: false,
-                        offset: (i + 1) * 30
-                    });
-                }
-            }
-            this.optionData.push(option);
-            this.yData.push({ id, data: [{ name: data.name, data: data.data, show: true }] });
-        },
+        // addChart(id, data) {
+        //     this.setChartBoxList({ type: 'push', data: { id } });
+        //     let option = {
+        //         id: id,
+        //         toolbox: {
+        //             show: true,
+        //             feature: {
+        //                 dataZoom: {
+        //                     yAxisIndex: 'none'
+        //                 }
+        //             }
+        //         },
+        //         color: this.colors,
+        //         tooltip: {
+        //             trigger: 'axis',
+        //             position: 'right'
+        //         },
+        //         grid: {
+        //             right: '50px',
+        //             left: 0,
+        //             top: 5,
+        //             bottom: 5,
+        //             containLabel: true
+        //         },
+        //         xAxis: {
+        //             type: 'category',
+        //             axisTick: {
+        //                 show: false
+        //             },
+        //             axisLabel: {
+        //                 show: false,
+        //                 formatter: '{value} ml'
+        //             },
+        //             axisLine: {
+        //                 show: false
+        //             },
+        //             data: []
+        //         },
+        //         yAxis: [
+        //             {
+        //                 name: data.name,
+        //                 type: 'value',
+        //                 min: 0,
+        //                 max: 250,
+        //                 position: 'left',
+        //                 offset: 0
+        //
+        //             }
+        //         ],
+        //         series: [
+        //             {
+        //                 name: data.name,
+        //                 type: 'line',
+        //                 data: []
+        //             }
+        //         ]
+        //     };
+        //     //增加空白y轴，对其最近一个y坐标
+        //     if (this.maxYaxisLength > 1 && this.chartBoxList.length > 1) {
+        //         for (let i = 0; i <= this.maxYaxisLength - 2; i++) {
+        //             option.yAxis.push({
+        //                 type: 'value',
+        //                 name: 'NO_NAME',
+        //                 min: 0,
+        //                 max: 250,
+        //                 position: 'left',
+        //                 show: false,
+        //                 offset: (i + 1) * 30
+        //             });
+        //         }
+        //     }
+        //     this.setOptionData({ type: 'push', data: option });
+        //     this.setYData({ type: 'push', data: { id, data: [{ name: data.name, data: data.data, show: true }] } });
+        // },
         /**
          * 往图新增线
          * @param id
          * @param data
          */
-        addLine(id, data) {
-            let currOption = this.optionData.find(e => e.id === id);
-            let yData = this.yData.find(e => e.id === id);
-            let index = currOption.yAxis.findIndex(e => e.show === false);
-            let pushYData = {
-                type: 'value',
-                name: data.name,
-                min: 0,
-                max: 250,
-                position: 'left',
-                show: true,
-                offset: yData.data.length * 30
-            };
-            if (index >= 0) {
-                currOption.yAxis.splice(index, 1, pushYData);
-            } else {
-                currOption.yAxis.push(pushYData);
-                this.addOtherYAxis(id);
-            }
-            currOption.series.push({
-                name: data.name,
-                type: 'line',
-                data: data.data
-            });
-            yData.data.push({ name: data.name, data: data.data, show: true });
-
-        },
+        // addLine(id, data) {
+        //     let currOption = this.optionData.find(e => e.id === id);
+        //     let currOptionIndex = this.optionData.findIndex(e => e.id === id);
+        //     let yData = this.yData.find(e => e.id === id);
+        //     let yDataIndex = this.yData.findIndex(e => e.id === id);
+        //     let index = currOption.yAxis.findIndex(e => e.show === false);
+        //     let pushYData = {
+        //         type: 'value',
+        //         name: data.name,
+        //         min: 0,
+        //         max: 250,
+        //         position: 'left',
+        //         show: true,
+        //         offset: yData.data.length * 30
+        //     };
+        //     if (index >= 0) {
+        //         currOption.yAxis.splice(index, 1, pushYData);
+        //     } else {
+        //         currOption.yAxis.push(pushYData);
+        //         this.addOtherYAxis(id);
+        //     }
+        //     currOption.series.push({
+        //         name: data.name,
+        //         type: 'line',
+        //         data: data.data
+        //     });
+        //     this.setOptionData({ type: 'replace', data: { index: currOptionIndex, data: currOption } });
+        //     yData.data.push({ name: data.name, data: data.data, show: true });
+        //     this.setYData({ type: 'replace', data: { index: yDataIndex, data: yData } });
+        // },
         /**
          *给其他图加空白y轴
          * */
@@ -296,9 +296,11 @@ export default {
          * @param show
          */
         lengendShow(id, name, show) {
-            let yData = this.yData.find(e => e.id === id).data;
-            let data = yData.find(e => e.name === name);
+            let yData = this.yData.find(e => e.id === id);
+            let yDataIndex = this.yData.findIndex(e => e.id === id).data;
+            let data = yData.data.find(e => e.name === name);
             data.show = show;
+            this.setYData({ type: 'replace', data: { index: yDataIndex, data: yData } });
         },
         /**
          * 点击删除点
@@ -312,12 +314,10 @@ export default {
             let yDataIndex = this.yData.findIndex(e => e.id === id);
             //判断是否为最后一根线，是最后一根线后判断是否是最后一个图
             if (yData.data.length <= 1) {
-                this.chartBoxList = this.chartBoxList.reduce((arr, e) => {
-                    e.id !== id && arr.push(e);
-                    return arr;
-                }, []);
+                let spliceIndex = this.chartBoxList.findIndex(e => e.id === id);
+                this.setChartBoxList({ type: 'splice', data: spliceIndex });
                 if (this.chartBoxList.length === 0) {
-                    this.optionData.splice(0, 1);
+                    this.setOptionData({ type: 'splice', data: 0 });
                 }
                 return;
             }
@@ -339,8 +339,8 @@ export default {
                 e.name !== name && arr.push(e);
                 return arr;
             }, []);
-            this.optionData.splice(currOptionIndex, 1, currOption);
-            this.yData.splice(yDataIndex, 1, yData);
+            this.setOptionData({ type: 'replace', data: { index: currOptionIndex, data: currOption } });
+            this.setYData({ type: 'replace', data: { index: yDataIndex, data: yData } });
         },
         /**
          * 删除当前图的y轴的时候判断其他y轴应该如何处理
@@ -379,7 +379,7 @@ export default {
          * @param endValue
          */
         changexAxis(startValue, endValue) {
-            console.log(startValue, endValue);
+            this.getXData(1000);
         },
         setDataXaxis() {
             this.xAxisDataChart = echarts.init(this.$refs.xAxisData);
