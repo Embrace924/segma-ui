@@ -35,9 +35,11 @@ export default {
             this.xAxisDataChart = echarts.init(this.$refs.xAxisData);
             let option = {
                 grid: {
-                    left: 0,
-                    right: 0,
-                    top: 1
+                    right: '50px',
+                    left: '20px',
+                    top: 5,
+                    bottom: 5,
+                    containLabel: true
                 },
                 xAxis: {
                     type: 'category',
@@ -74,8 +76,11 @@ export default {
             console.log(option)
             this.xAxisDataChart.setOption(option);
             window.addEventListener("resize", () => {
-                this.xAxisDataChart.resize();
+                this.resize();
             });
+        },
+        resize() {
+            this.xAxisDataChart.resize();
         },
     },
 }

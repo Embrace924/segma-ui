@@ -4,11 +4,11 @@ import _ from 'lodash';
 
 Vue.use(Vuex);
 let color = [
-    '#5793f3',
-    '#d14a61',
-    '#675bba',
-    '#5723f3',
-    '#124a01',
+    '#3A70DF',
+    '#70B684',
+    '#DF8845',
+    '#DF3A25',
+    '#7979E4',
     '#175bba',
     '#1fd20c',
     '#56ba62',
@@ -39,7 +39,7 @@ let baseOption = {
     id: '',
     grid: {
         right: '50px',
-        left: 0,
+        left: '10px',
         top: 5,
         bottom: 5,
         containLabel: true
@@ -70,20 +70,71 @@ let baseOption = {
         axisTick: {
             show: false
         },
+
         axisLabel: {
             show: false,
             formatter: '{value} ml'
         },
         axisLine: {
-            show: false
+            show: true,
+            lineStyle: {
+                color: '#F1F3F6'
+            }
+        },
+        splitLine: {
+            show: true,
+            interval: 'auto',
+            lineStyle: {
+                color: '#F1F3F6'
+            }
         },
         data: []
     },
     yAxis: [],
     series: []
 };
+let baseYAxis = (name, length) => {
+    return {
+        name: name,
+        type: 'value',
+        min: 0,
+        max: 50,
+        splitNumber: 4,
+        position: 'left',
+        offset: length * 39,
+        splitLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: color[length]
+            }
+        },
+        axisLabel: {
+            margin: 25,
+            align: 'left',
+            formatter: [
+                '{a|{value}}',
+            ].join('\n'),
+            rich: {
+                a: {
+                    width: 100,
+                    padding: [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+            }
+        }
+    }
+}
 let getLineData = (id, name) => {
-    let n = 300, min = 0, max = 250;
+    let n = 100, min = 0, max = 50;
     let arr = [];
     for (let i = 0; i < n; i++) {
         let random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -164,15 +215,8 @@ export default new Vuex.Store({
         addOtherYAxis(state, id) {
             state.optionData = state.optionData.map(e => {
                 if (e.id !== id) {
-                    e.yAxis.push({
-                        type: 'value',
-                        name: 'NO_NAME',
-                        min: 0,
-                        max: 250,
-                        position: 'left',
-                        show: false,
-                        offset: e.yAxis.length * 30
-                    });
+                    let baseY = baseYAxis('NO_NAME', e.yAxis.length)
+                    e.yAxis.push(baseY);
                 }
                 return e;
             });
@@ -186,7 +230,7 @@ export default new Vuex.Store({
 
         getXData({ state, commit }, { startTime, endTime }) {
             let xData = [];
-            let n = 300;
+            let n = 100;
             for (let i = 0; i < n; i++) {
                 xData.push(`${i}天`);
             }
@@ -215,23 +259,19 @@ export default new Vuex.Store({
                 let yData = _.cloneDeep(state.yData[yDataIndex]);
                 lineData.forEach(e => {
                     let index = currOption.yAxis.findIndex(e => e.show === false);
-                    let pushYData = {
-                        name: e.name,
-                        type: 'value',
-                        min: 0,
-                        max: 250,
-                        position: 'left',
-                        offset: yData.data.length * 30
-                    }
+                    let pushYData = baseYAxis(e.name, yData.data.length)
+
                     if (index >= 0) {
                         currOption.yAxis.splice(index, 1, pushYData);
                     } else {
                         currOption.yAxis.push(pushYData);
                         commit('addOtherYAxis', id);
                     }
+                    // currOption.grid.left = yData.data.length * 8
                     currOption.series.push({
                         name: name,
                         type: 'line',
+                        showSymbol: false,
                         data: []
                     });
                     yData.data.push({ name: name, data: e.value, show: true });
@@ -245,17 +285,13 @@ export default new Vuex.Store({
                 addOption.id = id
                 let addYData = { id: id, data: [] }
                 lineData.forEach((e, index) => {
-                    addOption.yAxis.push({
-                        name: e.name,
-                        type: 'value',
-                        min: 0,
-                        max: 250,
-                        position: 'left',
-                        offset: index.length * 30
-                    })
+                    let pushYData = baseYAxis(e.name, index)
+                    addOption.yAxis.push(pushYData)
+                    // addOption.grid.left = index * 8
                     addOption.series.push({
                         name: e.name,
                         type: 'line',
+                        showSymbol: false,
                         data: []
                     })
                     addYData.data.push({ name: e.name, data: e.value, show: true })
@@ -263,15 +299,8 @@ export default new Vuex.Store({
                 //增加空白y轴，对其最近一个y坐标
                 if (state.maxYaxisLength > 1 && state.chartBoxList.length > 1) {
                     for (let i = 0; i <= state.maxYaxisLength - 2; i++) {
-                        addOption.yAxis.push({
-                            type: 'value',
-                            name: 'NO_NAME',
-                            min: 0,
-                            max: 250,
-                            position: 'left',
-                            show: false,
-                            offset: (i + 1) * 30
-                        });
+                        let pushYData = baseYAxis('NO_NAME', (i + 1))
+                        addOption.yAxis.push(pushYData);
                     }
                 }
                 commit('setOptionData', { type: 'push', data: addOption });

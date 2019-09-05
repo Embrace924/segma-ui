@@ -43,7 +43,8 @@
             </div>
         </div>
         <x-axis-for-chart v-if="yData.length>0"
-                          :xAxisWidth="xAxisWidth"></x-axis-for-chart>
+                          :xAxisWidth="xAxisWidth"
+                          ref="xAxisDataChart"></x-axis-for-chart>
         <data-zoom-for-chart></data-zoom-for-chart>
     </div>
 </template>
@@ -125,7 +126,7 @@ export default {
     },
     watch: {
         maxYaxisLength() {
-            this.xAxisDataChart.resize();
+            this.$refs.xAxisDataChart.resize();
         },
     },
     mounted() {
@@ -193,7 +194,7 @@ export default {
             }, []);
             currOption.yAxis = currOption.yAxis.reduce((arr, e, index) => {
                 //删除一条数据后 该图该数据后面的y轴offset值应该分别向前走30px
-                e.offset = index > delIndex ? e.offset - 30 : e.offset;
+                e.offset = index > delIndex ? e.offset - 39 : e.offset;
                 e.name !== name && arr.push(e);
                 return arr;
             }, []);
@@ -201,6 +202,7 @@ export default {
                 e.name !== name && arr.push(e);
                 return arr;
             }, []);
+            // currOption.grid.left =(yData.data.length - 1) * 8
             this.setOptionData({ type: 'replace', data: { index: currOptionIndex, data: currOption } });
             this.setYData({ type: 'replace', data: { index: yDataIndex, data: yData } });
         },
@@ -225,10 +227,39 @@ export default {
                     type: 'value',
                     name: 'NO_NAME',
                     min: 0,
-                    max: 250,
+                    max: 50,
+                    splitNumber: 4,
                     position: 'left',
-                    show: false,
-                    offset: currLength * 30
+                    offset: length * 39,
+                    splitLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: this.color[currLength]
+                        }
+                    },
+                    axisLabel: {
+                        margin: 25,
+                        align: 'left',
+                        formatter: [
+                            '{a|{value}}',
+                        ].join('\n'),
+                        rich: {
+                            a: {
+                                width: 100,
+                                padding: [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            },
+                        }
+                    }
                 });
             }
             return currOption;

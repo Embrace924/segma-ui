@@ -12,7 +12,7 @@
                 <span class="legend-name"
                       @click="lengendShow(ID,ele.name,!ele.show)">{{ele.name}}</span>
                 <span class="legend-del"
-                      @click="delLegend(ID,ele.name,index)">x</span>
+                      @click="delLegend(ID,ele.name,index)"><i class="el-icon-close"></i></span>
             </div>
 
         </div>
@@ -49,11 +49,11 @@ export default {
         ...mapState(['xData']),
         colors() {
             return [
-                '#5793f3',
-                '#d14a61',
-                '#675bba',
-                '#5723f3',
-                '#124a01',
+                '#3A70DF',
+                '#70B684',
+                '#DF8845',
+                '#DF3A25',
+                '#7979E4',
                 '#175bba',
                 '#1fd20c',
                 '#56ba62',
@@ -185,8 +185,8 @@ export default {
         right: 0;
         .legend {
             width: 100%;
-            height: 12px;
-            line-height: 12px;
+            height: 14px;
+            line-height: 14px;
             margin-bottom: 5px;
             align-items: center;
             display: flex;
@@ -196,6 +196,7 @@ export default {
                 display: inline-block;
                 font-size: 12px;
                 width: 120px;
+                color: #7f7f7f;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
@@ -203,9 +204,14 @@ export default {
             }
             .legend-box {
                 display: inline-block;
-                width: 10px;
-                height: 10px;
+                width: 12px;
+                height: 12px;
+                border-radius: 2px;
                 margin-right: 3px;
+            }
+            .legend-del {
+                font-size: 14px;
+                color: #a6a6a6;
             }
         }
 
