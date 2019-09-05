@@ -228,6 +228,7 @@ export default {
                     name: 'NO_NAME',
                     min: 0,
                     max: 50,
+                    show: false,
                     splitNumber: 4,
                     position: 'left',
                     offset: length * 39,

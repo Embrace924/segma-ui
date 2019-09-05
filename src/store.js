@@ -216,6 +216,7 @@ export default new Vuex.Store({
             state.optionData = state.optionData.map(e => {
                 if (e.id !== id) {
                     let baseY = baseYAxis('NO_NAME', e.yAxis.length)
+                    baseY.show = false
                     e.yAxis.push(baseY);
                 }
                 return e;
@@ -300,6 +301,7 @@ export default new Vuex.Store({
                 if (state.maxYaxisLength > 1 && state.chartBoxList.length > 1) {
                     for (let i = 0; i <= state.maxYaxisLength - 2; i++) {
                         let pushYData = baseYAxis('NO_NAME', (i + 1))
+                        pushYData.show = false
                         addOption.yAxis.push(pushYData);
                     }
                 }
