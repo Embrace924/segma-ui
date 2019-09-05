@@ -103,8 +103,7 @@ export default new Vuex.Store({
         xEndTime: '',
         //x轴数据
         xData: [],
-        //底部x轴宽度
-        xAxisWidth: 'calc(100% - 100px - 150px - 20px - 10px - 30px)',
+
         //
         xAxisDataChart: '',
         //有相同y轴个数且显示出来
@@ -139,6 +138,16 @@ export default new Vuex.Store({
             } else if (type === 'replace') {
                 state.yData.splice(data.index, 1, data.data);
             }
+            //改变yData后,实时更新最新y轴最大个数 是否有相等个数Y轴
+            let hasSameYaxisLength = false;
+            state.maxYaxisLength = state.yData.reduce((max, ele) => {
+                if (max === ele.data.length) {
+                    hasSameYaxisLength = true;
+                    return max;
+                }
+                return max > ele.data.length ? max : ele.data.length;
+            }, 1);
+            state.hasSameYaxisLength = hasSameYaxisLength;
         },
         setXData(state, data) {
             state.xData = data;
@@ -149,6 +158,9 @@ export default new Vuex.Store({
         setMaxYaxisLength(state, data) {
             state.maxYaxisLength = data;
         },
+        /**
+         *给其他图加空白y轴
+         * */
         addOtherYAxis(state, id) {
             state.optionData = state.optionData.map(e => {
                 if (e.id !== id) {

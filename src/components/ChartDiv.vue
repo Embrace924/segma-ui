@@ -106,6 +106,9 @@ export default {
     },
     mounted() {
         this.init();
+        window.addEventListener("resize", () => {
+            this.resize();
+        });
     },
     methods: {
         /**
@@ -120,13 +123,11 @@ export default {
                 this.myChart.on('datazoom', (params) => {
                     this.$emit('changexAxis', params.startValue, params.endValue);
                 });
-                window.addEventListener("resize", () => {
-                    this.myChart.resize();
-                });
             });
         },
-
-
+        resize() {
+            this.myChart.resize();
+        },
         /**
          * 重新渲染数据
          **/
@@ -169,7 +170,7 @@ export default {
        lang="scss">
 .line-chart-box {
     width: 100%;
-    height: 200px;
+    height: 100%;
     margin: 20px 0;
     display: flex;
     position: relative;
