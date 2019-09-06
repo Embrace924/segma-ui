@@ -14,6 +14,8 @@
             <router-link to="/Button">Button</router-link>
             |
             <router-link to="/hello">hello</router-link>
+            |
+            <router-link to="/rangeSelect">rangeSelect</router-link>
         </div>
         <router-view class="segma-ui" />
     </div>

@@ -25,6 +25,11 @@ export default new Router({
             component: () => import(/* webpackChunkName: "about" */ './components/HelloWorld.vue')
         },
         {
+            path: '/rangeSelect',
+            name: 'rangeSelect',
+            component: () => import(/* webpackChunkName: "about" */ './components/test-range-select.vue')
+        },
+        {
             path: '/about',
             name: 'about',
             // route level code-splitting
