@@ -232,7 +232,7 @@ export default {
          **/
         btnWrapperStyle(i, index) {
             let { currBtn, perPxValue, min } = this;
-            let style = { left: '0px', zIndex: '', transition: 'all 5s' };
+            let style = { left: '0px', zIndex: '' };
             style.left = ((i - min) / perPxValue) + 'px';
             style.zIndex = currBtn === index ? 2 : 1;
             return style
@@ -282,7 +282,6 @@ $themeColor: #1cc19f;
             transform: translate(-50%, -50%);
             background: transparent;
             user-select: none;
-            transition: all 5s;
             .value-input {
                 position: absolute;
                 top: -27px;
@@ -353,14 +352,12 @@ $themeColor: #1cc19f;
             .btn {
                 width: 15px;
                 height: 15px;
-                /*  background-color: $themeColor;*/
                 border-radius: 50%;
-                transition: all 5s;
                 cursor: w-resize;
                 &:hover {
                     transform: scale(1.3);
-
                 }
+
             }
 
         }
@@ -370,8 +367,6 @@ $themeColor: #1cc19f;
         height: 6px;
         float: left;
         border-radius: 5px;
-        transition: 5s;
-        /*  background: $themeColor;*/
     }
 }
 
