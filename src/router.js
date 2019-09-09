@@ -27,7 +27,7 @@ export default new Router({
         {
             path: '/rangeSelect',
             name: 'rangeSelect',
-            component: () => import(/* webpackChunkName: "about" */ './components/test-range-select.vue')
+            component: () => import(/* webpackChunkName: "about" */ './views/rangeSelect.vue')
         },
         {
             path: '/about',
