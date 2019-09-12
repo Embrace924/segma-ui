@@ -16,6 +16,8 @@
             <router-link to="/hello">hello</router-link>
             |
             <router-link to="/rangeSelect">rangeSelect</router-link>
+            |
+            <router-link to="/chartSwitching">chartSwitching</router-link>
         </div>
         <router-view class="segma-ui" />
     </div>

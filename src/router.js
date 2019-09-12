@@ -30,6 +30,11 @@ export default new Router({
             component: () => import(/* webpackChunkName: "about" */ './views/rangeSelect.vue')
         },
         {
+            path: '/chartSwitching',
+            name: 'chartSwitching',
+            component: () => import(/* webpackChunkName: "about" */ './views/chartSwitching.vue')
+        },
+        {
             path: '/about',
             name: 'about',
             // route level code-splitting
