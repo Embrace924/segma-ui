@@ -10,57 +10,40 @@ import Button from './views/Button.vue'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Home,
-            childrens: []
-        },
-        {
-            path: '/hello',
-            name: 'home',
-            component: () => import(/* webpackChunkName: "about" */ './components/HelloWorld.vue')
-        },
-        {
-            path: '/rangeSelect',
-            name: 'rangeSelect',
-            component: () => import(/* webpackChunkName: "about" */ './views/rangeSelect.vue')
-        },
-        {
-            path: '/chartSwitching',
-            name: 'chartSwitching',
-            component: () => import(/* webpackChunkName: "about" */ './views/chartSwitching.vue')
-        },
-        {
-            path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-        },
-        {
-            path: '/Input',
-            name: 'Input',
-            component: Input
-        },
-        {
-            path: '/InputNumber',
-            name: 'InputNumber',
-            component: InputNumber
-        },
-        {
-            path: '/Select',
-            name: 'Select',
-            component: Select
-        },
-        {
-            path: '/Button',
-            name: 'Button',
-            component: Button
-        }
-    ]
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes: [
+		{
+			path: '/',
+			name: 'home',
+			component: Home,
+			childrens: []
+		},
+
+
+		{
+			path: '/color',
+			name: 'color',
+			// route level code-splitting
+			// this generates a separate chunk (about.[hash].js) for this route
+			// which is lazy-loaded when the route is visited.
+			component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
+		},
+		{
+			path: '/Input',
+			name: 'Input', component: () => import(/* webpackChunkName: "about" */ './views/Input.vue')
+		},
+		{
+			path: '/InputNumber',
+			name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
+		},
+		{
+			path: '/Select',
+			name: 'Select', component: () => import(/* webpackChunkName: "about" */ './views/Select.vue')
+		},
+		{
+			path: '/Button',
+			name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
+		}
+	]
 })

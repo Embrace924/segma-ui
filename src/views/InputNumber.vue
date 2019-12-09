@@ -39,8 +39,8 @@ export default {
 @import "../assets/css/segmaUIResetElementUI";
 
 .segma-input-number {
-    width: 300px;
-    padding: 20px 0;
     box-sizing: border-box;
+    padding: 20px 0;
+    width: 300px;
 }
 </style>

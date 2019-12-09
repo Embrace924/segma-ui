@@ -35,46 +35,42 @@
 </template>
 <script>
 export default {
-    // Options / Data
-    // components: {},
-    data() {
-        return {
-            dialogVisible: false,
-            ruleForm: {
-                categoryName: ''
+	// Options / Data
+	// components: {},
+	data() {
+		return {
+			dialogVisible: false,
+			ruleForm: {
+				categoryName: ''
 
-            },
-            rules: {
-                categoryName: [
-                    { required: true, message: '请输入商品分类', trigger: 'blur' },
-                    { min: 1, max: 10, message: '长度在1 到 10 个字符', trigger: 'blur' }
-                ]
-            }
-        }
-    }
-    //props: [],
-    // propsData: {},
-    // computed: {},
-    // methods: {},
-    // watch: {},
-    // Options / DOM
-    // el () {},
-    // template: '',
-    // render () {},
-    // Options / Lifecycle Hooks
-    // created () {},
-    // mounted() {},
-    // updated () {},
-    // activated () {},
-    // deactivated () {},
-    // beforeDestroy () {},
-    // destroyed () {},
-    // Options / Assets
-    //directives: {},
-    // filters: {},
+			},
+			rules: {
+				categoryName: [
+					{ required: true, message: '请输入商品分类', trigger: 'blur' },
+					{ min: 1, max: 10, message: '长度在1 到 10 个字符', trigger: 'blur' }
+				]
+			}
+		}
+	}
+	//props: [],
+	// propsData: {},
+	// computed: {},
+	// methods: {},
+	// watch: {},
+	// Options / DOM
+	// el () {},
+	// template: '',
+	// render () {},
+	// Options / Lifecycle Hooks
+	// created () {},
+	// mounted() {},
+	// updated () {},
+	// activated () {},
+	// deactivated () {},
+	// beforeDestroy () {},
+	// destroyed () {},
+	// Options / Assets
+	//directives: {},
+	// filters: {},
 }
 </script>
-<style rel="stylesheet/scss"
-       lang="scss">
-
-</style>

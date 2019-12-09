@@ -3,7 +3,7 @@
         <div id="nav">
             <router-link to="/">Home</router-link>
             |
-            <router-link to="/about">About</router-link>
+            <router-link to="/color">color</router-link>
             |
             <router-link to="/Input">Input</router-link>
             |
@@ -24,6 +24,8 @@
 </template>
 
 <style lang="less">
+/* @import "./assets/css/segmaUIResetElementUI"; */
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

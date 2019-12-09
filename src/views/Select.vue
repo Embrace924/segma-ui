@@ -63,47 +63,52 @@
 
 <script>
 export default {
-    name: "select", data() {
-        return {
-            segmaSelect: {
-                value1: '',
-                value1Options: [
-                    {
-                        value: '1',
-                        label: '测试1'
-                    },
-                    {
-                        value: '2',
-                        label: '测试2'
-                    }
-                ],
-                value2: '',
-                value2Options: [
-                    {
-                        value: '选项1',
-                        label: '黄金糕'
-                    }, {
-                        value: '选项2',
-                        label: '双皮奶'
-                    }, {
-                        value: '选项3',
-                        label: '蚵仔煎'
-                    }, {
-                        value: '选项4',
-                        label: '龙须面'
-                    }, {
-                        value: '选项5',
-                        label: '北京烤鸭'
-                    }
-                ],
-            },
+	name: "select", data() {
+		return {
+			segmaSelect: {
+				value1: '',
+				value1Options: [
+					{
+						value: '1',
+						label: '测试1'
+					},
+					{
+						value: '2',
+						label: '测试2'
+					}
+				],
+				value2: '',
+				value2Options: [
+					{
+						value: '选项1',
+						label: '黄金糕'
+					},
+					{
+						value: '选项2',
+						label: '双皮奶'
+					},
+					{
+						value: '选项3',
+						label: '蚵仔煎'
+					},
+					{
+						value: '选项4',
+						label: '龙须面'
+					},
+					{
+						value: '选项5',
+						label: '北京烤鸭'
+					}
+				],
+			},
 
-        };
-    }
+		};
+	}
 }
 </script>
 
-<style lang="less">
+<style lang="less"
+       scoped>
 @import "../assets/css/segmaUIResetElementUI";
 
 </style>

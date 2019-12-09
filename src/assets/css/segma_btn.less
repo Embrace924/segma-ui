@@ -1,0 +1,36 @@
+@primary: #3a70df;
+@danger: #df3a25;
+@success: #2fcd77;
+@warning: #fba13b;
+@white: #ffffff;
+@black: #000000;
+
+@colorlist: @danger, @primary, @success, @warning;
+@colorTypelist: danger, primary, success, warning;
+
+.setBtnColor(@type,@color) {
+    .el-button--@{type}.is-plain {
+        border-color: @color;
+        color: @color;
+        background: @white;
+
+        &:hover, &:focus {
+            border-color: mix(@white, @color, 20%);
+            color: mix(@white, @color, 20%);
+            background-color: mix(@white, @color, 90%);
+        }
+
+        &:active {
+            border-color: mix(@black, @color, 20%);
+            color: mix(@black, @color, 20%);
+            background-color: mix(@white, @color, 80%);
+        }
+    }
+}
+
+.loopBtnColor(@i) when (@i < (length(@colorlist)+1)) {
+    .setBtnColor(extract(@colorTypelist, @i), extract(@colorlist, @i));
+    .loopBtnColor(@i+1);
+}
+
+.loopBtnColor(1);
