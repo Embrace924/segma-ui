@@ -4,7 +4,7 @@
 @warning: #fba13b;
 @white: #ffffff;
 @black: #000000;
-
+@ccc: #cccccc;
 @colorlist: @danger, @primary, @success, @warning;
 @colorTypelist: danger, primary, success, warning;
 
@@ -25,6 +25,12 @@
             color: mix(@black, @color, 20%);
             background-color: mix(@white, @color, 80%);
         }
+    }
+    .el-button--@{type}.is-disabled {
+        border-color: @ccc;
+        color: @white;
+        background: @ccc;
+
     }
 }
 
