@@ -523,15 +523,15 @@ $--button-medium-font-size: 16px;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 11px !default;
+$--button-medium-padding-vertical: 12px !default;
 /// padding||Spacing|3
 $--button-medium-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
-$--button-small-font-size: 12px !default;
+$--button-small-font-size: 14px !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-vertical: 8px !default;
 /// padding||Spacing|3
 $--button-small-padding-horizontal: 12px !default;
 /// fontSize||Font|1
@@ -975,23 +975,23 @@ $--lg: 1200px !default;
 $--xl: 1920px !default;
 
 $--breakpoints: (
-    'xs' : (max-width: $--sm - 1),
-    'sm' : (min-width: $--sm),
-    'md' : (min-width: $--md),
-    'lg' : (min-width: $--lg),
-    'xl' : (min-width: $--xl)
+        'xs' : (max-width: $--sm - 1),
+        'sm' : (min-width: $--sm),
+        'md' : (min-width: $--md),
+        'lg' : (min-width: $--lg),
+        'xl' : (min-width: $--xl)
 );
 
 $--breakpoints-spec: (
-    'xs-only' : (max-width: $--sm - 1),
-    'sm-and-up' : (min-width: $--sm),
-    'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
-    'sm-and-down': (max-width: $--md - 1),
-    'md-and-up' : (min-width: $--md),
-    'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
-    'md-and-down': (max-width: $--lg - 1),
-    'lg-and-up' : (min-width: $--lg),
-    'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
-    'lg-and-down': (max-width: $--xl - 1),
-    'xl-only' : (min-width: $--xl),
+        'xs-only' : (max-width: $--sm - 1),
+        'sm-and-up' : (min-width: $--sm),
+        'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+        'sm-and-down': (max-width: $--md - 1),
+        'md-and-up' : (min-width: $--md),
+        'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+        'md-and-down': (max-width: $--lg - 1),
+        'lg-and-up' : (min-width: $--lg),
+        'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+        'lg-and-down': (max-width: $--xl - 1),
+        'xl-only' : (min-width: $--xl),
 );
