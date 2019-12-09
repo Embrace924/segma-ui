@@ -1,20 +1,4 @@
-/* Element Chalk Variables */
-//使用方法 ：
-//安装工具  npm i element-theme -g
-//安装主题  npm i element-theme-chalk -D
-//执行命令  et -i [可以自定义变量文件]
-//          > ✔ Generator variables file
-//执行后当前目录会有一个 element-variables.scss 
-//直接编辑 element-variables.scss 文件
-//编译主题  et
-//          > ✔ build theme font
-//          > ✔ build element theme
-//引入自定义主题
-//import '../theme/index.css'
-//import ElementUI from 'element-ui'
-//import Vue from 'vue'
-//Vue.use(ElementUI)
-//结束
+/* Element Chalk Variables  */
 
 // Special comment for theme configurator
 // type|skipAutoTranslation|Category|Order
@@ -25,7 +9,7 @@
 $--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $--fade-linear-transition: opacity 200ms linear !default;
-$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 00.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 $--border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 
@@ -65,17 +49,15 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 /// color|1|Font Color|2
-$--color-text-primary: #383838 !default;
+$--color-text-primary: #303133 !default;
 /// color|1|Font Color|2
-$--color-text-regular: #383838 !default;
-///输入框选中后文字颜色
-$--color-text-checked: rgba(0, 0, 0, 0.78) !default;
+$--color-text-regular: #606266 !default;
 /// color|1|Font Color|2
-$--color-text-secondary: #7f7f7f !default;
+$--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
-$--color-text-placeholder: #7d7d7d !default;
+$--color-text-placeholder: #c0c4cc !default;
 /// color|1|Border Color|3
-$--border-color-base: #e5e5e5 !default;
+$--border-color-base: #dcdfe6 !default;
 /// color|1|Border Color|3
 $--border-color-light: #e4e7ed !default;
 /// color|1|Border Color|3
@@ -96,7 +78,7 @@ $--link-hover-color: $--color-primary !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-hover: $--color-text-regular !default;
+$--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
@@ -122,7 +104,6 @@ $--fill-base: $--color-white !default;
 /* Typography
 -------------------------- */
 $--font-path: 'fonts' !default;
-//饿了吗安装依赖后新增的2019/09/09 否则et build报错
 $--font-display: 'auto' !default;
 /// fontSize|1|Font Size|0
 $--font-size-extra-large: 20px !default;
@@ -442,7 +423,7 @@ $--notification-danger-icon-color: $--color-danger !default;
 -------------------------- */
 $--input-font-size: $--font-size-base !default;
 /// color||Color|0
-$--input-font-color: $--color-text-checked !default;
+$--input-font-color: $--color-text-regular !default;
 /// height||Other|4
 $--input-width: 140px !default;
 /// height||Other|4
@@ -533,40 +514,40 @@ $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 0 !default;
+$--button-padding-vertical: 9px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 20px !default;
+$--button-padding-horizontal: 12px !default;
 
 /// fontSize||Font|1
-$--button-medium-font-size: $--font-size-base !default;
+$--button-medium-font-size: 16px;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 0 !default;
+$--button-medium-padding-vertical: 11px !default;
 /// padding||Spacing|3
-$--button-medium-padding-horizontal: 16px !default;
+$--button-medium-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
-$--button-small-font-size: 14px !default;
-$--button-small-border-radius: $--border-radius-base !default;
+$--button-small-font-size: 12px !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-small-padding-vertical: 0 !default;
+$--button-small-padding-vertical: 9px !default;
 /// padding||Spacing|3
 $--button-small-padding-horizontal: 12px !default;
 /// fontSize||Font|1
 $--button-mini-font-size: 14px !default;
-$--button-mini-border-radius: $--border-radius-base !default;
+$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-mini-padding-vertical: 0 !default;
+$--button-mini-padding-vertical: 4px !default;
 /// padding||Spacing|3
 $--button-mini-padding-horizontal: 8px !default;
 
 /// color||Color|0
-$--button-default-font-color: $--color-primary !default;
+$--button-default-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--button-default-background-color: $--color-white !default;
 /// color||Color|0
-$--button-default-border-color: $--color-primary !default;
+$--button-default-border-color: $--border-color-base !default;
 
 /// color||Color|0
 $--button-disabled-font-color: $--color-text-placeholder !default;
@@ -606,7 +587,11 @@ $--button-info-font-color: $--color-white !default;
 /// color||Color|0
 $--button-info-background-color: $--color-info !default;
 
-$--button-hover-tint-percent: 20% !default;
+//button的hover的时候 取该色的90%混合#ffffff的百分之10%
+//mix(#ffffff,color)
+$--button-hover-tint-percent: 10% !default;
+//button的hover的时候 取该色的90%混合#000000的百分之10%
+//mix(#000000,color)
 $--button-active-shade-percent: 10% !default;
 
 /* cascader
@@ -661,18 +646,18 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 /* Pagination
 -------------------------- */
 /// fontSize||Font|1
-$--pagination-font-size: 14px !default;
+$--pagination-font-size: 13px !default;
 /// color||Color|0
 $--pagination-background-color: $--color-white !default;
 /// color||Color|0
 $--pagination-font-color: $--color-text-primary !default;
-$--pagination-border-radius: 4px !default;
+$--pagination-border-radius: 3px !default;
 /// color||Color|0
 $--pagination-button-color: $--color-text-primary !default;
 /// height||Other|4
-$--pagination-button-width: 32px !default;
+$--pagination-button-width: 35.5px !default;
 /// height||Other|4
-$--pagination-button-height: 32px !default;
+$--pagination-button-height: 28px !default;
 /// color||Color|0
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
 /// color||Color|0
@@ -788,7 +773,8 @@ $--slider-button-size: 16px !default;
 $--slider-button-wrapper-size: 36px !default;
 $--slider-button-wrapper-offset: -15px !default;
 
-/* Steps------------------------- */
+/* Steps
+-------------------------- */
 $--steps-border-color: $--disabled-border-base !default;
 $--steps-border-radius: 4px !default;
 $--steps-padding: 20px !default;
@@ -816,7 +802,7 @@ $--rate-icon-color: $--color-text-placeholder !default;
 
 /* DatePicker
 -------------------------- */
-$--datepicker-font-color: $--color-text-checked !default;
+$--datepicker-font-color: $--color-text-regular !default;
 /// color|1|Color|0
 $--datepicker-off-font-color: $--color-text-placeholder !default;
 /// color||Color|0
@@ -880,7 +866,8 @@ $--collapse-content-font-size: 13px !default;
 /// color||Color|0
 $--collapse-content-font-color: $--color-text-primary !default;
 
-/* Transfer------------------------- */
+/* Transfer
+-------------------------- */
 $--transfer-border-color: $--border-color-lighter !default;
 $--transfer-border-radius: $--border-radius-base !default;
 /// height||Other|4
@@ -899,7 +886,7 @@ $--transfer-item-height: 30px !default;
 $--transfer-filter-height: 32px !default;
 
 /* Header
-  -------------------------- */
+  --------------------------  */
 $--header-padding: 0 20px !default;
 
 /* Footer
@@ -911,7 +898,7 @@ $--footer-padding: 0 20px !default;
 $--main-padding: 20px !default;
 
 /* Timeline
---------------------------  */
+-------------------------- */
 $--timeline-node-size-normal: 12px !default;
 $--timeline-node-size-large: 14px !default;
 $--timeline-node-color: $--border-color-light !default;
@@ -955,6 +942,11 @@ $--calendar-border: $--table-border !default;
 /// color||Other|4
 $--calendar-selected-background-color: #f2f8fe !default;
 $--calendar-cell-width: 85px !default;
+
+/* Form
+--------------------------  */
+/// fontSize||Font|1
+$--form-label-font-size: $--font-size-base !default;
 
 /* Avatar
 -------------------------- */
