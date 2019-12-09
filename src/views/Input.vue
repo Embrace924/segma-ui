@@ -1,12 +1,20 @@
 <template>
-    <div class="segma-input">
+    <div>
         <div>输入框</div>
-        <el-input class="segma-xs"
+        <el-input size="mini"
                   placeholder="请输入内容"
                   v-model="segmaInput.value1">
         </el-input>
-        <el-input class="segma-s"
+        <el-input size="small"
                   placeholder="请输入内容"
+                  v-model="segmaInput.value1">
+        </el-input>
+        <el-input size="medium"
+                  placeholder="请输入内容"
+                  v-model="segmaInput.value1">
+        </el-input>
+
+        <el-input placeholder="请输入内容"
                   disabled
                   suffix-icon="el-icon-date"
                   v-model="segmaInput.value1">
