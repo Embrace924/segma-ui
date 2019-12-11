@@ -7,7 +7,8 @@
 @ccc: #cccccc;
 @colorlist: @danger, @primary, @success, @warning;
 @colorTypelist: danger, primary, success, warning;
-/*按钮样式开始*/
+
+/* 按钮样式开始 */
 .setBtnColor(@type,@color) {
     .el-button--@{type}.is-plain {
         border-color: @color;
@@ -26,11 +27,11 @@
             background-color: mix(@white, @color, 80%);
         }
     }
+
     .el-button--@{type}.is-disabled {
         border-color: @ccc;
         color: @white;
         background: @ccc;
-
     }
 }
 
@@ -41,8 +42,50 @@
 
 .loopBtnColor(1);
 
-/*按钮样式结束*/
+/* 按钮样式结束 */
 
-/*输入框开始*/
-/*输入框结束*/
+/* 输入框开始 */
 
+/* 输入框结束 */
+
+//*弹窗开始*/
+.segma-dialog {
+    .el-dialog {
+        overflow: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 0 !important;
+        border-radius: 4px;
+        max-width: calc(100% - 98px);
+        max-height: calc(100% - 98px);
+        transform: translate(-50%, -50%);
+
+        .el-dialog__header {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 12.5px 20px;
+            text-align: center;
+
+            .el-dialog__title {
+                font-weight: bold;
+            }
+
+            .el-dialog__headerbtn {
+                i {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .el-dialog__body {
+            padding: 16px;
+        }
+
+        .el-dialog__footer {
+            padding: 0 16px 16px 16px;
+        }
+    }
+}
+
+//*弹窗结束*/

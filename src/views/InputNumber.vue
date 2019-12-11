@@ -1,19 +1,17 @@
 <template>
-    <div class="segma-input-number">
-        <div>计数器</div>
+    <div>
         <el-input-number v-model="segmaInputNumber.num"
-                         class="segma-xs"
                          :min="1"
                          :max="10"
                          label="描述文字"></el-input-number>
         <el-input-number v-model="segmaInputNumber.num"
-                         class="segma-xs"
                          controls-position="right"
+                         size="small"
                          :min="1"
                          :max="10"
                          label="描述文字"></el-input-number>
         <el-input-number v-model="segmaInputNumber.num"
-                         class="segma-m"
+                         size="medium"
                          :disabled="true"
                          :min="1"
                          :max="10"
@@ -36,11 +34,8 @@ export default {
 
 <style scoped
        lang="less">
-@import "../assets/css/segmaUIResetElementUI";
 
-.segma-input-number {
-    box-sizing: border-box;
-    padding: 20px 0;
+.input-number {
     width: 300px;
 }
 </style>

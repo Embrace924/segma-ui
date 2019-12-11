@@ -10,40 +10,44 @@ import Button from './views/Button.vue'
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
-	base: process.env.BASE_URL,
-	routes: [
-		{
-			path: '/',
-			name: 'home',
-			component: Home,
-			childrens: []
-		},
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home,
+            childrens: []
+        },
 
 
-		{
-			path: '/color',
-			name: 'color',
-			// route level code-splitting
-			// this generates a separate chunk (about.[hash].js) for this route
-			// which is lazy-loaded when the route is visited.
-			component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
-		},
-		{
-			path: '/Input',
-			name: 'Input', component: () => import(/* webpackChunkName: "about" */ './views/Input.vue')
-		},
-		{
-			path: '/InputNumber',
-			name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
-		},
-		{
-			path: '/Select',
-			name: 'Select', component: () => import(/* webpackChunkName: "about" */ './views/Select.vue')
-		},
-		{
-			path: '/Button',
-			name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
-		}
-	]
+        {
+            path: '/color',
+            name: 'color',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
+        },
+        {
+            path: '/Input',
+            name: 'Input', component: () => import(/* webpackChunkName: "about" */ './views/Input.vue')
+        },
+        {
+            path: '/InputNumber',
+            name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
+        },
+        {
+            path: '/Select',
+            name: 'Select', component: () => import(/* webpackChunkName: "about" */ './views/Select.vue')
+        },
+        {
+            path: '/Dialog',
+            name: 'Dialog', component: () => import(/* webpackChunkName: "about" */ './views/Dialog.vue')
+        },
+        {
+            path: '/Button',
+            name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
+        }
+    ]
 })
