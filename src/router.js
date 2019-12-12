@@ -39,6 +39,10 @@ export default new Router({
             path: '/Pagination',
             name: 'Pagination', component: () => import(/* webpackChunkName: "about" */ './views/Pagination.vue')
         },
+        {
+            path: '/Comfirm',
+            name: 'Comfirm', component: () => import(/* webpackChunkName: "about" */ './views/Comfirm.vue')
+        },
 
         {
             path: '/color',

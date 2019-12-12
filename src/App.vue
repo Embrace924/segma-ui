@@ -13,8 +13,9 @@
             |
             <router-link to="/Pagination">Pagination</router-link>
             |
+            <router-link to="/Comfirm">Comfirm</router-link>
+            |
             <router-link to="/color">color</router-link>
-
             |
             <router-link to="/InputNumber">InputNumber</router-link>
             |

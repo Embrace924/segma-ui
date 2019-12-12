@@ -116,3 +116,50 @@
         }
     }
 }
+
+/* alert开始 */
+.segma-alert {
+    .el-message-box__header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0;
+
+        .el-message-box__title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 50px;
+            color: rgba(56, 56, 56, 1);
+        }
+    }
+
+    .el-message-box__btns {
+        padding: 15px 20px;
+
+        button {
+            border-radius: 4px;
+            width: 100%;
+            height: 32px;
+        }
+    }
+}
+
+.segma-alert.el-message-box--center {
+    padding-bottom: 0;
+}
+
+.setAlertColor(@type,@color) {
+    .segma-alert.@{type} {
+        .el-message-box__btns button {
+            border-color: @color;
+            background: @color;
+        }
+    }
+}
+
+.loopAlertColor(@i) when (@i < (length(@colorlist)+1)) {
+    .setAlertColor(extract(@colorTypelist, @i), extract(@colorlist, @i));
+    .loopAlertColor(@i+1);
+}
+
+.loopAlertColor(1);
+
+/* alert开始 */
