@@ -4,6 +4,7 @@
 @warning: #fba13b;
 @white: #ffffff;
 @black: #000000;
+@textBlack: #383838;
 @ccc: #cccccc;
 @colorlist: @danger, @primary, @success, @warning;
 @colorTypelist: danger, primary, success, warning;
@@ -88,4 +89,30 @@
     }
 }
 
-//*弹窗结束*/
+/* 弹窗结束 */
+
+.el-pagination.is-background {
+    .el-pager li {
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        min-width: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    .btn-prev, .btn-next {
+        border: none;
+        min-width: 40px;
+        background-color: #f5f5f5;
+
+        &:hover {
+            color: @primary;
+        }
+
+        &:disabled {
+            color: #a6a6a6;
+            background-color: #f5f5f5;
+        }
+    }
+}

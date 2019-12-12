@@ -3,16 +3,22 @@
         <div id="nav">
             <router-link to="/">Home</router-link>
             |
-            <router-link to="/color">color</router-link>
+            <router-link to="/Button">Button</router-link>
             |
             <router-link to="/Input">Input</router-link>
             |
             <router-link to="/Select">Select</router-link>
             |
+            <router-link to="/Dialog">dialog</router-link>
+            |
+            <router-link to="/Pagination">Pagination</router-link>
+            |
+            <router-link to="/color">color</router-link>
+
+            |
             <router-link to="/InputNumber">InputNumber</router-link>
             |
-            <router-link to="/Button">Button</router-link>
-            |
+
             <router-link to="/hello">hello</router-link>
             |
             <router-link to="/rangeSelect">rangeSelect</router-link>
@@ -24,7 +30,7 @@
 </template>
 
 <style lang="less">
-/* @import "./assets/css/segmaUIResetElementUI"; */
+@import "./assets/css/segma_ui.less";
 
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

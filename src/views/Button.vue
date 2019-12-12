@@ -120,7 +120,6 @@ export default {
 
 <style lang="less"
        scoped>
-@import "../assets/css/segma_ui.less";
 
 .el-button {
     margin-bottom: 10px;

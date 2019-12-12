@@ -50,7 +50,7 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 /// color|1|Font Color|2
-$--color-text-primary: #303133 !default;
+$--color-text-primary: #383838 !default;
 /// color|1|Font Color|2
 $--color-text-regular: #606266 !default;
 /// color|1|Font Color|2
@@ -650,18 +650,18 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 /* Pagination
 -------------------------- */
 /// fontSize||Font|1
-$--pagination-font-size: 13px !default;
+$--pagination-font-size: 14px !default;
 /// color||Color|0
 $--pagination-background-color: $--color-white !default;
 /// color||Color|0
 $--pagination-font-color: $--color-text-primary !default;
-$--pagination-border-radius: 3px !default;
+$--pagination-border-radius: 4px !default;
 /// color||Color|0
 $--pagination-button-color: $--color-text-primary !default;
 /// height||Other|4
-$--pagination-button-width: 35.5px !default;
+$--pagination-button-width: 40px !default;
 /// height||Other|4
-$--pagination-button-height: 28px !default;
+$--pagination-button-height: 40px !default;
 /// color||Color|0
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
 /// color||Color|0

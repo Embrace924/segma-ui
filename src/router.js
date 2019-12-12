@@ -19,23 +19,13 @@ export default new Router({
             component: Home,
             childrens: []
         },
-
-
         {
-            path: '/color',
-            name: 'color',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
+            path: '/Button',
+            name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
         },
         {
             path: '/Input',
             name: 'Input', component: () => import(/* webpackChunkName: "about" */ './views/Input.vue')
-        },
-        {
-            path: '/InputNumber',
-            name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
         },
         {
             path: '/Select',
@@ -46,8 +36,24 @@ export default new Router({
             name: 'Dialog', component: () => import(/* webpackChunkName: "about" */ './views/Dialog.vue')
         },
         {
-            path: '/Button',
-            name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
-        }
+            path: '/Pagination',
+            name: 'Pagination', component: () => import(/* webpackChunkName: "about" */ './views/Pagination.vue')
+        },
+
+        {
+            path: '/color',
+            name: 'color',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
+        },
+
+        {
+            path: '/InputNumber',
+            name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
+        },
+
+
     ]
 })
