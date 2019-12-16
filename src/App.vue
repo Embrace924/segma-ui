@@ -15,16 +15,9 @@
             |
             <router-link to="/Comfirm">Comfirm</router-link>
             |
-            <router-link to="/color">color</router-link>
-            |
             <router-link to="/InputNumber">InputNumber</router-link>
             |
-
             <router-link to="/hello">hello</router-link>
-            |
-            <router-link to="/rangeSelect">rangeSelect</router-link>
-            |
-            <router-link to="/chartSwitching">chartSwitching</router-link>
         </div>
         <router-view class="segma-ui" />
     </div>

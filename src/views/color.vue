@@ -17,11 +17,11 @@
 </template>
 <script>
 export default {
-	methods: {
-		boxFun(type, i) {
-			return `${type}${i}`
-		}
-	}
+    methods: {
+        boxFun(type, i) {
+            return `${type}${i}`
+        }
+    }
 }
 </script>
 <style lang="less"

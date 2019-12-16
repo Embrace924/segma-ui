@@ -1,75 +1,65 @@
 <template>
-    <div class="segma-ui">
+    <div class="about">
+        <div class="box"></div>
+        <div>
+            <div v-for="i in 10"
+                 :class="boxFun('box',i)">{{i*10}}%
+            </div>
+        </div>
+
+        <div>
+            <div v-for="i in 10"
+                 :class="boxFun('box-black',i)">{{i*10}}%
+            </div>
+        </div>
 
     </div>
 </template>
-
 <script>
 export default {
-	name: 'test',
-	data() {
-		return {
-			segmaInput: {
-				value1: ''
-			},
-			segmaSelect: {
-				value1: '',
-				value1Options: [
-					{
-						value: '1',
-						label: '测试1'
-					},
-					{
-						value: '2',
-						label: '测试2'
-					}
-				],
-				value2: '',
-				value2Options: [
-					{
-						value: '选项1',
-						label: '黄金糕'
-					},
-					{
-						value: '选项2',
-						label: '双皮奶'
-					},
-					{
-						value: '选项3',
-						label: '蚵仔煎'
-					},
-					{
-						value: '选项4',
-						label: '龙须面'
-					},
-					{
-						value: '选项5',
-						label: '北京烤鸭'
-					}
-				],
-			},
-			segmaInputNumber: {
-				num: 0
-			}
-		};
-	}
-};
-</script>
-
-<style lang="less"
-       scoped>
-@import "../assets/css/segmaUIResetElementUI";
-
-.segma-ui {
-    .segma-input {
-        margin-left: 20px;
-        width: 300px;
-    }
-
-    .segma-select {
-        box-sizing: border-box;
-        padding: 20px 0;
+    methods: {
+        boxFun(type, i) {
+            return `${type}${i}`
+        }
     }
 }
+</script>
+<style lang="less"
+       scoped>
 
+@green: #3a70df;
+
+.box {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: #383838;
+    background-color: #3a70df;
+}
+
+//定义
+.box-loop(@n, @i:1) when (@i <= @n) {
+    .box@{i} {
+        margin: 0 20px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: #383838;
+        background-color: mix(#ffffff, @green, @i*10);
+    }
+
+    .box-black@{i} {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: #ffffff;
+        background-color: mix(#383838, @green, @i*10);
+    }
+    .box-loop(@n, (@i + 1));
+}
+
+.about {
+    display: flex;
+    .box-loop(10);
+}
 </style>

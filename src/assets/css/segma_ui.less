@@ -33,6 +33,18 @@
         border-color: @ccc;
         color: @white;
         background: @ccc;
+
+        &:hover, &:focus {
+            border-color: @ccc;
+            color: @white;
+            background: @ccc;
+        }
+
+        &:active {
+            border-color: @ccc;
+            color: @white;
+            background: @ccc;
+        }
     }
 }
 
@@ -118,10 +130,12 @@
 }
 
 /* alert开始 */
-.segma-alert {
+.segma-alert.el-message-box, .segma-message.el-message-box {
+    padding-bottom: 0;
+
     .el-message-box__header {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 0;
+        padding: 0 20px;
 
         .el-message-box__title {
             font-size: 16px;
@@ -136,14 +150,19 @@
 
         button {
             border-radius: 4px;
-            width: 100%;
             height: 32px;
         }
     }
 }
 
 .segma-alert.el-message-box--center {
-    padding-bottom: 0;
+    .el-message-box__btns button {
+        width: 100%;
+    }
+}
+
+.segma-alert.el-message-box--center .el-message-box__btns {
+    text-align: right;
 }
 
 .setAlertColor(@type,@color) {
