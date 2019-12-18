@@ -144,32 +144,10 @@
 /* alert结束 */
 .setPagerLi(@type,@size) {
     .el-pagination.is-background.@{type} {
-        .el-pager li {
+        .el-pager li, .btn-prev, .btn-next, .el-pagination__jump, .el-pagination__editor.el-input, .el-input__inner {
             min-width: @size;
             height: @size;
             line-height: @size;
-        }
-
-        .btn-prev, .btn-next {
-            min-width: @size;
-            height: @size;
-            line-height: @size;
-        }
-
-        .el-pagination__jump {
-            min-width: @size;
-            height: @size;
-            line-height: @size;
-
-            .el-pagination__editor.el-input {
-                min-width: @size;
-                height: @size;
-
-                .el-input__inner {
-                    min-width: @size;
-                    height: @size;
-                }
-            }
         }
     }
 }
