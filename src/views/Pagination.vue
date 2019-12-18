@@ -1,6 +1,7 @@
 <template>
     <div>
-        <el-pagination background
+        <el-pagination class="small"
+                       background
                        page-size.sync="1"
                        :current-page="10"
                        :total="1000"
@@ -36,7 +37,3 @@ export default {
     // filters: {},
 }
 </script>
-<style rel="stylesheet/scss"
-       lang="scss">
-
-</style>

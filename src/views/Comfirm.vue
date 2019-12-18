@@ -22,6 +22,7 @@ export default {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
                 customClass: 'segma-message',
+                cancelButtonClass: 'el-button--primary is-plain'
             }).then(() => {
                 this.$message({
                     type: 'success',
@@ -38,13 +39,17 @@ export default {
             this.$alert('确定删除Alert？', {
                 title: '删除',
                 confirmButtonText: '确定',
-                customClass: 'segma-alert danger',
+                customClass: 'segma-alert',
+                confirmButtonClass: 'el-button--danger',
                 center: true,
                 closeOnClickModal: true,
             }).then(() => {
                 this.$message.success('Alert删除成功！');
             }).catch(() => {
-
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });
             });
         }
     },

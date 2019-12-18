@@ -5,6 +5,7 @@
         </el-button>
         <el-dialog title="新增商品分类"
                    :visible.sync="dialogVisible"
+                   width="500px"
                    class="segma-dialog">
             <el-form ref="ruleForm"
                      :model="ruleForm"

@@ -15,7 +15,6 @@
         <!--icon的样式还要处理-->
         <el-input placeholder="请输入内容"
                   disabled
-                  suffix-icon="el-icon-date"
                   v-model="segmaInput.value1">
         </el-input>
         <el-input placeholder="请输入内容"
