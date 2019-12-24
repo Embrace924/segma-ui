@@ -118,7 +118,7 @@ export default {
 		// Vue.use(Alert);
 		// Vue.use(Slider);
 		// Vue.use(Icon);
-		Vue.use(Row);
+		// Vue.use(Row);
 		// Vue.use(Col);
 		// Vue.use(Upload);
 		// Vue.use(Progress);
