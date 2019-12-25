@@ -8353,7 +8353,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -8363,7 +8363,7 @@
 }
 
 .el-button.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-button:hover, .el-button:focus {
@@ -8446,7 +8446,7 @@
 
 .el-button.is-circle {
     border-radius: 50%;
-    padding: 9px;
+    padding: 8px;
 }
 
 .el-button--primary {
@@ -13297,13 +13297,13 @@
     cursor: pointer;
     -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-radio-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-radio-button__inner:hover {
@@ -14047,13 +14047,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -18130,7 +18130,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -18140,7 +18140,7 @@
 }
 
 .el-button.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-button:hover, .el-button:focus {
@@ -18223,7 +18223,7 @@
 
 .el-button.is-circle {
     border-radius: 50%;
-    padding: 9px;
+    padding: 8px;
 }
 
 .el-button--primary {
@@ -19491,13 +19491,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -22021,13 +22021,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -34105,7 +34105,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -34115,7 +34115,7 @@
 }
 
 .el-button.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-button:hover, .el-button:focus {
@@ -34198,7 +34198,7 @@
 
 .el-button.is-circle {
     border-radius: 50%;
-    padding: 9px;
+    padding: 8px;
 }
 
 .el-button--primary {
@@ -39124,13 +39124,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -54058,13 +54058,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -57363,7 +57363,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -57373,7 +57373,7 @@
 }
 
 .el-button.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-button:hover, .el-button:focus {
@@ -57456,7 +57456,7 @@
 
 .el-button.is-circle {
     border-radius: 50%;
-    padding: 9px;
+    padding: 8px;
 }
 
 .el-button--primary {
@@ -58594,13 +58594,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
@@ -62445,7 +62445,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -62455,7 +62455,7 @@
 }
 
 .el-button.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-button:hover, .el-button:focus {
@@ -62538,7 +62538,7 @@
 
 .el-button.is-circle {
     border-radius: 50%;
-    padding: 9px;
+    padding: 8px;
 }
 
 .el-button--primary {
@@ -64579,13 +64579,13 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 9px 12px;
+    padding: 8px 12px;
     font-size: 14px;
     border-radius: 0;
 }
 
 .el-checkbox-button__inner.is-round {
-    padding: 9px 12px;
+    padding: 8px 12px;
 }
 
 .el-checkbox-button__inner:hover {
