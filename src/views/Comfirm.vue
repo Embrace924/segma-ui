@@ -17,40 +17,15 @@ export default {
     // propsData: {},
     // computed: {},
     methods: {
-        openConfirm() {
-            this.$confirm('此操作将永久Confirm, 是否继续?', 'Confirm提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                customClass: 'segma-message',
-                cancelButtonClass: 'el-button--primary is-plain'
-            }).then(() => {
-                this.$message({
-                    type: 'success',
-                    message: '删除成功!'
-                });
-            }).catch(() => {
-                this.$message({
-                    type: 'info',
-                    message: '已取消删除'
-                });
-            });
+        async openConfirm() {
+            let result = await this.$confirm('此操作将永久Confirm, 是否继续?', 'Confirm提示', {})
+            console.log(result)//true/false
         },
-        openAlert() {
-            this.$alert('确定删除Alert？', {
-                title: '删除',
-                confirmButtonText: '确定',
-                customClass: 'segma-alert',
-                confirmButtonClass: 'el-button--danger',
-                center: true,
-                closeOnClickModal: true,
-            }).then(() => {
-                this.$message.success('Alert删除成功！');
-            }).catch(() => {
-                this.$message({
-                    type: 'info',
-                    message: '已取消删除'
-                });
-            });
+        async openAlert() {
+            let result = await this.$alert('确定删除Alert？', '删除', {
+                confirmButtonClass: 'el-button--warning',
+            })
+            console.log(result)//true/false
         }
     },
     // watch: {},
