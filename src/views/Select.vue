@@ -12,8 +12,7 @@
                 :value="item.value">
             </el-option>
         </el-select>
-        <el-select size="small"
-                   v-model="segmaSelect.value1"
+        <el-select v-model="segmaSelect.value1"
                    clearable
                    placeholder="请选择">
             <el-option

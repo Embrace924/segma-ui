@@ -1,7 +1,6 @@
 <template>
     <div>
-        <el-pagination class="small"
-                       background
+        <el-pagination background
                        page-size.sync="1"
                        :current-page="10"
                        :total="1000"

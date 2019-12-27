@@ -4,8 +4,7 @@
                   placeholder="请输入内容"
                   v-model="segmaInput.value1">
         </el-input>
-        <el-input size="small"
-                  placeholder="请输入内容"
+        <el-input placeholder="请输入内容"
                   v-model="segmaInput.value1">
         </el-input>
         <el-input size="medium"
