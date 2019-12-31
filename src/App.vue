@@ -15,6 +15,8 @@
             |
             <router-link to="/Comfirm">Comfirm</router-link>
             |
+            <router-link to="/Table">Table</router-link>
+            |
             <router-link to="/InputNumber">InputNumber</router-link>
             |
             <router-link to="/hello">hello</router-link>

@@ -634,15 +634,15 @@ $--dialog-padding-primary: 16px !default;
 /* Table
 -------------------------- */
 /// color||Color|0
-$--table-border-color: $--border-color-lighter !default;
+$--table-border-color: rgba(221, 221, 221, 1) !default;
 $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
-$--table-font-color: $--color-text-regular !default;
+$--table-font-color: $--color-text-placeholder !default;
 /// color||Color|0
-$--table-header-font-color: $--color-text-secondary !default;
+$--table-header-font-color: $--color-font-black !default;
 /// color||Color|0
-$--table-row-hover-background-color: $--background-color-base !default;
-$--table-current-row-background-color: $--color-primary-light-9 !default;
+$--table-row-hover-background-color: $--color-text-placeholder !default;
+$--table-current-row-background-color: $--color-text-placeholder !default;
 /// color||Color|0
 $--table-header-background-color: $--color-white !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;

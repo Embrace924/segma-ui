@@ -43,7 +43,10 @@ export default new Router({
             path: '/Comfirm',
             name: 'Comfirm', component: () => import(/* webpackChunkName: "about" */ './views/Comfirm.vue')
         },
-
+        {
+            path: '/Table',
+            name: 'Table', component: () => import(/* webpackChunkName: "about" */ './views/Table.vue')
+        },
         {
             path: '/color',
             name: 'color',

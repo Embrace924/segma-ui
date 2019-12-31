@@ -59,10 +59,6 @@
 
 /* 按钮样式结束 */
 
-/* 输入框开始 */
-
-/* 输入框结束 */
-
 //*弹窗开始*/
 .segma-dialog.el-dialog__wrapper::after {
     display: inline-block;
@@ -195,3 +191,28 @@
 }
 
 /* 分页按钮结束 */
+
+/* 表格样式开始 */
+
+.el-table {
+    .cell, th > .cell, th:first-child .cell, td:first-child .cell {
+        padding-left: 12px;
+    }
+
+    th, td {
+        padding: 11px 0;
+    }
+
+    .el-table__empty-text {
+        display: block;
+        padding: 61px 0 20px 0;
+        text-align: center;
+        color: rgba(204, 204, 204, 1);
+        background-image: url('../images/tableNoData.png');
+        background-repeat: no-repeat;
+        background-position: center 42px;
+        background-size: 28px 32px;
+    }
+}
+
+/* 表格样式结束 */
