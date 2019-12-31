@@ -199,8 +199,13 @@
         padding-left: 12px;
     }
 
+    th.is-sortable .cell {
+        position: relative;
+    }
+
     th, td {
         padding: 11px 0;
+        font-weight: 400;
     }
 
     .el-table__empty-text {
@@ -212,6 +217,49 @@
         background-repeat: no-repeat;
         background-position: center 42px;
         background-size: 28px 32px;
+    }
+
+    .caret-wrapper {
+        position: absolute;
+        right: 12px;
+        width: 24px;
+        height: 23px;
+    }
+
+    .sort-caret {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        border: none;
+        width: 8px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 20px 13px;
+    }
+
+    .sort-caret.ascending {
+        top: 5px;
+        left: 8px;
+        border-bottom-color: transparent;
+        background-image: url("./../images/sortUp.svg");
+    }
+
+    .sort-caret.descending {
+        top: 5px;
+        left: 0;
+        border-top-color: transparent;
+        background-image: url("./../images/sortDown.svg");
+    }
+
+    .ascending .sort-caret.ascending {
+        border-bottom-color: transparent;
+        background-image: url("./../images/sortUpActive.svg");
+    }
+
+    .descending .sort-caret.descending {
+        border-top-color: transparent;
+        background-image: url("./../images/sortDownActive.svg");
     }
 }
 

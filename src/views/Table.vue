@@ -4,6 +4,7 @@
                   border>
             <el-table-column
                 prop="date"
+                sortable
                 label="日期">
             </el-table-column>
             <el-table-column
@@ -64,14 +65,10 @@ export default {
 
 <style scoped
        lang="less">
-/*@import "../../theme/index.css";*/
-/*@import "../assets/css/segma_ui.less";*/
-.popover {
-    overflow: hidden;
-    width: 100%;
-    height: 23px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    cursor: pointer;
+.el-table .sort-caret.ascending {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-image: url("../assets/images/sortUp.svg");
 }
 </style>
