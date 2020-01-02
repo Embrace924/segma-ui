@@ -1,14 +1,13 @@
 /**
  * Created by cld on 2019/12/23.
  */
-import './assets/css/reset.css'
-import './assets/css/index.css'
-import './assets/css/segma_ui.less'
+import './assets/css/index.less'
 import { $alert, $confirm } from './component/prototype'
+import SegmaLoading from './plugins/directives/index';
+
 /**
  * Created by chenz on 2018/11/9.
  */
-
 import {
     Pagination,
     Dialog,
@@ -164,18 +163,14 @@ const components = [
     CascaderPanel,
     MessageBox,
     Message,
-    Notification
+    Notification,
+    SegmaLoading
 ]
 const install = function(Vue) {
     components.forEach(component => {
         Vue.component(component, component);
     });
-
-    Vue.prototype.$msgbox = MessageBox;
-    Vue.prototype.$alert = $alert
-    Vue.prototype.$confirm = $comfrim
-    Vue.prototype.$notify = Notification;
-    Vue.prototype.$message = Message;
+    Vue.use(SegmaLoading.directive);
 
 };
 /* istanbul ignore if */
@@ -261,5 +256,6 @@ export default {
     CascaderPanel,
     MessageBox,
     Message,
-    Notification
+    Notification,
+    SegmaLoading
 }
