@@ -10,11 +10,8 @@
 在plugins 中 新建文件segmaUI.js
 
 里面的element-ui的原生组件按需引入。
-	/**
-	 * Created by cld on 2019/12/26.
-	 */
-	import Vue from 'vue'
 
+  import Vue from 'vue'
 	// npm install --save segma-ui
 	import 'segma-ui/lib/segma-ui.css'
 	import element from 'segma-ui/lib/segma-ui.common'
