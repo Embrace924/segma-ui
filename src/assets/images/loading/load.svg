@@ -1,0 +1,126 @@
+<svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 28 28" enable-background="new 0 0 100 100" xml:space="preserve">
+<style>
+.path1 {
+    fill: #3a70df;
+    opacity: 1;
+    -webkit-animation: pulse1 1s infinite;
+}
+
+.path2 {
+    fill: #3a70df;
+    opacity: 0.7;
+    -webkit-animation: pulse2 1s infinite;
+}
+
+.path3 {
+    fill: #3a70df;
+    opacity: 0.5;
+    -webkit-animation: pulse3 1s infinite;
+}
+
+.path4 {
+    stroke-linecap: round;
+    fill: #3a70df;
+    opacity: 0.2;
+    -webkit-animation: pulse4 1s infinite;
+}
+
+@-webkit-keyframes pulse1 {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes pulse2 {
+    0% {
+        opacity: 0.7;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes pulse3 {
+    0% {
+        opacity: 0.2;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+@-webkit-keyframes pulse4 {
+    0% {
+        opacity: 0.5;
+    }
+
+    25% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+
+}
+</style>
+ <path class="path1" fill="#3A70DF" opacity="1"  d="M12,13H1c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1h11c0.6,0,1,0.4,1,1v11C13,12.6,12.6,13,12,13z">
+  </path>
+  <path class="path2" fill="#3A70DF" opacity="0.7"  d="M27,13H16c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1h11c0.6,0,1,0.4,1,1v11C28,12.6,27.6,13,27,13z">
+  </path>
+ <path class="path3" fill="#3A70DF" opacity="0.5"  d="M12,28H1c-0.6,0-1-0.4-1-1V16c0-0.6,0.4-1,1-1h11c0.6,0,1,0.4,1,1v11C13,27.6,12.6,28,12,28z">
+  </path>
+    <path class="path4" fill="#3A70DF" opacity="0.2"  d="M27,28H16c-0.6,0-1-0.4-1-1V16c0-0.6,0.4-1,1-1h11c0.6,0,1,0.4,1,1v11C28,27.6,27.6,28,27,28z">
+  </path>
+</svg>
