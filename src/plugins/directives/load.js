@@ -4,8 +4,6 @@
 // js 文件
 import '../../assets/css/load.css';
 
-import load from '../../assets/images/loading/load.svg';
-
 function getElementStyle(obj, attr) {
     if (obj.currentStyle) {
         return obj.currentStyle[attr];
@@ -19,7 +17,6 @@ export default {
         const tempDiv = document.createElement('div');
         tempDiv.className = 'custom-loading';
         const round = document.createElement('div');
-        round.innerHTML = `<img src=${load}>`;
         round.className = 'custom-loading-round';
         tempDiv.appendChild(round);
         el.loadingElement = tempDiv;
