@@ -5,20 +5,22 @@
 
 ## Set
 ###index.js文件
+
 	//新建plugins文件夹
 	//新建index.js文件
 	import segma_ui from './segma_ui';
 	const plugins = [
-    	segma_ui,
+	segma_ui,
 	];
 	export default {
-    	install(Vue) {
-        	plugins.forEach(plugin => {
-            	Vue.use(plugin);
-        	});
-    	}
+	install(Vue) {
+		plugins.forEach(plugin => {
+		Vue.use(plugin);
+		});
+	}
 	};
 ###segma_ui.js文件
+
 	//在plugins文件夹中新建segma_ui.js文件
 	import 'segma-ui/lib/segma-ui.css'
 	import element from 'segma-ui/lib/segma-ui.common'
