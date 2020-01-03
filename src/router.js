@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Input from './views/Input'
-import InputNumber from './views/InputNumber'
-import Select from './views/Select.vue'
-import Button from './views/Button.vue'
 
 
 Vue.use(Router)
@@ -46,6 +42,10 @@ export default new Router({
         {
             path: '/Table',
             name: 'Table', component: () => import(/* webpackChunkName: "about" */ './views/Table.vue')
+        },
+        {
+            path: '/Tag',
+            name: 'Tag', component: () => import(/* webpackChunkName: "about" */ './views/Tag.vue')
         },
         {
             path: '/color',

@@ -84,7 +84,8 @@ import {
     CascaderPanel,
     MessageBox,
     Message,
-    Notification
+    Notification,
+    Loading
 } from 'element-ui';
 
 const components = [
@@ -164,6 +165,7 @@ const components = [
     MessageBox,
     Message,
     Notification,
+    Loading,
     SegmaLoading
 ]
 const install = function(Vue) {
@@ -171,7 +173,7 @@ const install = function(Vue) {
         Vue.component(component, component);
     });
     Vue.use(SegmaLoading.directive);
-
+    Vue.use(Loading.directive);
 };
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
@@ -257,5 +259,6 @@ export default {
     MessageBox,
     Message,
     Notification,
+    Loading,
     SegmaLoading
 }

@@ -17,6 +17,8 @@
             |
             <router-link to="/Table">Table</router-link>
             |
+            <router-link to="/Tag">Tag</router-link>
+            |
             <router-link to="/InputNumber">InputNumber</router-link>
             |
             <router-link to="/hello">hello</router-link>

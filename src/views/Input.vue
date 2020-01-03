@@ -1,5 +1,6 @@
 <template>
-    <div class="input">
+    <div class="input"
+         v-segma-loading="true">
         <el-input size="mini"
                   placeholder="请输入内容"
                   v-model="segmaInput.value1">
