@@ -6,10 +6,7 @@
 	//main.js中
 	import './plugins/segmaUI.js'
 ## Use
-    新建文件夹plugins
-    在plugins 中 新建文件segmaUI.js
 
-    里面的element-ui的原生组件按需引入。
 
 	import Vue from 'vue'
 	// npm install --save segma-ui
