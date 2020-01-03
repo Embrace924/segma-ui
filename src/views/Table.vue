@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <el-table :data="tableData"
-                  border>
+    <div class="over">
+        <el-table
+            :data="tableData"
+            border>
             <el-table-column
                 prop="date"
                 sortable
@@ -65,10 +66,4 @@ export default {
 
 <style scoped
        lang="less">
-.el-table .sort-caret.ascending {
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    background-image: url("../assets/images/sortUp.svg");
-}
 </style>
