@@ -4,7 +4,7 @@
     npm install --save segma-ui
 
 ## Set
-###index.js文件
+index.js文件
 
 	//新建plugins文件夹
 	//新建index.js文件
@@ -19,7 +19,8 @@
 		});
 	}
 	};
-###segma_ui.js文件
+	
+segma_ui.js文件
 
 	//在plugins文件夹中新建segma_ui.js文件
 	import 'segma-ui/lib/segma-ui.css'
@@ -106,6 +107,7 @@
 		Notification,
 		SegmaLoading
 	} = element
+	
 	export default {
 		install(Vue) {
 			Vue.use(Pagination);
@@ -182,7 +184,6 @@
 			Vue.use(PageHeader);
 			Vue.use(CascaderPanel);
 			Vue.use(SegmaLoading);
-
 
 			Vue.prototype.$msgbox = MessageBox;
 			Vue.prototype.$alert = $alert;
