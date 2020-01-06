@@ -44,6 +44,10 @@ export default new Router({
             name: 'Table', component: () => import(/* webpackChunkName: "about" */ './views/Table.vue')
         },
         {
+            path: '/Loading',
+            name: 'Loading', component: () => import(/* webpackChunkName: "about" */ './views/Loading.vue')
+        },
+        {
             path: '/Tag',
             name: 'Tag', component: () => import(/* webpackChunkName: "about" */ './views/Tag.vue')
         },

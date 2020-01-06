@@ -105,6 +105,7 @@ segma_ui.js文件
 		MessageBox,
 		Message,
 		Notification,
+		Loading,
 		SegmaLoading
 	} = element
 	
@@ -183,8 +184,10 @@ segma_ui.js文件
 			Vue.use(Backtop);
 			Vue.use(PageHeader);
 			Vue.use(CascaderPanel);
+			Vue.use(Loading.directive);
 			Vue.use(SegmaLoading);
 
+      Vue.prototype.$loading = Loading.service;
 			Vue.prototype.$msgbox = MessageBox;
 			Vue.prototype.$alert = $alert;
 			Vue.prototype.$confirm = $confirm;
