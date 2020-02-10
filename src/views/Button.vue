@@ -6,16 +6,9 @@
                    plain>loading
         </el-button>
         <br>
+        <el-button type="primary">按钮</el-button>
         <el-button type="primary"
-                   size="mini">mini
-        </el-button>
-        <el-button type="primary">small
-        </el-button>
-        <el-button type="primary"
-                   size="medium">medium
-        </el-button>
-        <el-button type="primary"
-                   plain>plain
+                   plain>次要
         </el-button>
         <el-button type="primary"
                    :loading="true">
@@ -25,17 +18,10 @@
                    plain>
         </el-button>
         <br>
-        <el-button type="danger"
-                   size="mini">mini
-        </el-button>
-        <el-button type="danger">small
-        </el-button>
-
-        <el-button type="danger"
-                   size="medium">medium
+        <el-button type="danger">按钮
         </el-button>
         <el-button type="danger"
-                   plain>plain
+                   plain>次要
         </el-button>
         <el-button type="danger"
                    :loading="true">
@@ -45,17 +31,10 @@
                    plain>
         </el-button>
         <br>
-        <el-button type="success"
-                   size="mini">mini
-        </el-button>
-        <el-button type="success">small
-        </el-button>
-
-        <el-button type="success"
-                   size="medium">medium
+        <el-button type="success">按钮
         </el-button>
         <el-button type="success"
-                   plain>plain
+                   plain>次要
         </el-button>
         <el-button type="success"
                    :loading="true">
@@ -65,17 +44,11 @@
                    plain>
         </el-button>
         <br>
-        <el-button type="warning"
-                   size="mini">mini
-        </el-button>
-        <el-button type="warning">small
-        </el-button>
 
-        <el-button type="warning"
-                   size="medium">medium
+        <el-button type="warning">按钮
         </el-button>
         <el-button type="warning"
-                   plain>plain
+                   plain>次要
         </el-button>
         <el-button type="warning"
                    :loading="true">
