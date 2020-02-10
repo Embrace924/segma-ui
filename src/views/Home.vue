@@ -34,7 +34,7 @@ export default {
     height: 50px;
     line-height: 50px;
     color: #383838;
-    background-color: #3a70df;
+    background-color: extract(@primary, 2);
 }
 
 //定义

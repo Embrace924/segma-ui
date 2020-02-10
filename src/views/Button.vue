@@ -1,8 +1,10 @@
 <template>
     <div>
-        <el-button>default</el-button>
+        <el-button plain>default</el-button>
         <el-button disabled>disabled</el-button>
-        <el-button :loading="true">loading</el-button>
+        <el-button :loading="true"
+                   plain>loading
+        </el-button>
         <br>
         <el-button type="primary"
                    size="mini">mini

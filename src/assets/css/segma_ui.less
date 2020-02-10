@@ -1,52 +1,91 @@
-@primary: #3a70df;
-@danger: #df3a25;
-@success: #2fcd77;
-@warning: #fba13b;
+//@primary: #3a70df;
+//@danger: #df3a25;
+//@success: #2fcd77;
+//@warning: #fba13b;
 @white: #ffffff;
 @black: #000000;
-@textBlack: #383838;
+@textBlack: rgba(#000000, 0.85);
 @ccc: #cccccc;
-@colorlist: @danger, @primary, @success, @warning;
-@colorTypelist: danger, primary, success, warning;
+
+@colorlist: @primary, @danger, @warning, @success;
+@colorTypelist: primary, danger, warning, success;
+
 @sizelist: small, medium;
 @sizeHeight: 32px, 40px;
 
 /* 按钮样式开始 */
 .setBtnColor(@type,@color) {
-    .el-button--@{type}.is-plain {
-        border-color: @color;
-        color: @color;
-        background: @white;
+    .el-button--@{type} {
+        border-color: extract(@color, 5);
+        color: @white;
+        background: extract(@color, 5);
 
         &:hover, &:focus {
-            border-color: mix(@white, @color, 20%);
-            color: mix(@white, @color, 20%);
-            background-color: mix(@white, @color, 90%);
+            border-color: extract(@color, 4);
+            color: @white;
+            background-color: extract(@color, 4);
         }
 
         &:active {
-            border-color: mix(@black, @color, 20%);
-            color: mix(@black, @color, 20%);
-            background-color: mix(@white, @color, 80%);
+            border-color: extract(@color, 3);
+            color: @white;
+            background-color: extract(@color, 3);
         }
     }
 
-    .el-button.is-disabled {
-        border-color: @ccc;
-        color: @white;
-        background: @ccc;
+    .el-button--@{type}.is-plain {
+        border-color: extract(@color, 9);
+        color: extract(@color, 5);
+        background: @white;
 
         &:hover, &:focus {
-            border-color: @ccc;
-            color: @white;
-            background: @ccc;
+            border-color: extract(@color, 9);
+            color: extract(@color, 5);
+            background-color: extract(@color, 10);
         }
 
         &:active {
-            border-color: @ccc;
-            color: @white;
-            background: @ccc;
+            border-color: extract(@color, 9);
+            color: extract(@color, 5);
+            background-color: extract(@color, 9);
         }
+    }
+}
+
+.el-button.is-plain {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: rgba(#000000, 0.85);
+    background: @white;
+
+    &:hover, &:focus {
+        border-color: extract(@primary, 5);
+        color: extract(@primary, 5);
+        background-color: @white;
+    }
+
+    &:active {
+        border-color: extract(@primary, 4);
+        color: extract(@primary, 4);
+        background-color: @white;
+    }
+}
+
+.el-button.is-disabled {
+    border-color: rgba(#000000, 0.15);
+    color: rgba(#000000, 0.25);
+    background: rgba(#000000, 0.15);
+    cursor: not-allowed;
+
+    &:hover, &:focus {
+        border-color: rgba(#000000, 0.15);
+        color: rgba(#000000, 0.25);
+        background: rgba(#000000, 0.15);
+    }
+
+    &:active {
+        border-color: rgba(#000000, 0.15);
+        color: rgba(#000000, 0.25);
+        background: rgba(#000000, 0.15);
     }
 }
 
@@ -56,6 +95,8 @@
 }
 
 .loopBtnColor(1);
+
+/* 按钮样式结束 */
 
 /* 按钮样式结束 */
 
