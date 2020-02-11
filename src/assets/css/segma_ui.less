@@ -95,7 +95,7 @@
 
 /* 按钮样式结束 */
 
-/* 输入框样式开始 */
+/* 输入框 下拉框样式开始 */
 .el-input .el-input__inner {
     padding: 0 12px;
 }
@@ -104,13 +104,32 @@
     padding-left: 30px;
 }
 
-//.el-input__suffix {
-//    &:hover {
-//        color: extract(@primary, 5);
-//    }
-//}
-
 /* 输入框样式结束 */
+
+/* 下拉框样式开始 */
+.el-select {
+    width: 100%;
+}
+
+.el-select-dropdown__item {
+    &:hover {
+        color: extract(@primary, 5);
+    }
+}
+
+.el-select-dropdown__item.is-disabled {
+    &:hover {
+        color: rgba(@black, 0.25);
+    }
+}
+
+.el-icon-arrow-up {
+    &::before {
+        content: "\e78f";
+    }
+}
+
+/* 下拉框样式结束 */
 
 /* 弹窗开始 */
 .segma-dialog.el-dialog__wrapper::after {
