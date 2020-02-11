@@ -109,6 +109,10 @@
 /* 下拉框样式开始 */
 .el-select {
     width: 100%;
+
+    .el-tag__close.el-icon-close {
+        background-color: rgba(@black, 0.25);
+    }
 }
 
 .el-select-dropdown__item {
@@ -219,13 +223,17 @@
 
 /* 分页按钮开始 */
 .setPagerLi(@type,@size) {
-    .el-pagination.is-background.@{type} {
-        .el-pager li, .btn-prev, .btn-next, .el-pagination__jump, .el-pagination__editor.el-input, .el-input__inner {
+    .el-pagination.@{type} {
+        .el-pager li, .btn-prev, .btn-next, .el-pagination__jump {
             min-width: @size;
             height: @size;
             line-height: @size;
         }
     }
+}
+
+.el-pagination__editor.el-input .el-input__inner {
+    height: 28px;
 }
 
 .loopPageLiColor(@i) when (@i < (length(@colorlist)+1)) {
