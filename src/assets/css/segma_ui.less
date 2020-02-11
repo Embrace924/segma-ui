@@ -1,7 +1,5 @@
 @white: #ffffff;
 @black: #000000;
-@textBlack: rgba(#000000, 0.85);
-@ccc: #cccccc;
 @colorlist: @primary, @danger, @warning, @success;
 @colorTypelist: primary, danger, warning, success;
 @sizelist: small, medium;
@@ -48,7 +46,7 @@
 
 .el-button.is-plain {
     border-color: rgba(0, 0, 0, 0.15);
-    color: rgba(#000000, 0.85);
+    color: rgba(@black, 0.85);
     background: @white;
 
     &:hover, &:focus {
@@ -70,21 +68,21 @@
 }
 
 .el-button.is-disabled {
-    border-color: rgba(#000000, 0.15);
-    color: rgba(#000000, 0.25);
-    background: rgba(#000000, 0.15);
+    border-color: rgba(@black, 0.15);
+    color: rgba(@black, 0.25);
+    background: rgba(@black, 0.15);
     cursor: not-allowed;
 
     &:hover, &:focus {
-        border-color: rgba(#000000, 0.15);
-        color: rgba(#000000, 0.25);
-        background: rgba(#000000, 0.15);
+        border-color: rgba(@black, 0.15);
+        color: rgba(@black, 0.25);
+        background: rgba(@black, 0.15);
     }
 
     &:active {
-        border-color: rgba(#000000, 0.15);
-        color: rgba(#000000, 0.25);
-        background: rgba(#000000, 0.15);
+        border-color: rgba(@black, 0.15);
+        color: rgba(@black, 0.25);
+        background: rgba(@black, 0.15);
     }
 }
 
@@ -97,9 +95,24 @@
 
 /* 按钮样式结束 */
 
-/* 按钮样式结束 */
+/* 输入框样式开始 */
+.el-input .el-input__inner {
+    padding: 0 12px;
+}
 
-//*弹窗开始*/
+.el-input--prefix .el-input__inner {
+    padding-left: 30px;
+}
+
+//.el-input__suffix {
+//    &:hover {
+//        color: extract(@primary, 5);
+//    }
+//}
+
+/* 输入框样式结束 */
+
+/* 弹窗开始 */
 .segma-dialog.el-dialog__wrapper::after {
     display: inline-block;
     width: 0;
@@ -184,6 +197,8 @@
 }
 
 /* alert结束 */
+
+/* 分页按钮开始 */
 .setPagerLi(@type,@size) {
     .el-pagination.is-background.@{type} {
         .el-pager li, .btn-prev, .btn-next, .el-pagination__jump, .el-pagination__editor.el-input, .el-input__inner {
@@ -193,8 +208,6 @@
         }
     }
 }
-
-/* 分页按钮开始 */
 
 .loopPageLiColor(@i) when (@i < (length(@colorlist)+1)) {
     .setPagerLi(extract(@sizelist, @i), extract(@sizeHeight, @i));

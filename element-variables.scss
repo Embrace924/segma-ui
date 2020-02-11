@@ -21,7 +21,7 @@ $--color-primary: #225bf6 !default;
 $--color-white: #ffffff !default;
 /// color|1|Background Color|4
 $--color-black: #000000 !default;
-$--color-font-black: #383838 !default;
+$--color-font-black: rgba(0, 0, 0, 0.85) !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -56,10 +56,10 @@ $--color-text-regular: #606266 !default;
 /// color|1|Font Color|2
 $--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2  #c0c4cc
-$--color-text-placeholder: #7f7f7f !default;
+$--color-text-placeholder: rgba(0, 0, 0, 0.45) !default;
 /// color|1|Font Color|2  #c0c4cc
 /// color|1|Border Color|3  #dcdfe6
-$--border-color-base: #dcdfe6 !default;
+$--border-color-base: rgba(0, 0, 0, 0.15) !default;
 /// color|1|Border Color|3
 $--border-color-light: #e4e7ed !default;
 
@@ -81,7 +81,7 @@ $--link-hover-color: $--color-primary !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-hover: $--color-text-placeholder !default;
+$--border-color-hover: rgba(0, 0, 0, 0.25) !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
@@ -143,9 +143,9 @@ $--index-popper: 2000 !default;
 /* Disable base
 -------------------------- */
 //$--background-color-base
-$--disabled-fill-base: #f5f5f5 !default;
-$--disabled-color-base: #a6a6a6 !default;
-$--disabled-border-base: #e5e5e5 !default;
+$--disabled-fill-base: rgba(0, 0, 0, 0.15) !default;
+$--disabled-color-base: rgba(0, 0, 0, 0.25) !default;
+$--disabled-border-base: rgba(0, 0, 0, 0.25) !default;
 
 /* Icon
 -------------------------- */
