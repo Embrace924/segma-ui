@@ -58,8 +58,8 @@
     }
 
     &:active {
-        border-color: extract(@primary, 3);
-        color: extract(@primary, 3);
+        border-color: extract(@primary, 4);
+        color: extract(@primary, 4);
         background-color: @white;
     }
 }
@@ -353,6 +353,10 @@
         border-color: extract(@color, 10);
         background-color: extract(@color, 10);
     }
+}
+
+.el-message__content {
+    font-size: 16px;
 }
 
 .loopMessageColor(@i) when (@i < (length(@colorlist)+1)) {

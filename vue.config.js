@@ -2,7 +2,6 @@
  * Created by cld on 2020/2/7.
  */
 const antDesign = require('@ant-design/colors')
-console.log(antDesign.generate('#FF3D3D').reverse(),)
 module.exports = {
     css: {
         loaderOptions: {
