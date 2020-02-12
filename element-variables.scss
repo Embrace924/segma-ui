@@ -331,7 +331,7 @@ $--alert-padding: 8px 16px !default;
 /// borderRadius||Border|2
 $--alert-border-radius: $--border-radius-base !default;
 /// fontSize||Font|1
-$--alert-title-font-size: 13px !default;
+$--alert-title-font-size: 14px !default;
 /// fontSize||Font|1
 $--alert-description-font-size: 12px !default;
 /// fontSize||Font|1
@@ -649,8 +649,8 @@ $--table-font-color: $--color-info !default;
 /// color||Color|0
 $--table-header-font-color: $--color-font-black !default;
 /// color||Color|0
-$--table-row-hover-background-color: rgba(240, 246, 255, 1) !default;
-$--table-current-row-background-color: rgba(240, 246, 255, 1) !default;
+$--table-row-hover-background-color: rgba($--color-primary, 0.04) !default;
+$--table-current-row-background-color: rgba($--color-primary, 0.04) !default;
 /// color||Color|0
 $--table-header-background-color: rgba(240, 246, 255, 1) !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
