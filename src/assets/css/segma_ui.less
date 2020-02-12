@@ -86,6 +86,10 @@
     }
 }
 
+.el-button + .el-button {
+    margin-left: 16px;
+}
+
 .loopBtnColor(@i) when (@i < (length(@colorlist)+1)) {
     .setBtnColor(extract(@colorTypelist, @i), extract(@colorlist, @i));
     .loopBtnColor(@i+1);
@@ -155,28 +159,35 @@
         background-color: #ffffff;
 
         .el-dialog__header {
-            border-bottom: 1px solid #e5e5e5;
-            padding: 12.5px 20px;
-            text-align: center;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            padding: 12px 16px;
+            text-align: left;
+            background-color: extract(@primary, 10);
 
             .el-dialog__title {
                 font-weight: bold;
+                color: rgba(@black, 0.85);
             }
 
             .el-dialog__headerbtn {
                 i {
                     font-size: 20px;
                     font-weight: bold;
+                    color: rgba(@black, 0.45);
                 }
             }
         }
 
         .el-dialog__body {
-            padding: 16px;
+            border-bottom: 1px solid rgba(@black, 0.09);
+            padding: 0;
         }
 
         .el-dialog__footer {
-            padding: 0 16px 16px 16px;
+            padding: 10px 24px;
+            height: 52px;
+            color: rgba(@black, 0.65);
         }
     }
 }
@@ -249,7 +260,7 @@
 
 .el-table {
     .cell, th > .cell, th:first-child .cell, td:first-child .cell {
-        padding-left: 30px;
+        padding: 0 12px;
     }
 
     th.is-sortable .cell {

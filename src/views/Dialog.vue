@@ -5,22 +5,26 @@
         </el-button>
         <el-dialog title="新增商品分类"
                    :visible.sync="dialogVisible"
-                   width="500px"
+                   width="550px"
                    class="segma-dialog">
             <el-form ref="ruleForm"
                      :model="ruleForm"
                      :rules="rules"
-                     label-width="80px">
-                <el-form-item label="商品分类"
+                     label-width="95px">
+                <el-form-item label="商品分类："
                               prop="categoryName">
-                    <el-input v-model="ruleForm.categoryName"
-                              size="small"></el-input>
+                    <el-input v-model="ruleForm.categoryName"></el-input>
+                </el-form-item>
+                <el-form-item label="商品信息："
+                              prop="categoryMsg">
+                    <el-input v-model="ruleForm.categoryMsg"
+                              type="textarea"
+                              rows="5"></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer"
                   class="dialog-footer">
-                        <el-button type="primary"
-                                   plain
+                        <el-button plain
                                    @click="dialogVisible = false">取 消</el-button>
                         <el-button type="primary"
                                    @click="dialogVisible=false">确 定</el-button>
@@ -37,7 +41,11 @@ export default {
         return {
             dialogVisible: false,
             ruleForm: {
-                categoryName: ''
+                categoryName: '',
+                categoryMsg: 'body的padding需要项目中自己定义\n' +
+                '/deep/ .segma-dialog .el-dialog .el-dialog__body {\n' +
+                '    padding: 30px 30px 8px 30px;\n' +
+                '}'
 
             },
             rules: {
@@ -70,3 +78,9 @@ export default {
     // filters: {},
 }
 </script>
+<style lang="less"
+       scoped>
+/deep/ .segma-dialog .el-dialog .el-dialog__body {
+    padding: 30px 30px 8px 30px;
+}
+</style>
