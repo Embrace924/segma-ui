@@ -1,24 +1,18 @@
 <template>
     <div class="over">
-        <el-table
-            :data="tableData"
-            border>
-            <el-table-column
-                prop="date"
-                sortable
-                label="日期">
+        <el-table :data="tableData">
+            <el-table-column prop="date"
+                             sortable
+                             label="日期">
             </el-table-column>
-            <el-table-column
-                prop="name"
-                label="姓名">
+            <el-table-column prop="name"
+                             label="姓名">
             </el-table-column>
-            <el-table-column
-                prop="name"
-                label="姓名">
+            <el-table-column prop="name"
+                             label="姓名">
             </el-table-column>
-            <el-table-column
-                prop="address"
-                label="地址">
+            <el-table-column prop="address"
+                             label="地址">
                 <template slot-scope="scope">
                     <el-tooltip class="item"
                                 effect="dark"
@@ -63,3 +57,10 @@ export default {
     }
 }
 </script>
+<style lang="less"
+       scoped>
+.el-table {
+    margin: 0 50px;
+    width: 80%;
+}
+</style>

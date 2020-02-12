@@ -635,17 +635,17 @@ $--dialog-padding-primary: 16px !default;
 /* Table
 -------------------------- */
 /// color||Color|0
-$--table-border-color: rgba(221, 221, 221, 1) !default;
+$--table-border-color: rgba(0, 0, 0, 0.09) !default;
 $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
-$--table-font-color: $--color-text-placeholder !default;
+$--table-font-color: $--color-info !default;
 /// color||Color|0
 $--table-header-font-color: $--color-font-black !default;
 /// color||Color|0
-$--table-row-hover-background-color: $--color-text-placeholder !default;
-$--table-current-row-background-color: $--color-text-placeholder !default;
+$--table-row-hover-background-color: rgba(240, 246, 255, 1) !default;
+$--table-current-row-background-color: rgba(240, 246, 255, 1) !default;
 /// color||Color|0
-$--table-header-background-color: $--color-white !default;
+$--table-header-background-color: rgba(240, 246, 255, 1) !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 
 /* Pagination
