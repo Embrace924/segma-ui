@@ -4,6 +4,12 @@
 // type|skipAutoTranslation|Category|Order
 // skipAutoTranslation 1
 
+//色板1-10
+$Primary: #000c5c, #001682, #0727a8, #133ecf, #225bf6, #4d82ff, #75a3ff, #9ec2ff, #c7ddff, #f0f6ff;
+$Danger: #660815, #8c0d19, #b31923, #d9292f, #ff3d3d, #ff6b66, #ff968f, #ffbfb8, #ffe4e0, #fff2f0;
+$Warning: #5c2200, #823400, #a84d07, #cf6a13, #f68c22, #ffac4d, #ffc375, #ffd89e, #ffeac7, #fffaf0;
+$Success: #004219, #006925, #068f31, #10b53f, #1edb4e, #46e869, #71f589, #9effad, #c7ffcd, #f0fff1;
+
 /* Transition
 -------------------------- */
 $--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
@@ -40,14 +46,15 @@ $--color-danger: #ff3d3d !default;
 /// color|1|Functional Color|1
 $--color-info: rgba(0, 0, 0, 0.65) !default;
 
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-success-light: nth($Success, 9) !default;
+$--color-warning-light: nth($Warning, 9) !default;
+$--color-danger-light: nth($Danger, 9) !default;
+
 $--color-info-light: mix($--color-white, $--color-info, 80%) !default;
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-success-lighter: nth($Success, 10) !default;
+$--color-warning-lighter: nth($Warning, 10) !default;
+$--color-danger-lighter: nth($Danger, 10) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 /// color|1|Font Color|2
 $--color-text-primary: #383838 !default;
@@ -332,10 +339,10 @@ $--alert-close-font-size: 12px !default;
 /// fontSize||Font|1
 $--alert-close-customed-font-size: 13px !default;
 
-$--alert-success-color: $--color-success-lighter !default;
-$--alert-info-color: $--color-info-lighter !default;
-$--alert-warning-color: $--color-warning-lighter !default;
-$--alert-danger-color: $--color-danger-lighter !default;
+$--alert-success-color: $--color-success-light !default;
+$--alert-info-color: nth($Primary, 9) !default;
+$--alert-warning-color: $--color-warning-light !default;
+$--alert-danger-color: $--color-danger-light !default;
 
 /// height||Other|4
 $--alert-icon-size: 16px !default;
@@ -360,7 +367,7 @@ $--msgbox-padding-primary: 15px !default;
 /// color||Color|0
 $--messagebox-success-color: $--color-success !default;
 /// color||Color|0
-$--messagebox-info-color: $--color-info !default;
+$--messagebox-info-color: $--color-primary !default;
 /// color||Color|0
 $--messagebox-warning-color: $--color-warning !default;
 /// color||Color|0
@@ -382,7 +389,7 @@ $--message-close-hover-color: $--color-text-secondary !default;
 /// color||Color|0
 $--message-success-font-color: $--color-success !default;
 /// color||Color|0
-$--message-info-font-color: $--color-info !default;
+$--message-info-font-color: $--color-primary !default;
 /// color||Color|0
 $--message-warning-font-color: $--color-warning !default;
 /// color||Color|0

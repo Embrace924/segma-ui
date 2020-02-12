@@ -2,6 +2,8 @@
 @black: #000000;
 @colorlist: @primary, @danger, @warning, @success;
 @colorTypelist: primary, danger, warning, success;
+@messageTypelist: info, danger, warning, success;
+
 @sizelist: small, medium;
 @sizeHeight: 32px, 40px;
 
@@ -338,3 +340,21 @@
 }
 
 /* 表格样式结束 */
+
+/* Message 样式开始 */
+
+.setMessage(@type,@color) {
+    .el-message--@{type} {
+        border-color: extract(@color, 10);
+        background-color: extract(@color, 10);
+    }
+}
+
+.loopMessageColor(@i) when (@i < (length(@colorlist)+1)) {
+    .setMessage(extract(@messageTypelist, @i), extract(@colorlist, @i));
+    .loopMessageColor(@i+1);
+}
+
+.loopMessageColor(1);
+
+/* Message 样式结束 */

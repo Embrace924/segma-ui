@@ -9,13 +9,13 @@
             |
             <router-link to="/Select">Select</router-link>
             |
-            <router-link to="/Dialog">dialog</router-link>
-            |
             <router-link to="/Pagination">Pagination</router-link>
             |
-            <router-link to="/Comfirm">Comfirm</router-link>
-            |
             <router-link to="/Table">Table</router-link>
+            |
+            <router-link to="/Dialog">dialog</router-link>
+            |
+            <router-link to="/Comfirm">Comfirm</router-link>
             |
             <router-link to="/Loading">Loading</router-link>
             <!--|-->
