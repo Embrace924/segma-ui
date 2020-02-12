@@ -26,7 +26,7 @@ const $confirm = async (message = '', title = '提示', option = {}) => {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             customClass: 'segma-message',
-            cancelButtonClass: 'el-button--primary is-plain',
+            cancelButtonClass: 'is-plain',
             ...option
         })
         return true

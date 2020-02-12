@@ -6,17 +6,13 @@
         <el-button type="danger"
                    @click="openAlert">alert
         </el-button>
-        <el-button :plain="true"
-                   @click="open2">成功
+        <el-button @click="open2">成功
         </el-button>
-        <el-button :plain="true"
-                   @click="open3">警告
+        <el-button @click="open3">警告
         </el-button>
-        <el-button :plain="true"
-                   @click="open1">消息
+        <el-button @click="open1">消息
         </el-button>
-        <el-button :plain="true"
-                   @click="open4">错误
+        <el-button @click="open4">错误
         </el-button>
     </div>
 </template>
@@ -34,9 +30,7 @@ export default {
             console.log(result)//true/false
         },
         async openAlert() {
-            let result = await this.$alert('确定删除Alert？', '删除', {
-                confirmButtonClass: 'el-button--warning',
-            })
+            let result = await this.$alert('确定删除Alert？', '删除', {})
             console.log(result)//true/false
         },
         open1() {
