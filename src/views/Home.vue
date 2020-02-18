@@ -45,16 +45,9 @@ export default {
         height: 50px;
         line-height: 50px;
         color: #383838;
-        background-color: mix(#ffffff, @green, @i*10);
+        background-color: extract(@primary, @i);
     }
 
-    .box-black@{i} {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        color: #ffffff;
-        background-color: mix(#383838, @green, @i*10);
-    }
     .box-loop(@n, (@i + 1));
 }
 

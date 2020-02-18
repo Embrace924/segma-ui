@@ -11,6 +11,10 @@
                   prefix-icon="el-icon-search"
                   v-model="segmaInput.value1">
         </el-input>
+        <el-input placeholder="请输入内容"
+                  suffix-icon="el-icon-search"
+                  v-model="segmaInput.value1">
+        </el-input>
     </div>
 </template>
 

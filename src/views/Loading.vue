@@ -1,13 +1,24 @@
 <template>
-    <div class="loading"
-         v-segma-loading="true">测试segmaLoading
+    <div>
+        <el-button type="primary"
+                   @click="loading=!loading">{{loading?'取消':'开始'}}Loading
+        </el-button>
+        <div class="loading"
+             v-segma-loading="loading">测试segmaLoading
+        </div>
     </div>
+
 </template>
 <script>
+
 export default {
     // Options / Data
     // components: {},
-    //data() {},
+    data() {
+        return {
+            loading: false
+        }
+    },
     //props: [],
     // propsData: {},
     // computed: {},
@@ -38,6 +49,5 @@ export default {
     width: 500px;
     height: 400px;
     line-height: 400px;
-
 }
 </style>

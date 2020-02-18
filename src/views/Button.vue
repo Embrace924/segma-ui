@@ -1,10 +1,13 @@
 <template>
     <div>
+
+
         <el-button plain>default</el-button>
-        <el-button disabled>disabled</el-button>
         <el-button :loading="true"
                    plain>loading
         </el-button>
+        <el-button disabled>disabled</el-button>
+
         <br>
         <el-button type="primary">按钮</el-button>
         <el-button type="primary"
