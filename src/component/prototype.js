@@ -34,6 +34,8 @@ const $confirm = async (message = '', title = '提示', option = {}) => {
         return false
     }
 }
+
 export {
     $alert, $confirm
 }
+

@@ -4,7 +4,7 @@
                    @click="loading=!loading">{{loading?'取消':'开始'}}Loading
         </el-button>
         <div class="loading"
-             v-segma-loading="loading">测试segmaLoading
+             v-loading="loading">测试segmaLoading
         </div>
     </div>
 

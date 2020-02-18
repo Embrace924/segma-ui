@@ -3,7 +3,7 @@
  */
 import './assets/css/index.less'
 import { $alert, $confirm } from './component/prototype'
-import SegmaLoading from './plugins/directives/index';
+import Loading from './views/Loading/index.js';
 
 /**
  * Created by chenz on 2018/11/9.
@@ -85,7 +85,6 @@ import {
     MessageBox,
     Message,
     Notification,
-    Loading
 } from 'element-ui';
 
 const components = [
@@ -165,14 +164,12 @@ const components = [
     MessageBox,
     Message,
     Notification,
-    Loading,
-    SegmaLoading
+    Loading
 ]
-const install = function(Vue) {
+const install = function (Vue) {
     components.forEach(component => {
         Vue.component(component, component);
     });
-    Vue.use(SegmaLoading.directive);
     Vue.use(Loading.directive);
 };
 /* istanbul ignore if */
@@ -260,5 +257,4 @@ export default {
     Message,
     Notification,
     Loading,
-    SegmaLoading
 }
