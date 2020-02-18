@@ -266,6 +266,7 @@
 /* 表格样式开始 */
 
 .el-table {
+
     .cell, th > .cell, th:first-child .cell, td:first-child .cell {
         padding: 0 12px;
     }
@@ -341,6 +342,14 @@
     .descending .sort-caret.descending {
         border-top-color: transparent;
         background-image: url("../images/table/sortDownActive.svg");
+    }
+}
+
+.border {
+    .el-table__body-wrapper, .el-table__footer-wrapper {
+        border-right: 1px solid rgba(@black, 0.09);
+        border-left: 1px solid rgba(@black, 0.09);
+        width: calc(100% - 2px);
     }
 }
 
