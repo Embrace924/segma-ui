@@ -1,82 +1,62 @@
 <template>
     <div>
-        <el-button size="small"
-                   plain>default
-        </el-button>
-        <el-button size="small"
-                   :loading="true"
+
+
+        <el-button plain>default</el-button>
+        <el-button :loading="true"
                    plain>loading
         </el-button>
-        <el-button size="small"
-                   disabled>disabled
-        </el-button>
+        <el-button disabled>disabled</el-button>
 
         <br>
-        <el-button size="small"
-                   type="primary">按钮
-        </el-button>
-        <el-button size="small"
-                   type="primary"
+        <el-button type="primary">按钮</el-button>
+        <el-button type="primary"
                    plain>次要
         </el-button>
-        <el-button size="small"
-                   type="primary"
+        <el-button type="primary"
                    :loading="true">
         </el-button>
-        <el-button size="small"
-                   type="primary"
+        <el-button type="primary"
                    :loading="true"
                    plain>
         </el-button>
         <br>
-        <el-button size="small"
-                   type="danger">按钮
+        <el-button type="danger">按钮
         </el-button>
-        <el-button size="small"
-                   type="danger"
+        <el-button type="danger"
                    plain>次要
         </el-button>
-        <el-button size="small"
-                   type="danger"
+        <el-button type="danger"
                    :loading="true">
         </el-button>
-        <el-button size="small"
-                   type="danger"
+        <el-button type="danger"
                    :loading="true"
                    plain>
         </el-button>
         <br>
-        <el-button size="small"
-                   type="success">按钮
+        <el-button type="success">按钮
         </el-button>
-        <el-button size="small"
-                   type="success"
+        <el-button type="success"
                    plain>次要
         </el-button>
-        <el-button size="small"
-                   type="success"
+        <el-button type="success"
                    :loading="true">
         </el-button>
-        <el-button size="small"
-                   type="success"
+        <el-button type="success"
                    :loading="true"
                    plain>
         </el-button>
         <br>
 
-        <el-button size="small"
-                   type="warning">按钮
+        <el-button type="warning">按钮
         </el-button>
-        <el-button size="small"
-                   type="warning"
+        <el-button type="warning"
                    plain>次要
         </el-button>
-        <el-button size="small"
-                   type="warning"
+        <el-button type="warning"
                    :loading="true">
         </el-button>
-        <el-button size="small"
-                   type="warning"
+        <el-button type="warning"
                    :loading="true"
                    plain>
         </el-button>

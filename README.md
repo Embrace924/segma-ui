@@ -19,7 +19,7 @@ index.js文件
 		});
 	}
 	};
-	
+
 segma_ui.js文件
 
 	//在plugins文件夹中新建segma_ui.js文件
@@ -27,8 +27,6 @@ segma_ui.js文件
 	import element from 'segma-ui/lib/segma-ui.common'
 
 	let {
-		$confirm,
-		$alert,
 		Pagination,
 		Dialog,
 		Autocomplete,
@@ -108,7 +106,7 @@ segma_ui.js文件
 		Loading,
 		SegmaLoading
 	} = element
-	
+
 	export default {
 		install(Vue) {
 			Vue.use(Pagination);
@@ -189,8 +187,8 @@ segma_ui.js文件
 
       Vue.prototype.$loading = Loading.service;
 			Vue.prototype.$msgbox = MessageBox;
-			Vue.prototype.$alert = $alert;
-			Vue.prototype.$confirm = $confirm;
+			Vue.prototype.$alert = MessageBox.alert;
+			Vue.prototype.$confirm = $MessageBox.confirm;
 			Vue.prototype.$prompt = MessageBox.prompt;
 			Vue.prototype.$notify = Notification;
 			Vue.prototype.$message = Message;
