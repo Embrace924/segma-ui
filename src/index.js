@@ -161,10 +161,11 @@ const components = [
     Backtop,
     PageHeader,
     CascaderPanel,
+    Loading,
     MessageBox,
     Message,
     Notification,
-    Loading
+    InfiniteScroll
 ]
 const install = function (Vue) {
     components.forEach(component => {
@@ -253,8 +254,9 @@ export default {
     Backtop,
     PageHeader,
     CascaderPanel,
+    Loading,
     MessageBox,
     Message,
     Notification,
-    Loading,
+    InfiniteScroll
 }
