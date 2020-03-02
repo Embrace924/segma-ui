@@ -2,6 +2,7 @@
     <div class="select">
         <div> 下拉菜单</div>
         <el-select v-model="segmaSelect.value1"
+                   size="small"
                    clearable
                    placeholder="请选择">
             <el-option
@@ -12,17 +13,18 @@
             </el-option>
         </el-select>
         <el-select v-model="segmaSelect.value1"
+                   size="small"
                    clearable
                    disabled
                    placeholder="请选择">
-            <el-option
-                v-for="item in segmaSelect.value1Options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
+            <el-option v-for="item in segmaSelect.value1Options"
+                       :key="item.value"
+                       :label="item.label"
+                       :value="item.value">
             </el-option>
         </el-select>
         <el-select v-model="segmaSelect.value2"
+                   size="small"
                    multiple
                    placeholder="请选择">
             <el-option

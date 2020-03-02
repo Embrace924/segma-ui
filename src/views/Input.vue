@@ -1,17 +1,21 @@
 <template>
     <div class="input">
         <el-input placeholder="请输入内容"
+                  size="small"
                   v-model="segmaInput.value1">
         </el-input>
         <el-input placeholder="请输入内容"
                   disabled
+                  size="small"
                   v-model="segmaInput.value1">
         </el-input>
-        <el-input placeholder="请输入内容"
+        <el-input size="small"
+                  placeholder="请输入内容"
                   prefix-icon="el-icon-search"
                   v-model="segmaInput.value1">
         </el-input>
-        <el-input placeholder="请输入内容"
+        <el-input size="small"
+                  placeholder="请输入内容"
                   suffix-icon="el-icon-search"
                   v-model="segmaInput.value1">
         </el-input>

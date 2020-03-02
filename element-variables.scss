@@ -1,4 +1,20 @@
-/* Element Chalk Variables  */
+/* Element Chalk Variables */
+//使用方法 ：
+//安装工具  npm i element-theme -g
+//安装主题  npm i element-theme-chalk -D
+//执行命令  et -i [可以自定义变量文件]
+//          > ✔ Generator variables file
+//执行后当前目录会有一个 element-variables.scss 
+//直接编辑 element-variables.scss 文件
+//编译主题  et
+//          > ✔ build theme font
+//          > ✔ build element theme
+//引入自定义主题
+//import '../theme/index.css'
+//import ElementUI from 'element-ui'
+//import Vue from 'vue'
+//Vue.use(ElementUI)
+//结束
 
 // Special comment for theme configurator
 // type|skipAutoTranslation|Category|Order
@@ -69,7 +85,6 @@ $--color-text-placeholder: rgba(0, 0, 0, 0.45) !default;
 $--border-color-base: rgba(0, 0, 0, 0.15) !default;
 /// color|1|Border Color|3
 $--border-color-light: #e4e7ed !default;
-
 /// color|1|Border Color|3
 $--border-color-lighter: #ebeef5 !default;
 /// color|1|Border Color|3
@@ -139,11 +154,11 @@ $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbbbbb !default;
 
 /* Size
--------------------------- */
+--------------------------  */
 $--size-base: 14px !default;
 
 /* z-index
--------------------------- */
+--------------------------  */
 $--index-normal: 1 !default;
 $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
@@ -439,7 +454,7 @@ $--input-font-color: $--color-font-black !default;
 /// height||Other|4
 $--input-width: 140px !default;
 /// height||Other|4
-$--input-height: 32px !default;
+$--input-height: 40px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 /// borderRadius||Border|2
@@ -467,17 +482,17 @@ $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--disabled-color-base !default;
 
 /// fontSize||Font|1
-$--input-medium-font-size: 16px !default;
+$--input-medium-font-size: 14px !default;
 /// height||Other|4
-$--input-medium-height: 40px !default;
+$--input-medium-height: 36px !default;
 /// fontSize||Font|1
 $--input-small-font-size: 14px !default;
 /// height||Other|4
 $--input-small-height: 32px !default;
 /// fontSize||Font|1
-$--input-mini-font-size: 14px !default;
+$--input-mini-font-size: 12px !default;
 /// height||Other|4
-$--input-mini-height: 24px !default;
+$--input-mini-height: 28px !default;
 
 /* Cascader
 -------------------------- */
@@ -526,16 +541,16 @@ $--button-font-weight: $--font-weight-primary !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 8px !default;
+$--button-padding-vertical: 12px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 24px !default;
+$--button-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
 $--button-medium-font-size: 16px;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 11px !default;
+$--button-medium-padding-vertical: 10px !default;
 /// padding||Spacing|3
 $--button-medium-padding-horizontal: 20px !default;
 
@@ -550,9 +565,9 @@ $--button-small-padding-horizontal: 24px !default;
 $--button-mini-font-size: 14px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 /// padding||Spacing|3
-$--button-mini-padding-vertical: 4px !default;
+$--button-mini-padding-vertical: 7px !default;
 /// padding||Spacing|3
-$--button-mini-padding-horizontal: 8px !default;
+$--button-mini-padding-horizontal: 15px !default;
 
 /// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;
@@ -898,7 +913,7 @@ $--transfer-item-height: 30px !default;
 $--transfer-filter-height: 32px !default;
 
 /* Header
-  --------------------------  */
+  -------------------------- */
 $--header-padding: 0 20px !default;
 
 /* Footer
@@ -910,7 +925,7 @@ $--footer-padding: 0 20px !default;
 $--main-padding: 20px !default;
 
 /* Timeline
--------------------------- */
+--------------------------  */
 $--timeline-node-size-normal: 12px !default;
 $--timeline-node-size-large: 14px !default;
 $--timeline-node-color: $--border-color-light !default;
@@ -947,8 +962,7 @@ $--link-danger-font-color: $--color-danger !default;
 /// color||Color|0
 $--link-info-font-color: $--color-info !default;
 
-/* Calendar
--------------------------- */
+/* Calendar-------------------------- */
 /// border||Other|4
 $--calendar-border: $--table-border !default;
 /// color||Other|4
@@ -960,8 +974,7 @@ $--calendar-cell-width: 85px !default;
 /// fontSize||Font|1
 $--form-label-font-size: $--font-size-base !default;
 
-/* Avatar
--------------------------- */
+/* Avatar-------------------------- */
 /// color||Color|0
 $--avatar-font-color: #ffffff !default;
 /// color||Color|0
@@ -979,8 +992,7 @@ $--avatar-medium-size: 36px !default;
 /// size|1|Avatar Size|3
 $--avatar-small-size: 28px !default;
 
-/* Break-point
--------------------------- */
+/* Break-point-------------------------- */
 $--sm: 768px !default;
 $--md: 992px !default;
 $--lg: 1200px !default;
