@@ -23,7 +23,7 @@ let fullscreenLoading;
 LoadingConstructor.prototype.originalPosition = '';
 LoadingConstructor.prototype.originalOverflow = '';
 
-LoadingConstructor.prototype.close = function () {
+LoadingConstructor.prototype.close = function() {
     if (this.fullscreen) {
         fullscreenLoading = undefined;
     }
@@ -49,14 +49,20 @@ const addStyle = (options, parent, instance) => {
         maskStyle.zIndex = PopupManager.nextZIndex();
     } else if (options.body) {
         instance.originalPosition = getStyle(document.body, 'position');
-        ['top', 'left'].forEach(property => {
+        [
+            'top',
+            'left'
+        ].forEach(property => {
             let scroll = property === 'top' ? 'scrollTop' : 'scrollLeft';
             maskStyle[property] = options.target.getBoundingClientRect()[property] +
                 document.body[scroll] +
                 document.documentElement[scroll] +
                 'px';
         });
-        ['height', 'width'].forEach(property => {
+        [
+            'height',
+            'width'
+        ].forEach(property => {
             maskStyle[property] = options.target.getBoundingClientRect()[property] + 'px';
         });
     } else {

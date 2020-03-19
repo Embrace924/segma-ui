@@ -271,6 +271,8 @@
 /* 表格样式开始 */
 
 .el-table {
+    border-radius: 4px;
+
     th.is-leaf {
         border-bottom: none;
     }
@@ -310,10 +312,9 @@
 
     /* 排序 */
     .caret-wrapper {
-        position: absolute;
-        right: 12px;
+        margin-left: 10px;
         width: 24px;
-        height: 23px;
+        height: 24px;
     }
 
     .sort-caret {
@@ -321,23 +322,23 @@
         position: absolute;
         top: 0;
         border: none;
-        width: 8px;
-        height: 16px;
+        width: 10px;
+        height: 20px;
         background-repeat: no-repeat;
         background-position: center top;
-        background-size: 20px 13px;
+        background-size: 30px 20px;
     }
 
     .sort-caret.ascending {
-        top: 5px;
-        left: 8px;
+        top: 1px;
+        left: 0;
         border-bottom-color: transparent;
         background-image: url("../images/table/sortUp.svg");
     }
 
     .sort-caret.descending {
-        top: 5px;
-        left: 0;
+        top: 1px;
+        left: 10px;
         border-top-color: transparent;
         background-image: url("../images/table/sortDown.svg");
     }
@@ -353,12 +354,13 @@
     }
 }
 
-.border {
-    .el-table__body-wrapper, .el-table__footer-wrapper {
-        border-top: 1px solid rgba(@black, 0.09);
-        border-right: 1px solid rgba(@black, 0.09);
-        border-left: 1px solid rgba(@black, 0.09);
-        width: calc(100% - 2px);
+.el-table--border {
+    th, td {
+        border-right: none;
+    }
+
+    .el-table__header-wrapper {
+        border-bottom: 1px solid rgba(@black, 0.09);
     }
 }
 
