@@ -1,7 +1,6 @@
 <template>
     <div class="over">
-        <el-table :data="tableData"
-                  border>
+        <el-table :data="tableData">
             <el-table-column prop="date"
                              sortable
                              label="日期">
