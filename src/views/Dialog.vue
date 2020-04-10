@@ -13,11 +13,13 @@
                      label-width="95px">
                 <el-form-item label="商品分类："
                               prop="categoryName">
-                    <el-input v-model="ruleForm.categoryName"></el-input>
+                    <el-input v-model="ruleForm.categoryName"
+                              size="small"></el-input>
                 </el-form-item>
                 <el-form-item label="商品信息："
                               prop="categoryMsg">
                     <el-input v-model="ruleForm.categoryMsg"
+                              size="small"
                               type="textarea"
                               rows="5"></el-input>
                 </el-form-item>
@@ -25,8 +27,10 @@
             <span slot="footer"
                   class="dialog-footer">
                         <el-button plain
+                                   size="small"
                                    @click="dialogVisible = false">取 消</el-button>
                         <el-button type="primary"
+                                   size="small"
                                    @click="dialogVisible=false">确 定</el-button>
                 </span>
         </el-dialog>
@@ -80,7 +84,7 @@ export default {
 </script>
 <style lang="less"
        scoped>
-/deep/ .segma-dialog .el-dialog .el-dialog__body {
+/deep/ .el-dialog .el-dialog__body {
     padding: 30px 30px 8px 30px;
 }
 </style>
