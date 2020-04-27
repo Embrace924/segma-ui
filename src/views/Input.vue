@@ -28,6 +28,15 @@
             <el-checkbox v-model="checked"
                          disabled>备选项1
             </el-checkbox>
+            <el-checkbox label="备选项1"
+                         v-model="checked1"
+                         size="small"
+                         border></el-checkbox>
+            <el-checkbox label="备选项2"
+                         v-model="checked1"
+                         border
+                         size="small"
+                         disabled></el-checkbox>
         </div>
         <div>
             <el-radio v-model="radio"
