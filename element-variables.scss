@@ -192,12 +192,13 @@ $--input-icon-color: $input-icon-color !default;
 $--input-placeholder-color: $--color-text-placeholder !default;
 $--input-background-color: $--color-white !default;
 //input hover-border颜色
-$--input-hover-border: $--border-deep !default;
-$--input-focus-border: $--color-primary !default;
+$--input-hover-border: $--border-color-deep !default;
+$--input-border-color-hover: $--border-color-deep !default;
+$--input-focus-border: $primary !default;
 $--input-focus-fill: $--color-white !default;
 
 $--input-disabled-fill: $disabled-bg !default;
-$--input-disabled-border: $--border-base !default;
+$--input-disabled-border: $--border-color-base !default;
 $--input-disabled-placeholder-color: $disabled-font-color !default;
 
 /* Input需要的截至
@@ -324,12 +325,11 @@ $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
 
 /* Select
 -------------------------- */
+$--select-disabled-border: $--border-color-base !default;
 $--select-border-color-hover: $--border-color-deep !default;
-$--select-disabled-border: $--disabled-border-base !default;
 $--select-font-size: $--font-size-base !default;
 $--select-input-color: $text-title !default;
 $--select-close-hover-color: $--color-text-secondary !default;
-$--select-multiple-input-color: #666666 !default;
 $--select-input-font-size: 14px !default;
 $--select-input-focus-border-color: $primary !default;
 
@@ -342,6 +342,8 @@ $--select-option-selected-hover: $primary !default;
 $--select-option-selected-font-color: $primary !default;
 
 /// height||Other|4
+$--select-multiple-input-color: #666666 !default;
+
 $--select-option-height: 32px !default;
 /// color||Color|0
 $--select-group-color: $--color-info !default;
@@ -467,7 +469,6 @@ $--input-fill-disabled: $--disabled-fill-base !default;
 $--input-color-disabled: $--font-color-disabled-base !default;
 $--input-clear-hover-color: $--color-text-secondary !default;
 $--input-disabled-color: $--disabled-color-base !default;
-$--input-border-color-hover: $--border-color-deep !default;
 
 /// borderRadius||Border|2
 $--input-border-radius: $--border-radius-base !default;
