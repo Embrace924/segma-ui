@@ -19,6 +19,32 @@
                   suffix-icon="el-icon-search"
                   v-model="segmaInput.value1">
         </el-input>
+        <div>
+            <el-checkbox v-model="checked1">备选项</el-checkbox>
+            <el-checkbox v-model="checked">备选项</el-checkbox>
+            <el-checkbox v-model="checked1"
+                         disabled>备选项1
+            </el-checkbox>
+            <el-checkbox v-model="checked"
+                         disabled>备选项1
+            </el-checkbox>
+        </div>
+        <div>
+            <el-radio v-model="radio"
+                      label="1">备选项
+            </el-radio>
+            <el-radio v-model="radio"
+                      label="2">备选项
+            </el-radio>
+            <el-radio v-model="radio"
+                      label="1"
+                      disabled>备选项
+            </el-radio>
+            <el-radio v-model="radio"
+                      label="2"
+                      disabled>备选项
+            </el-radio>
+        </div>
     </div>
 </template>
 
@@ -30,6 +56,9 @@ export default {
             segmaInput: {
                 value1: ''
             },
+            checked: false,
+            checked1: true,
+            radio: '1',
         };
     }
 }
@@ -38,7 +67,7 @@ export default {
 <style lang="less">
 .input {
     margin: 0 auto;
-    width: 300px;
+    width: 500px;
 
     > div {
         margin-bottom: 20px;
