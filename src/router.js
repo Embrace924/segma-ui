@@ -2,7 +2,92 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 
-
+let Arr = [
+    'Pagination',
+    'Dialog',
+    // Autocomplete,
+    // Dropdown,
+    // DropdownMenu,
+    // DropdownItem,
+    // Menu,
+    // Submenu,
+    // MenuItem,
+    // MenuItemGroup,
+    'Input',
+    // InputNumber,
+    'Radio',
+    // RadioGroup,
+    // RadioButton,
+    'Checkbox',
+    // CheckboxButton,
+    // CheckboxGroup,
+    // Switch,
+    'Select',
+    // Option,
+    // OptionGroup,
+    'Button',
+    // ButtonGroup,
+    'Table',
+    // TableColumn,
+    // DatePicker,
+    // TimeSelect,
+    // TimePicker,
+    // Popover,
+    // Tooltip,
+    // Breadcrumb,
+    // BreadcrumbItem,
+    // Form,
+    // FormItem,
+    // Tabs,
+    // TabPane,
+    'Tag',
+    // Tree,
+    // Alert,
+    // Slider,
+    // Icon,
+    // Row,
+    // Col,
+    // Upload,
+    // Progress,
+    // Spinner,
+    // Badge,
+    // Card,
+    // Rate,
+    // Steps,
+    // Step,
+    // Carousel,
+    // CarouselItem,
+    // Collapse,
+    // CollapseItem,
+    // Cascader,
+    // ColorPicker,
+    // Transfer,
+    // Container,
+    // Header,
+    // Aside,
+    // Main,
+    // Footer,
+    // Timeline,
+    // TimelineItem,
+    // Link,
+    // Divider,
+    // Image,
+    // Calendar,
+    // Backtop,
+    // PageHeader,
+    // CascaderPanel,
+    // Loading,
+    // MessageBox,
+    // Message,
+    // Notification,
+    // InfiniteScroll
+]
+let elementRoutes = Arr.map(e => {
+    return {
+        path: `/${e}`,
+        name: `${e}`, component: () => import(/* webpackChunkName: "about" */ `./views/${e}.vue`)
+    }
+})
 Vue.use(Router)
 
 export default new Router({
@@ -15,42 +100,7 @@ export default new Router({
             component: Home,
             childrens: []
         },
-        {
-            path: '/Button',
-            name: 'Button', component: () => import(/* webpackChunkName: "about" */ './views/Button.vue')
-        },
-        {
-            path: '/Input',
-            name: 'Input', component: () => import(/* webpackChunkName: "about" */ './views/Input.vue')
-        },
-        {
-            path: '/Select',
-            name: 'Select', component: () => import(/* webpackChunkName: "about" */ './views/Select.vue')
-        },
-        {
-            path: '/Dialog',
-            name: 'Dialog', component: () => import(/* webpackChunkName: "about" */ './views/Dialog.vue')
-        },
-        {
-            path: '/Pagination',
-            name: 'Pagination', component: () => import(/* webpackChunkName: "about" */ './views/Pagination.vue')
-        },
-        {
-            path: '/Comfirm',
-            name: 'Comfirm', component: () => import(/* webpackChunkName: "about" */ './views/Comfirm.vue')
-        },
-        {
-            path: '/Table',
-            name: 'Table', component: () => import(/* webpackChunkName: "about" */ './views/Table.vue')
-        },
-        {
-            path: '/Loading',
-            name: 'Loading', component: () => import(/* webpackChunkName: "about" */ './views/Loading.vue')
-        },
-        {
-            path: '/Tag',
-            name: 'Tag', component: () => import(/* webpackChunkName: "about" */ './views/Tag.vue')
-        },
+        ...elementRoutes,
         {
             path: '/color',
             name: 'color',

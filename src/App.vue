@@ -1,33 +1,105 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Home</router-link>
-            |
-            <router-link to="/Button">Button</router-link>
-            |
-            <router-link to="/Input">Input</router-link>
-            |
-            <router-link to="/Select">Select</router-link>
-            |
-            <router-link to="/Pagination">Pagination</router-link>
-            |
-            <router-link to="/Table">Table</router-link>
-            |
-            <router-link to="/Dialog">dialog</router-link>
-            |
-            <router-link to="/Comfirm">Comfirm</router-link>
-            |
-            <router-link to="/Loading">Loading</router-link>
-            <!--|-->
-            <!--<router-link to="/Tag">Tag</router-link>-->
-            <!--|-->
-            <!--<router-link to="/InputNumber">InputNumber</router-link>-->
-            <!--|-->
-            <!--<router-link to="/hello">hello</router-link>-->
+            <router-link to="/">Home|</router-link>
+            <router-link :to="`/${item}`"
+                         v-for=" item in arr"> {{item}}|
+            </router-link>
+
         </div>
         <router-view class="segma-ui" />
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            arr: [
+                'Pagination',
+                'Dialog',
+                // Autocomplete,
+                // Dropdown,
+                // DropdownMenu,
+                // DropdownItem,
+                // Menu,
+                // Submenu,
+                // MenuItem,
+                // MenuItemGroup,
+                'Input',
+                // InputNumber,
+                'Radio',
+                // RadioGroup,
+                // RadioButton,
+                'Checkbox',
+                // CheckboxButton,
+                // CheckboxGroup,
+                // Switch,
+                'Select',
+                // Option,
+                // OptionGroup,
+                'Button',
+                // ButtonGroup,
+                'Table',
+                // TableColumn,
+                // DatePicker,
+                // TimeSelect,
+                // TimePicker,
+                // Popover,
+                // Tooltip,
+                // Breadcrumb,
+                // BreadcrumbItem,
+                // Form,
+                // FormItem,
+                // Tabs,
+                // TabPane,
+                'Tag',
+                // Tree,
+                // Alert,
+                // Slider,
+                // Icon,
+                // Row,
+                // Col,
+                // Upload,
+                // Progress,
+                // Spinner,
+                // Badge,
+                // Card,
+                // Rate,
+                // Steps,
+                // Step,
+                // Carousel,
+                // CarouselItem,
+                // Collapse,
+                // CollapseItem,
+                // Cascader,
+                // ColorPicker,
+                // Transfer,
+                // Container,
+                // Header,
+                // Aside,
+                // Main,
+                // Footer,
+                // Timeline,
+                // TimelineItem,
+                // Link,
+                // Divider,
+                // Image,
+                // Calendar,
+                // Backtop,
+                // PageHeader,
+                // CascaderPanel,
+                // Loading,
+                // MessageBox,
+                // Message,
+                // Notification,
+                // InfiniteScroll
+            ]
+
+        }
+    },
+    computed: {},
+}
+</script>
 
 <style lang="less">
 @import "./assets/css/segma_ui.less";
