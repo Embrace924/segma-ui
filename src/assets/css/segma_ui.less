@@ -13,7 +13,7 @@
 @table-tr-hover: #f0f4ff;
 @disabled-bg: #f3f4f6;
 @disabled-font-color: #aaafb5;
-@normal-font-color: #aaafb5;
+@--color-text-placeholder: #aaafb5;
 @input-icon-color: #828992;
 //@colorlist: @primary, @danger, @warning, @success;
 //@colorTypelist: primary, danger, warning, success;
@@ -239,6 +239,22 @@
 
 
 /* 下拉框样式结束 */
+
+/* 单选框开始 */
+
+.el-radio {
+
+}
+
+.el-radio-group {
+    .el-radio-button.is-disabled {
+        .el-radio-button__inner {
+            background-color: @disabled-bg;
+        }
+    }
+}
+
+/* 单选框结束 */
 
 /* 多选框开始 */
 

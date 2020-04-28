@@ -51,29 +51,18 @@ $text-content: #5d6470;
 $table-tr-hover: #f0f4ff;
 $disabled-bg: #f3f4f6;
 $disabled-font-color: #aaafb5;
-$normal-font-color: #aaafb5;
 $input-icon-color: #828992;
 
-/// color|1|Brand Color|0
 $--color-primary: $primary !default;
-/// color|1|Functional Color|1
 $--color-success: $success !default;
-/// color|1|Functional Color|1
 $--color-warning: $warning !default;
-/// color|1|Functional Color|1
 $--color-danger: $danger !default;
-/// color|1|Functional Color|1
 $--color-info: $info !default;
-/// color|1|Background Color|4
 $--color-white: #ffffff !default;
-/// color|1|Background Color|4
 $--color-black: #000000 !default;
+
 $--color-font-black: $text-title !default;
-/// color|1|Font Color|2
 $--color-text-primary: $text-title !default;
-/// color|1|Font Color|2
-$--color-text-regular: $text-content !default;
-/// color|1|Font Color|2  #c0c4cc
 $--color-text-placeholder: #aaafb5 !default;
 
 /* Color 需要的截至
@@ -100,8 +89,10 @@ $--font-color-disabled-base: #bbbbbb !default;
 
 /* Border需要的
 -------------------------- */
+
 $--border-color-base: #e0e5f0 !default;
 $--border-color-deep: #b6bece !default;
+$--border-color-disabled: #e0e5f0 !default;
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-color-hover: rgba(182, 190, 206, 1) !default;
@@ -337,7 +328,7 @@ $--select-option-color: $text-content !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $disabled-bg !default;
 
-$--select-option-hover-background: $--color-white !default;
+$--select-option-hover-background: #f0f7ff !default;
 $--select-option-selected-hover: $primary !default;
 $--select-option-selected-font-color: $primary !default;
 
@@ -445,7 +436,7 @@ $--notification-group-margin-right: 8px !default;
 /// fontSize||Font|1
 $--notification-content-font-size: $--font-size-base !default;
 /// color||Color|0
-$--notification-content-color: $--color-text-regular !default;
+$--notification-content-color: $text-content !default;
 /// fontSize||Font|1
 $--notification-title-font-size: 16px !default;
 /// color||Color|0
@@ -454,7 +445,7 @@ $--notification-title-color: $--color-text-primary !default;
 /// color||Color|0
 $--notification-close-color: $--color-text-secondary !default;
 /// color||Color|0
-$--notification-close-hover-color: $--color-text-regular !default;
+$--notification-close-hover-color: $text-content !default;
 
 /// color||Color|0
 $--notification-success-icon-color: $--color-success !default;
@@ -492,7 +483,7 @@ $--input-mini-height: 28px !default;
 /* Cascader
 -------------------------- */
 /// color||Color|0
-$--cascader-menu-font-color: $--color-text-regular !default;
+$--cascader-menu-font-color: $text-content !default;
 /// color||Color|0
 $--cascader-menu-selected-font-color: $--color-primary !default;
 $--cascader-menu-fill: $--fill-base !default;
@@ -519,8 +510,8 @@ $--group-title-width: 66px !default;
 $--tab-font-size: $--font-size-base !default;
 $--tab-border-line: 1px solid #e4e4e4 !default;
 $--tab-header-color-active: $--color-text-secondary !default;
-$--tab-header-color-hover: $--color-text-regular !default;
-$--tab-header-color: $--color-text-regular !default;
+$--tab-header-color-hover: $text-content !default;
+$--tab-header-color: $text-content !default;
 $--tab-header-fill-active: rgba($--color-font-black, 0.06) !default;
 $--tab-header-fill-hover: rgba($--color-font-black, 0.06) !default;
 $--tab-vertical-header-width: 90px !default;
@@ -565,7 +556,7 @@ $--button-mini-padding-vertical: 7px !default;
 $--button-mini-padding-horizontal: 15px !default;
 
 /// color||Color|0
-$--button-default-font-color: $--color-text-regular !default;
+$--button-default-font-color: $text-title !default;
 /// color||Color|0
 $--button-default-background-color: $--color-white !default;
 /// color||Color|0
@@ -576,7 +567,7 @@ $--button-disabled-font-color: $--color-text-placeholder !default;
 /// color||Color|0
 $--button-disabled-background-color: $--color-white !default;
 /// color||Color|0
-$--button-disabled-border-color: $--border-color-lighter !default;
+$--button-disabled-border-color: $--border-color-disabled !default;
 
 /// color||Color|0
 $--button-primary-border-color: $--color-primary !default;
@@ -747,7 +738,7 @@ $--tag-padding: 0 10px !default;
 /// color||Color|0
 $--tree-node-hover-background-color: $--background-color-base !default;
 /// color||Color|0
-$--tree-font-color: $--color-text-regular !default;
+$--tree-font-color: $text-content !default;
 /// color||Color|0
 $--tree-expand-icon-color: $--color-text-placeholder !default;
 
@@ -824,11 +815,11 @@ $--rate-icon-color: $--color-text-placeholder !default;
 
 /* DatePicker
 -------------------------- */
-$--datepicker-font-color: $--color-text-regular !default;
+$--datepicker-font-color: $text-content !default;
 /// color|1|Color|0
 $--datepicker-off-font-color: $--color-text-placeholder !default;
 /// color||Color|0
-$--datepicker-header-font-color: $--color-text-regular !default;
+$--datepicker-header-font-color: $text-content !default;
 $--datepicker-icon-color: $--color-text-primary !default;
 $--datepicker-border-color: $--disabled-border-base !default;
 $--datepicker-inner-border-color: #e4e4e4 !default;
@@ -941,7 +932,7 @@ $--link-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
 $--link-font-weight: $--font-weight-primary !default;
 /// color||Color|0
-$--link-default-font-color: $--color-text-regular !default;
+$--link-default-font-color: $text-content !default;
 /// color||Color|0
 $--link-default-active-color: $--color-primary !default;
 /// color||Color|0
