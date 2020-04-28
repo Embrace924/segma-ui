@@ -119,6 +119,12 @@
     .el-tag__close.el-icon-close {
         background-color: rgba(@black, 0.25);
     }
+
+    .el-icon-arrow-up {
+        &::before {
+            content: "\e78f";
+        }
+    }
 }
 
 .el-select-dropdown__item {
@@ -130,12 +136,6 @@
 .el-select-dropdown__item.is-disabled {
     &:hover {
         color: rgba(@black, 0.25);
-    }
-}
-
-.el-icon-arrow-up {
-    &::before {
-        content: "\e78f";
     }
 }
 
@@ -156,12 +156,9 @@
 
 .el-dialog {
     display: inline-block;
-    margin-top: 0 !important;
     border-radius: 4px;
     max-width: calc(100% - 98px);
-    max-height: calc(100% - 98px);
     text-align: left;
-    vertical-align: middle;
     background-color: #ffffff;
 
     .el-dialog__header {
