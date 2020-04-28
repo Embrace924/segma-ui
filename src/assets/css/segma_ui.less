@@ -182,31 +182,39 @@
 .el-select {
     width: 100%;
 
-    .el-input.is-disabled .el-input__inner:hover {
-        border-color: @border-color-base;
-    }
-
-    .el-tag.el-tag--info {
-        border-color: @border-color-base;
-        color: @text-title;
-        background-color: #f9fafd;
-    }
-
-    .el-tag.el-tag--info .el-tag__close.el-icon-close {
-        background-color: transparent;
-
-        &:hover {
-            color: @primary;
-            background-color: transparent;
+    .el-input.is-disabled {
+        .el-input__inner {
+            &:hover {
+                border-color: @border-color-base;
+            }
         }
     }
 
-    .el-tag.el-tag--info .el-icon-close {
-        top: -1px;
-        right: -4px;
-        font-size: 14px;
-        font-weight: bold;
-        color: @text-title;
+    .el-tag {
+        &.el-tag--info {
+            border-color: @border-color-base;
+            color: @text-title;
+            background-color: #f9fafd;
+
+            .el-icon-close {
+                top: -1px;
+                right: -4px;
+                font-size: 14px;
+                font-weight: bold;
+                color: @text-title;
+            }
+
+            .el-tag__close {
+                &.el-icon-close {
+                    background-color: transparent;
+
+                    &:hover {
+                        color: @primary;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
     }
 
     .el-tag--mini {
@@ -220,22 +228,22 @@
 }
 
 .el-select-dropdown__item {
+    &.selected {
+        font-weight: normal;
+
+        &::after {
+            font-size: 14px;
+        }
+    }
+
+    &.is-disabled {
+        &:hover {
+            color: @disabled-font-color;
+        }
+    }
+
     &:hover {
         color: @primary;
-    }
-}
-
-.el-select-dropdown__item.selected {
-    font-weight: normal;
-
-    &::after {
-        font-size: 14px;
-    }
-}
-
-.el-select-dropdown__item.is-disabled {
-    &:hover {
-        color: @disabled-font-color;
     }
 }
 
@@ -243,18 +251,25 @@
 /* 下拉框样式结束 */
 
 /* 单选框开始 */
-.el-radio.is-disabled.is-bordered.is-checked {
-    background-color: @disabled-bg;
-}
 
-.el-radio.is-disabled.is-bordered {
-    border-color: @border-disabled-color;
+.el-radio {
+    &.is-disabled {
+        &.is-bordered {
+            border-color: @border-disabled-color;
+
+            &.is-checked {
+                background-color: @disabled-bg;
+            }
+        }
+    }
 }
 
 .el-radio-group {
-    .el-radio-button.is-disabled {
-        .el-radio-button__inner {
-            background-color: @disabled-bg;
+    .el-radio-button {
+        &.is-disabled {
+            .el-radio-button__inner {
+                background-color: @disabled-bg;
+            }
         }
     }
 }
@@ -263,17 +278,47 @@
 
 /* 多选框开始 */
 
-.el-checkbox.is-bordered.el-checkbox--small {
-    border-radius: 4px;
-    padding: 7px 16px 7px 10px;
-}
+.el-checkbox {
+    &.is-bordered {
+        &.el-checkbox--small {
+            border-radius: 4px;
+            padding: 7px 16px 7px 10px;
+        }
 
-.el-checkbox.is-bordered.is-disabled {
-    border-color: @border-color-base;
-    background-color: @disabled-bg;
+        &.is-disabled {
+            border-color: @border-color-base;
+            background-color: @disabled-bg;
+        }
+    }
 }
 
 /* 多选框结束 */
+
+/* 开关开始 */
+
+.el-switch {
+    &.is-disabled {
+        opacity: 1;
+
+        .el-switch__core {
+            border: 1px solid rgba(@border-color-deep, 0);
+            background: rgba(@border-color-deep, 0.65);
+
+            &::after {
+                background: rgba(@white, 0.75);
+            }
+        }
+
+        &.is-checked {
+            .el-switch__core {
+                border: 1px solid rgba(@primary, 0);
+                background: rgba(@primary, 0.35);
+            }
+        }
+    }
+}
+
+/* 开关结束 */
 
 //
 ///* 弹窗开始 */

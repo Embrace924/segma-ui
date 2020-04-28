@@ -64,6 +64,7 @@ $--color-black: #000000 !default;
 $--color-font-black: $text-title !default;
 $--color-text-primary: $text-title !default;
 $--color-text-placeholder: #aaafb5 !default;
+$--color-text-regular: $text-content !default;
 
 /* Color 需要的截至
 -------------------------- */
@@ -195,6 +196,27 @@ $--input-disabled-placeholder-color: $disabled-font-color !default;
 /* Input需要的截至
 -------------------------- */
 
+/* Select需要
+-------------------------- */
+$--select-disabled-border: $--border-color-base !default;
+$--select-border-color-hover: $--border-color-deep !default;
+$--select-font-size: $--font-size-base !default;
+$--select-input-color: $text-title !default;
+$--select-input-font-size: 14px !default;
+$--select-option-height: 32px !default;
+$--select-input-focus-border-color: $primary !default;
+
+$--select-option-color: $text-content !default;
+$--select-option-disabled-color: $--color-text-placeholder !default;
+$--select-option-disabled-background: $disabled-bg !default;
+
+$--select-option-hover-background: #f0f7ff !default;
+$--select-option-selected-hover: $primary !default;
+$--select-option-selected-font-color: $primary !default;
+
+/* Select需要的截至
+-------------------------- */
+
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
@@ -314,28 +336,10 @@ $--radio-button-checked-font-color: $--color-white !default;
 $--radio-button-checked-border-color: $--color-primary !default;
 $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
 
-/* Select
--------------------------- */
-$--select-disabled-border: $--border-color-base !default;
-$--select-border-color-hover: $--border-color-deep !default;
-$--select-font-size: $--font-size-base !default;
-$--select-input-color: $text-title !default;
-$--select-close-hover-color: $--color-text-secondary !default;
-$--select-input-font-size: 14px !default;
-$--select-input-focus-border-color: $primary !default;
-
-$--select-option-color: $text-content !default;
-$--select-option-disabled-color: $--color-text-placeholder !default;
-$--select-option-disabled-background: $disabled-bg !default;
-
-$--select-option-hover-background: #f0f7ff !default;
-$--select-option-selected-hover: $primary !default;
-$--select-option-selected-font-color: $primary !default;
-
 /// height||Other|4
 $--select-multiple-input-color: #666666 !default;
+$--select-close-hover-color: $--color-text-secondary !default;
 
-$--select-option-height: 32px !default;
 /// color||Color|0
 $--select-group-color: $--color-info !default;
 $--select-group-height: 30px !default;
@@ -616,16 +620,16 @@ $--cascader-height: 200px !default;
 /// color||Color|0
 $--switch-on-color: $--color-primary !default;
 /// color||Color|0
-$--switch-off-color: $--border-color-base !default;
+$--switch-off-color: $--border-color-deep !default;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
-$--switch-core-border-radius: 10px !default;
-// height||Other|4 TODO: width 代码写死的40px 所以下面这三个属性都没意义
-$--switch-width: 40px !default;
+$--switch-core-border-radius: 11px !default;
 // height||Other|4
-$--switch-height: 20px !default;
+$--switch-width: 44px !default;
 // height||Other|4
-$--switch-button-size: 16px !default;
+$--switch-height: 22px !default;
+// height||Other|4
+$--switch-button-size: 18px !default;
 
 /* Dialog
 -------------------------- */

@@ -33,7 +33,7 @@ export default {
                 'Checkbox',
                 // CheckboxButton,
                 // CheckboxGroup,
-                // Switch,
+                'Switch',
                 'Select',
                 // Option,
                 // OptionGroup,

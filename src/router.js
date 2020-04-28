@@ -21,7 +21,7 @@ let Arr = [
     'Checkbox',
     // CheckboxButton,
     // CheckboxGroup,
-    // Switch,
+    'Switch',
     'Select',
     // Option,
     // OptionGroup,
