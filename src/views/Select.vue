@@ -5,11 +5,10 @@
                    size="small"
                    clearable
                    placeholder="请选择">
-            <el-option
-                v-for="item in segmaSelect.value1Options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
+            <el-option v-for="item in segmaSelect.value1Options"
+                       :key="item.value"
+                       :label="item.label"
+                       :value="item.value">
             </el-option>
         </el-select>
         <el-select v-model="segmaSelect.value1"
@@ -27,12 +26,11 @@
                    size="small"
                    multiple
                    placeholder="请选择">
-            <el-option
-                v-for="item in segmaSelect.value2Options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-                :disabled="item.value==='选项2'">
+            <el-option v-for="item in segmaSelect.value2Options"
+                       :key="item.value"
+                       :label="item.label"
+                       :value="item.value"
+                       :disabled="item.value==='选项2'">
             </el-option>
         </el-select>
     </div>
@@ -40,7 +38,8 @@
 
 <script>
 export default {
-    name: "select", data() {
+    name: "Select",
+    data() {
         return {
             segmaSelect: {
                 value1: '',

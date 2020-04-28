@@ -19,41 +19,35 @@
                   suffix-icon="el-icon-search"
                   v-model="segmaInput.value1">
         </el-input>
-        <div>
-            <el-checkbox v-model="checked1">备选项</el-checkbox>
-            <el-checkbox v-model="checked">备选项</el-checkbox>
-            <el-checkbox v-model="checked1"
-                         disabled>备选项1
-            </el-checkbox>
-            <el-checkbox v-model="checked"
-                         disabled>备选项1
-            </el-checkbox>
-            <el-checkbox label="备选项1"
-                         v-model="checked1"
-                         size="small"
-                         border></el-checkbox>
-            <el-checkbox label="备选项2"
-                         v-model="checked1"
-                         border
-                         size="small"
-                         disabled></el-checkbox>
-        </div>
-        <div>
-            <el-radio v-model="radio"
-                      label="1">备选项
-            </el-radio>
-            <el-radio v-model="radio"
-                      label="2">备选项
-            </el-radio>
-            <el-radio v-model="radio"
-                      label="1"
-                      disabled>备选项
-            </el-radio>
-            <el-radio v-model="radio"
-                      label="2"
-                      disabled>备选项
-            </el-radio>
-        </div>
+        <el-input placeholder="请输入内容"
+                  v-model="segmaInput.value1"
+                  size="small">
+            <template slot="prepend">Http://</template>
+            <template slot="append">.com</template>
+        </el-input>
+        <el-input placeholder="请输入内容"
+                  size="small"
+                  v-model="segmaInput.value1"
+                  class="input-with-select">
+            <el-select v-model="segmaInput.value1"
+                       slot="prepend"
+                       placeholder="请选择">
+                <el-option label="餐厅名"
+                           value="1"></el-option>
+                <el-option label="订单号"
+                           value="2"></el-option>
+                <el-option label="用户电话"
+                           value="3"></el-option>
+            </el-select>
+            <el-button slot="append"
+                       icon="el-icon-search"></el-button>
+        </el-input>
+        <el-input type="textarea"
+                  placeholder="请输入内容"
+                  v-model="segmaInput.value1"
+                  rows="3"
+                  maxlength="30"
+                  show-word-limit></el-input>
     </div>
 </template>
 
