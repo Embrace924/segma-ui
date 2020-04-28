@@ -7,15 +7,42 @@
         <el-radio v-model="radio"
                   label="2">备选项
         </el-radio>
-        <el-radio v-model="radio"
+        <el-radio v-model="radio2"
                   label="1"
                   disabled>备选项
         </el-radio>
-        <el-radio v-model="radio"
+        <el-radio v-model="radio2"
                   label="2"
                   disabled>备选项
         </el-radio>
-        <el-radio-group v-model="radio"
+        <div>
+            <el-radio v-model="radio"
+                      label="1"
+                      border
+                      size="small">备选项1
+            </el-radio>
+            <el-radio v-model="radio"
+                      label="2"
+                      border
+                      size="small">备选项2
+            </el-radio>
+        </div>
+        <div>
+            <el-radio v-model="radio"
+                      label="1"
+                      border
+                      disabled
+                      size="small">备选项2
+            </el-radio>
+            <el-radio v-model="radio"
+                      label="2"
+                      border
+                      disabled
+                      size="small">备选项2
+            </el-radio>
+        </div>
+
+        <el-radio-group v-model="radio3"
                         size="small">
             <el-radio-button label="上海"></el-radio-button>
             <el-radio-button label="北京"
@@ -36,7 +63,9 @@ export default {
     // props: [],
     data() {
         return {
-            radio: false
+            radio: false,
+            radio2: true,
+            radio3: '上海'
         }
     },
     // computed: {},

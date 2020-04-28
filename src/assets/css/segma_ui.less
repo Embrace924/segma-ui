@@ -7,12 +7,14 @@
 @info: #f3f4f6;
 @border-color-base: #e0e5f0;
 @border-color-deep: #b6bece;
+@border-disabled-color: #e0e5f0;
 @text-title: #222222;
 @text-content: #5d6470;
 
 @table-tr-hover: #f0f4ff;
 @disabled-bg: #f3f4f6;
 @disabled-font-color: #aaafb5;
+
 @--color-text-placeholder: #aaafb5;
 @input-icon-color: #828992;
 //@colorlist: @primary, @danger, @warning, @success;
@@ -241,9 +243,12 @@
 /* 下拉框样式结束 */
 
 /* 单选框开始 */
+.el-radio.is-disabled.is-bordered.is-checked {
+    background-color: @disabled-bg;
+}
 
-.el-radio {
-
+.el-radio.is-disabled.is-bordered {
+    border-color: @border-disabled-color;
 }
 
 .el-radio-group {
