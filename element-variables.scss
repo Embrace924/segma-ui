@@ -39,11 +39,12 @@ $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !defau
 /* Color 需要的
 -------------------------- */
 $primary: #5374c0;
-$primary-hover-and-active: #364b7c;
 $danger: #ff3333;
 $success: #52c41a;
 $warning: #faad14;
 $info: #f3f4f6;
+
+$primary-hover-and-active: #364b7c;
 $info-hover-and-active: #eff0f4;
 $text-title: #222222;
 $text-content: #5d6470;
@@ -186,7 +187,7 @@ $--input-background-color: $--color-white !default;
 //input hover-border颜色
 $--input-hover-border: $--border-color-deep !default;
 $--input-border-color-hover: $--border-color-deep !default;
-$--input-focus-border: $primary !default;
+$--input-focus-border: $--color-primary !default;
 $--input-focus-fill: $--color-white !default;
 
 $--input-disabled-fill: $disabled-bg !default;
@@ -204,15 +205,15 @@ $--select-font-size: $--font-size-base !default;
 $--select-input-color: $text-title !default;
 $--select-input-font-size: 14px !default;
 $--select-option-height: 32px !default;
-$--select-input-focus-border-color: $primary !default;
+$--select-input-focus-border-color: $--color-primary !default;
 
 $--select-option-color: $text-content !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $disabled-bg !default;
 
 $--select-option-hover-background: #f0f7ff !default;
-$--select-option-selected-hover: $primary !default;
-$--select-option-selected-font-color: $primary !default;
+$--select-option-selected-hover: $--color-primary !default;
+$--select-option-selected-font-color: $--color-primary !default;
 
 /* Select需要的截至
 -------------------------- */
@@ -382,7 +383,7 @@ $--alert-close-font-size: 12px !default;
 $--alert-close-customed-font-size: 13px !default;
 
 $--alert-success-color: $--color-success-light !default;
-$--alert-info-color: rgba($primary, 0.9) !default;
+$--alert-info-color: rgba($--color-primary, 0.9) !default;
 $--alert-warning-color: $--color-warning-light !default;
 $--alert-danger-color: $--color-danger-light !default;
 
@@ -659,23 +660,18 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 
 /* Pagination
 -------------------------- */
-/// fontSize||Font|1
 $--pagination-font-size: 14px !default;
-/// color||Color|0
 $--pagination-background-color: transparent !default;
-/// color||Color|0
-$--pagination-font-color: $--color-info !default;
+$--pagination-font-color: $text-content !default;
+$--pagination-button-width: 16px !default;
+$--pagination-button-height: 16px !default;
 $--pagination-border-radius: 4px !default;
-/// color||Color|0
-$--pagination-button-color: $--color-info !default;
-/// height||Other|4
-$--pagination-button-width: 32px !default;
-/// height||Other|4
-$--pagination-button-height: 32px !default;
+$--pagination-button-color: $--color-primary !default;
+
 /// color||Color|0
 $--pagination-button-disabled-color: $--disabled-color-base !default;
 /// color||Color|0
-$--pagination-button-disabled-background-color: $--color-white !default;
+$--pagination-button-disabled-background-color: transparent !default;
 /// color||Color|0
 $--pagination-hover-color: $--color-primary !default;
 

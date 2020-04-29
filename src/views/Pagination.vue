@@ -4,7 +4,11 @@
                        :current-page="10"
                        :total="1000"
                        :hide-on-single-page="true"
-                       layout="prev, pager, next, jumper">
+                       layout="total, sizes, prev, pager, next, jumper">
+        </el-pagination>
+        <el-pagination :hide-on-single-page="true"
+                       :total="5"
+                       layout="prev, pager, next">
         </el-pagination>
     </div>
 </template>

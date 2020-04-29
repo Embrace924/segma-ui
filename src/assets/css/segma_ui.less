@@ -247,7 +247,6 @@
     }
 }
 
-
 /* 下拉框样式结束 */
 
 /* 单选框开始 */
@@ -483,33 +482,60 @@
 //
 ///* alert结束 */
 //
-///* 分页按钮开始 */
-//.setPagerLi(@type,@size) {
-//    .el-pagination.@{type} {
-//        .el-pager li, .btn-prev, .btn-next, .el-pagination__jump {
-//            min-width: @size;
-//            height: @size;
-//            line-height: @size;
-//        }
-//    }
-//}
-//
-//.el-pagination button:disabled {
-//    background-color: transparent;
-//}
-//
-//.el-pagination__editor.el-input .el-input__inner {
-//    height: 28px;
-//}
-//
-//.loopPageLiColor(@i) when (@i < (length(@colorlist)+1)) {
-//    .setPagerLi(extract(@sizelist, @i), extract(@sizeHeight, @i));
-//    .loopPageLiColor(@i+1);
-//}
-//
-//.loopPageLiColor(1);
-//
-///* 分页按钮结束 */
+
+/* 分页按钮开始 */
+.el-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+    span:not([class*=suffix]), button {
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .el-pager {
+        li {
+            &.number {
+                margin: 0 10px;
+                font-weight: normal;
+
+                &:hover, &.active {
+                    border-radius: 2px;
+                    color: @white;
+                    background-color: @primary;
+                }
+            }
+
+            &.btn-quicknext, &.btn-quickprev {
+                color: @text-content;
+            }
+        }
+
+        .more {
+            line-height: 20px;
+
+            &::before {
+                line-height: 20px;
+            }
+        }
+    }
+
+    .btn-next, .btn-prev {
+        color: @text-title;
+    }
+}
+
+.el-pagination button:disabled {
+    background-color: transparent;
+}
+
+.el-pagination__editor.el-input .el-input__inner {
+    height: 28px;
+}
+
+/* 分页按钮结束 */
 //
 ///* 表格样式开始 */
 //
