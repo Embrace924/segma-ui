@@ -1,62 +1,30 @@
 <template>
     <div>
-
-
-        <el-button plain>default</el-button>
+        <el-button plain
+                   size="small">default
+        </el-button>
         <el-button :loading="true"
-                   plain>loading
+                   plain
+                   size="small">loading
         </el-button>
-        <el-button disabled>disabled</el-button>
+        <el-button disabled
+                   size="small">disabled
+        </el-button>
 
         <br>
-        <el-button type="primary">按钮</el-button>
         <el-button type="primary"
-                   plain>次要
-        </el-button>
-        <el-button type="primary"
-                   :loading="true">
+                   size="small">按钮
         </el-button>
         <el-button type="primary"
-                   :loading="true"
-                   plain>
-        </el-button>
-        <br>
-        <el-button type="danger">按钮
-        </el-button>
-        <el-button type="danger"
+                   size="small"
                    plain>次要
         </el-button>
-        <el-button type="danger"
+        <el-button type="primary"
+                   size="small"
                    :loading="true">
         </el-button>
-        <el-button type="danger"
-                   :loading="true"
-                   plain>
-        </el-button>
-        <br>
-        <el-button type="success">按钮
-        </el-button>
-        <el-button type="success"
-                   plain>次要
-        </el-button>
-        <el-button type="success"
-                   :loading="true">
-        </el-button>
-        <el-button type="success"
-                   :loading="true"
-                   plain>
-        </el-button>
-        <br>
-
-        <el-button type="warning">按钮
-        </el-button>
-        <el-button type="warning"
-                   plain>次要
-        </el-button>
-        <el-button type="warning"
-                   :loading="true">
-        </el-button>
-        <el-button type="warning"
+        <el-button type="primary"
+                   size="small"
                    :loading="true"
                    plain>
         </el-button>

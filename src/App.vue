@@ -3,6 +3,7 @@
         <div id="nav">
             <router-link to="/">Home|</router-link>
             <router-link :to="`/${item}`"
+                         :key="item"
                          v-for=" item in arr"> {{item}}|
             </router-link>
 
@@ -41,9 +42,9 @@ export default {
                 // ButtonGroup,
                 'Table',
                 // TableColumn,
-                // DatePicker,
-                // TimeSelect,
-                // TimePicker,
+                'DatePicker',
+                // 'TimeSelect',
+                // 'TimePicker',
                 // Popover,
                 // Tooltip,
                 // Breadcrumb,

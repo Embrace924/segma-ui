@@ -217,6 +217,19 @@ $--select-option-selected-font-color: $primary !default;
 /* Select需要的截至
 -------------------------- */
 
+/* Switch需要
+-------------------------- */
+$--switch-on-color: $--color-primary !default;
+$--switch-off-color: $--border-color-deep !default;
+$--switch-font-size: $--font-size-base !default;
+$--switch-core-border-radius: 11px !default;
+$--switch-width: 44px !default;
+$--switch-height: 22px !default;
+$--switch-button-size: 18px !default;
+
+/* Switch需要的截至
+-------------------------- */
+
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
@@ -615,22 +628,6 @@ $--button-active-shade-percent: 10% !default;
 -------------------------- */
 $--cascader-height: 200px !default;
 
-/* Switch
--------------------------- */
-/// color||Color|0
-$--switch-on-color: $--color-primary !default;
-/// color||Color|0
-$--switch-off-color: $--border-color-deep !default;
-/// fontSize||Font|1
-$--switch-font-size: $--font-size-base !default;
-$--switch-core-border-radius: 11px !default;
-// height||Other|4
-$--switch-width: 44px !default;
-// height||Other|4
-$--switch-height: 22px !default;
-// height||Other|4
-$--switch-button-size: 18px !default;
-
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-white !default;
@@ -820,12 +817,11 @@ $--rate-icon-color: $--color-text-placeholder !default;
 /* DatePicker
 -------------------------- */
 $--datepicker-font-color: $text-content !default;
-/// color|1|Color|0
-$--datepicker-off-font-color: $--color-text-placeholder !default;
-/// color||Color|0
+$--datepicker-off-font-color: $disabled-font-color !default;
 $--datepicker-header-font-color: $text-content !default;
 $--datepicker-icon-color: $--color-text-primary !default;
-$--datepicker-border-color: $--disabled-border-base !default;
+$--datepicker-border-color: $--border-color-base !default;
+
 $--datepicker-inner-border-color: #e4e4e4 !default;
 /// color||Color|0
 $--datepicker-inrange-background-color: $--border-color-extra-light !default;

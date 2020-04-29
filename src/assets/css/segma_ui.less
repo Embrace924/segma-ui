@@ -320,6 +320,67 @@
 
 /* 开关结束 */
 
+/* 日期时间选择器开始 */
+.el-time-panel {
+    border: none;
+    width: 152px;
+
+    .el-time-spinner__wrapper {
+        &.el-scrollbar {
+            .el-scrollbar__thumb {
+                background-color: #b6bece;
+            }
+        }
+    }
+
+    .el-time-panel__content {
+        &::after {
+            margin-top: -84px;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        &::before {
+            margin: -84px 0 0 0;
+            border-top: none;
+            border-bottom: none;
+            background-color: #f0f7ff;
+        }
+    }
+
+    .el-time-spinner__list {
+        border-right: 1px solid @border-color-base;
+
+        &::after {
+            height: 10px;
+        }
+
+        &::before {
+            height: 10px;
+        }
+
+        .el-time-spinner__item {
+            font-size: 14px;
+
+            &:hover:not(.disabled):not(.active) {
+                color: @primary;
+                background-color: transparent;
+            }
+
+            &.active {
+                color: @primary;
+            }
+        }
+    }
+
+    .el-time-panel__footer {
+        border-top: 1px solid @border-color-base;
+        height: 32px;
+        text-align: center;
+    }
+}
+
+/* 日期时间选择器结束 */
 //
 ///* 弹窗开始 */
 //.el-dialog__wrapper {
