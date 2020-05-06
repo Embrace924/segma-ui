@@ -535,10 +535,6 @@
         padding: 12px 0;
         font-weight: bold;
 
-        &.is-leaf {
-            //border-bottom: none;
-        }
-
         &.is-sortable .cell {
             position: relative;
         }
@@ -565,11 +561,21 @@
                     background-color: rgba(245, 246, 250, 0.4);
                 }
             }
+
+            &:hover > td {
+                background-color: #f0f4ff;
+            }
         }
     }
 
-    &.el-table--striped .el-table__body tr.el-table__row--striped td {
-        background-color: rgba(245, 246, 250, 0.4);
+    &.el-table--striped .el-table__body tr {
+        &.el-table__row--striped td {
+            background-color: rgba(245, 246, 250, 0.4);
+        }
+
+        &:hover > td {
+            background-color: #f0f4ff;
+        }
     }
 
     /* hover tooltip手势 */
