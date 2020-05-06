@@ -26,7 +26,7 @@
             </el-form>
             <span slot="footer"
                   class="dialog-footer">
-                        <el-button plain
+                        <el-button type="info"
                                    size="small"
                                    @click="dialogVisible = false">取 消</el-button>
                         <el-button type="primary"

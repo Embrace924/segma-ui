@@ -18,6 +18,7 @@
 
 @--color-text-placeholder: #aaafb5;
 @input-icon-color: #828992;
+@header-bg: #f5f6fa;
 //@colorlist: @primary, @danger, @warning, @success;
 //@colorTypelist: primary, danger, warning, success;
 //@messageTypelist: info, danger, warning, success;
@@ -27,9 +28,9 @@
 
 /* 按钮样式开始 */
 .el-button {
-    min-width: 76px;
-
     &--default {
+        min-width: 76px;
+
         &:hover, &:focus {
             border-color: @primary;
             color: @primary;
@@ -48,6 +49,8 @@
     }
 
     &--primary {
+        min-width: 60px;
+
         &:hover, &:focus, &:active {
             border-color: @primary-hover;
             color: @white;
@@ -371,60 +374,56 @@
 /* 日期时间选择器结束 */
 //
 ///* 弹窗开始 */
-//.el-dialog__wrapper {
-//    text-align: center;
-//}
-//
-//.el-dialog__wrapper::after {
-//    display: inline-block;
-//    width: 0;
-//    vertical-align: middle;
-//    content: "";
-//}
-//
-//.el-dialog {
-//    display: inline-block;
-//    margin-top: 0 !important;
-//    border-radius: 4px;
-//    max-width: calc(100% - 98px);
-//    max-height: calc(100% - 98px);
-//    text-align: left;
-//    vertical-align: middle;
-//    background-color: #ffffff;
-//
-//    .el-dialog__header {
-//        border-top-left-radius: 4px;
-//        border-top-right-radius: 4px;
-//        padding: 12px 16px;
-//        text-align: left;
-//        background-color: extract(@primary, 10);
-//
-//        .el-dialog__title {
-//            font-weight: bold;
-//            color: rgba(@black, 0.85);
-//        }
-//
-//        .el-dialog__headerbtn {
-//            i {
-//                font-size: 20px;
-//                font-weight: bold;
-//                color: rgba(@black, 0.45);
-//            }
-//        }
-//    }
-//
-//    .el-dialog__body {
-//        border-bottom: 1px solid rgba(@black, 0.09);
-//        padding: 0;
-//    }
-//
-//    .el-dialog__footer {
-//        padding: 10px 24px;
-//        height: 52px;
-//        color: rgba(@black, 0.65);
-//    }
-//}
-//
+.el-dialog__wrapper {
+    text-align: center;
+}
+
+.el-dialog__wrapper::after {
+    display: inline-block;
+    width: 0;
+    vertical-align: middle;
+    content: "";
+}
+
+.el-dialog {
+    display: inline-block;
+    border-radius: 4px;
+    max-width: calc(100% - 98px);
+    text-align: left;
+    background-color: #ffffff;
+
+    .el-dialog__header {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 11px 16px;
+        text-align: left;
+        background-color: @header-bg;
+
+        .el-dialog__title {
+            font-weight: bold;
+            color: @text-title;
+        }
+
+        .el-dialog__headerbtn {
+            i {
+                font-size: 20px;
+                font-weight: bold;
+                color: @text-title;
+            }
+        }
+    }
+
+    .el-dialog__body {
+        padding: 0;
+    }
+
+    .el-dialog__footer {
+        padding: 0 24px 12px 24px;
+        height: 42px;
+        color: @text-title;
+    }
+}
+
 ///* 弹窗结束 */
 //
 ///* alert开始 */
