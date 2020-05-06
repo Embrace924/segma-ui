@@ -81,7 +81,7 @@ export default {
 <style lang="less">
 .radio {
     padding: 0 20px;
-    text-align: left;
+    text-align: center;
 
     > label {
         margin-bottom: 20px;
@@ -93,4 +93,3 @@ export default {
 }
 </style>
 
- 

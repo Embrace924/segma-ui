@@ -16,6 +16,8 @@ export default {
     data() {
         return {
             arr: [
+                'Input', 'Radio', 'Checkbox', 'Switch', 'DatePicker',
+                'Select', 'Button',
                 'Pagination',
                 'Dialog',
                 // Autocomplete,
@@ -26,23 +28,22 @@ export default {
                 // Submenu,
                 // MenuItem,
                 // MenuItemGroup,
-                'Input',
+
                 // InputNumber,
-                'Radio',
+
                 // RadioGroup,
                 // RadioButton,
-                'Checkbox',
+
                 // CheckboxButton,
                 // CheckboxGroup,
-                'Switch',
-                'Select',
+
                 // Option,
                 // OptionGroup,
-                'Button',
+
                 // ButtonGroup,
                 'Table',
                 // TableColumn,
-                'DatePicker',
+
                 // 'TimeSelect',
                 // 'TimePicker',
                 // Popover,

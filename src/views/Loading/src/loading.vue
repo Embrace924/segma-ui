@@ -6,21 +6,54 @@
              :style="{ backgroundColor: background || '' }"
              :class="[customClass, { 'is-fullscreen': fullscreen }]">
             <div class="el-loading-spinner">
-                <svg class="load-flower" version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 30 30" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle class="path1"  cx="7.5" cy="7.5" r="5" stroke="black"
-                        stroke-width="0" fill="#1890ff" opacity="0.9"     />
-                    <circle class="path2"  cx="21.5" cy="7.5" r="5" stroke="black"
-                        stroke-width="0"  fill="#1890ff" opacity="0.7"  />
-                    <circle class="path3"  cx="7.5" cy="21.5" r="5" stroke="black"
-                        stroke-width="0"  fill="#1890ff" opacity="0.5"/>
-                    <circle class="path4" cx="21.5" cy="21.5" r="5" stroke="black"
-                        stroke-width="0"  fill="#1890ff" opacity="0.2"/>
+                <svg class="load-flower"
+                     version="1.1"
+                     id="L7"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 30 30"
+                     enable-background="new 0 0 100 100"
+                     xml:space="preserve">
+                    <circle class="path1"
+                            cx="7.5"
+                            cy="7.5"
+                            r="5"
+                            stroke="black"
+                            stroke-width="0"
+                            fill="#1890ff"
+                            opacity="0.9" />
+                    <circle class="path2"
+                            cx="21.5"
+                            cy="7.5"
+                            r="5"
+                            stroke="black"
+                            stroke-width="0"
+                            fill="#1890ff"
+                            opacity="0.7" />
+                    <circle class="path3"
+                            cx="7.5"
+                            cy="21.5"
+                            r="5"
+                            stroke="black"
+                            stroke-width="0"
+                            fill="#1890ff"
+                            opacity="0.5" />
+                    <circle class="path4"
+                            cx="21.5"
+                            cy="21.5"
+                            r="5"
+                            stroke="black"
+                            stroke-width="0"
+                            fill="#1890ff"
+                            opacity="0.2" />
                 </svg>
-                <i v-else
-                   :class="spinner"></i>
                 <p v-if="text"
                    class="el-loading-text">{{ text }}</p>
+                <i v-else
+                   :class="spinner"></i>
+
             </div>
         </div>
     </transition>
