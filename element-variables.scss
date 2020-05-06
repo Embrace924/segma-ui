@@ -50,6 +50,8 @@ $text-title: #222222;
 $text-content: #5d6470;
 
 $table-tr-hover: #f0f4ff;
+$table-th-bg: #f5f6fa;
+$table-border-color: #eff0f4;
 $disabled-bg: #f3f4f6;
 $disabled-font-color: #aaafb5;
 $input-icon-color: #828992;
@@ -645,17 +647,17 @@ $--dialog-padding-primary: 16px !default;
 /* Table
 -------------------------- */
 /// color||Color|0
-$--table-border-color: rgba(0, 0, 0, 0.09) !default;
+$--table-border-color: $table-border-color !default;
 $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
-$--table-font-color: $--color-info !default;
+$--table-font-color: $text-title !default;
 /// color||Color|0
-$--table-header-font-color: $--color-font-black !default;
+$--table-header-font-color: $text-title !default;
 /// color||Color|0
-$--table-row-hover-background-color: rgba($--color-primary, 0.04) !default;
-$--table-current-row-background-color: rgba($--color-primary, 0.04) !default;
+$--table-row-hover-background-color: $table-tr-hover !default;
+$--table-current-row-background-color: $table-tr-hover !default;
 /// color||Color|0
-$--table-header-background-color: rgba(240, 246, 255, 1) !default;
+$--table-header-background-color: $table-th-bg !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 
 /* Pagination

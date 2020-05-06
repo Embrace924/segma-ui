@@ -65,6 +65,7 @@
                 background-color: #e9ebf0;
             }
         }
+
         &.is-loading {
             border-color: #869dd3;
             color: @white;
@@ -103,94 +104,6 @@
         margin-left: 8px;
     }
 }
-
-//.setBtnColor(@type,@color) {
-//    .el-button--@{type} {
-//        border-color: extract(@color, 5);
-//        color: @white;
-//        background: extract(@color, 5);
-//
-//        &:hover, &:focus {
-//            border-color: extract(@color, 4);
-//            color: @white;
-//            background-color: extract(@color, 4);
-//        }
-//
-//        &:active {
-//            border-color: extract(@color, 3);
-//            color: @white;
-//            background-color: extract(@color, 3);
-//        }
-//    }
-//
-//    .el-button--@{type}.is-plain {
-//        border-color: extract(@color, 9);
-//        color: extract(@color, 5);
-//        background: @white;
-//
-//        &:hover, &:focus {
-//            border-color: extract(@color, 9);
-//            color: extract(@color, 5);
-//            background-color: extract(@color, 10);
-//        }
-//
-//        &:active {
-//            border-color: extract(@color, 9);
-//            color: extract(@color, 5);
-//            background-color: extract(@color, 9);
-//        }
-//    }
-//}
-//
-//.el-button.is-plain {
-//    border-color: rgba(0, 0, 0, 0.15);
-//    color: rgba(@black, 0.85);
-//    background: @white;
-//
-//    &:hover, &:focus {
-//        border-color: extract(@primary, 5);
-//        color: extract(@primary, 5);
-//        background-color: @white;
-//    }
-//
-//    &:active {
-//        border-color: extract(@primary, 4);
-//        color: extract(@primary, 4);
-//        background-color: @white;
-//    }
-//}
-//
-
-//
-//.el-button.is-disabled {
-//    border-color: rgba(@black, 0.15);
-//    color: rgba(@black, 0.25);
-//    background: rgba(@black, 0.15);
-//    cursor: not-allowed;
-//
-//    &:hover, &:focus {
-//        border-color: rgba(@black, 0.15);
-//        color: rgba(@black, 0.25);
-//        background: rgba(@black, 0.15);
-//    }
-//
-//    &:active {
-//        border-color: rgba(@black, 0.15);
-//        color: rgba(@black, 0.25);
-//        background: rgba(@black, 0.15);
-//    }
-//}
-//
-//.el-button + .el-button {
-//    margin-left: 16px;
-//}
-//
-//.loopBtnColor(@i) when (@i < (length(@colorlist)+1)) {
-//    .setBtnColor(extract(@colorTypelist, @i), extract(@colorlist, @i));
-//    .loopBtnColor(@i+1);
-//}
-//
-//.loopBtnColor(1);
 
 /* 按钮样式结束 */
 
@@ -612,99 +525,128 @@
 }
 
 /* 分页按钮结束 */
-//
+
 ///* 表格样式开始 */
-//
-//.el-table {
-//    border-radius: 4px;
-//
-//    th.is-leaf {
-//        border-bottom: none;
-//    }
-//
-//    .cell, th > .cell, th:first-child .cell, td:first-child .cell {
-//        padding: 0 12px;
-//    }
-//
-//    th.is-sortable .cell {
-//        position: relative;
-//    }
-//
-//    th {
-//        font-weight: bold;
-//    }
-//
-//    th, td {
-//        padding: 12px 0;
-//    }
-//
-//    /* hover tooltip手势 */
-//    .el-tooltip {
-//        cursor: pointer;
-//    }
-//
-//    /* 无数据的展示 */
-//    .el-table__empty-text {
-//        display: block;
-//        padding: 61px 0 20px 0;
-//        text-align: center;
-//        color: rgba(204, 204, 204, 1);
-//        background-image: url('../images/table/tableNoData.png');
-//        background-repeat: no-repeat;
-//        background-position: center 42px;
-//        background-size: 28px 32px;
-//    }
-//
-//    /* 排序 */
-//    .caret-wrapper {
-//        margin-left: 10px;
-//        width: 24px;
-//        height: 24px;
-//    }
-//
-//    .sort-caret {
-//        display: inline-block;
-//        position: absolute;
-//        top: 0;
-//        border: none;
-//        width: 10px;
-//        height: 20px;
-//        background-repeat: no-repeat;
-//        background-position: center top;
-//        background-size: 30px 20px;
-//    }
-//
-//    .sort-caret.ascending {
-//        top: 1px;
-//        left: 0;
-//        border-bottom-color: transparent;
-//        background-image: url("../images/table/sortUp.svg");
-//    }
-//
-//    .sort-caret.descending {
-//        top: 1px;
-//        left: 10px;
-//        border-top-color: transparent;
-//        background-image: url("../images/table/sortDown.svg");
-//    }
-//
-//    .ascending .sort-caret.ascending {
-//        border-bottom-color: transparent;
-//        background-image: url("../images/table/sortUpActive.svg");
-//    }
-//
-//    .descending .sort-caret.descending {
-//        border-top-color: transparent;
-//        background-image: url("../images/table/sortDownActive.svg");
-//    }
-//}
-//
-//.el-table--border {
-//    th, td {
-//        border-right: none;
-//    }
-//}
-//
+
+.el-table {
+    border-radius: 4px;
+
+    th {
+        padding: 12px 0;
+        font-weight: bold;
+
+        &.is-leaf {
+            //border-bottom: none;
+        }
+
+        &.is-sortable .cell {
+            position: relative;
+        }
+    }
+
+    .cell, th > .cell, th:first-child .cell, td:first-child .cell {
+        padding: 0 12px;
+    }
+
+    td {
+        padding: 12px 0;
+    }
+
+    &.slide-border.el-table--border {
+        th, td {
+            border-right: none;
+        }
+    }
+
+    &.stripe-col {
+        tr {
+            td {
+                &:nth-child(2n-1) {
+                    background-color: rgba(245, 246, 250, 0.4);
+                }
+            }
+        }
+    }
+
+    &.el-table--striped .el-table__body tr.el-table__row--striped td {
+        background-color: rgba(245, 246, 250, 0.4);
+    }
+
+    /* hover tooltip手势 */
+    .el-tooltip {
+        cursor: pointer;
+    }
+
+    /* 无数据的展示 */
+    .el-table__empty-text {
+        display: block;
+        padding: 61px 0 20px 0;
+        text-align: center;
+        color: rgba(204, 204, 204, 1);
+        background-image: url('../images/table/tableNoData.png');
+        background-repeat: no-repeat;
+        background-position: center 42px;
+        background-size: 28px 32px;
+    }
+
+    .el-table--border {
+        th, td {
+            border-right: none;
+        }
+    }
+
+    /* 排序 */
+    .caret-wrapper {
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .sort-caret {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        border: none;
+        width: 10px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 30px 20px;
+
+        &.ascending {
+            top: 1px;
+            left: 0;
+            border-bottom-color: transparent;
+            background-image: url("../images/table/sortUp.svg");
+        }
+
+        &.descending {
+            top: 1px;
+            left: 10px;
+            border-top-color: transparent;
+            background-image: url("../images/table/sortDown.svg");
+        }
+    }
+
+    .ascending {
+        .sort-caret {
+            &.ascending {
+                border-bottom-color: transparent;
+                background-image: url("../images/table/sortUpActive.svg");
+            }
+        }
+    }
+
+    .descending {
+        .sort-caret {
+            &.descending {
+                border-top-color: transparent;
+                background-image: url("../images/table/sortDownActive.svg");
+            }
+        }
+    }
+}
+
 ///* 表格样式结束 */
 //
 ///* Message 样式开始 */
