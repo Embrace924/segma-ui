@@ -16,7 +16,7 @@ module.exports = {
         'font-family-no-missing-generic-family-keyword': null, // 禁止在字体系列名称列表中缺少通用族：允许
         'selector-list-comma-newline-after': 'never-multi-line',
         // 'comment-whitespace-inside': 'never', // 注释的代码前后是否需要空格
-
+        'no-descending-specificity': null,//多个同class 出现 顺序 不限制
         /* order插件配置 */
         'order/properties-alphabetical-order': null,
         // http://alloyteam.github.io/CodeGuide/#css-declaration-order
