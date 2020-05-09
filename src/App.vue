@@ -16,8 +16,13 @@ export default {
     data() {
         return {
             arr: [
-                'Input', 'Radio', 'Checkbox', 'Switch', 'DatePicker',
-                'Select', 'Button',
+                'Input',
+                'Radio',
+                'Checkbox',
+                'Switch',
+                'DatePicker',
+                'Select',
+                'Button',
                 'Pagination',
                 'Dialog',
                 // Autocomplete,
@@ -47,7 +52,8 @@ export default {
                 // 'TimeSelect',
                 // 'TimePicker',
                 // Popover,
-               'Tooltip',
+                'Tooltip',
+                'Toast',
                 // Breadcrumb,
                 // BreadcrumbItem,
                 // Form,
