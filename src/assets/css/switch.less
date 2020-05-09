@@ -1,0 +1,23 @@
+/* 开关开始 */
+
+.el-switch {
+    &.is-disabled {
+        opacity: 1;
+
+        .el-switch__core {
+            border: 1px solid rgba(@border-color-deep, 0);
+            background: rgba(@border-color-deep, 0.65);
+
+            &::after {
+                background: rgba(@white, 0.75);
+            }
+        }
+
+        &.is-checked {
+            .el-switch__core {
+                border: 1px solid rgba(@primary, 0);
+                background: rgba(@primary, 0.35);
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+/* 输入框 下拉框样式开始 */
+.el-input__inner {
+    padding: 0 12px;
+
+    &.is-active, &:focus {
+        box-shadow: 0 0 4px 0 rgba(117, 162, 255, 0.7);
+    }
+}
+
+.el-input {
+    .el-input-group__prepend, .el-input-group__append {
+        color: @text-title;
+
+        .el-input--prefix {
+            .el-input__inner {
+                padding-left: 30px;
+            }
+        }
+
+        .el-select {
+            .el-input__inner {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .el-input__suffix {
+        margin-top: 2px;
+
+        .el-input__suffix-inner {
+            .el-input__icon {
+                position: absolute;
+                right: 5px;
+                height: calc(100% - 4px);
+            }
+
+            .el-icon-circle-close {
+                background-color: #ffffff;
+
+                &::before {
+                    content: "\E79D";
+                }
+            }
+        }
+    }
+
+    &.el-input--small {
+        .el-input__suffix {
+            .el-input__icon {
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+.el-textarea {
+    .el-input__count {
+        color: @input-icon-color;
+    }
+
+    .el-textarea__inner {
+        &:focus {
+            box-shadow: 0 0 4px 0 rgba(117, 162, 255, 0.7);
+        }
+    }
+
+    .el-input {
+        &.el-input--prefix {
+            .el-input__inner {
+                padding-left: 30px;
+            }
+        }
+
+        &.el-input--suffix {
+            .el-input__inner {
+                padding-right: 30px;
+            }
+        }
+
+        .el-input__inner {
+            padding: 0 12px;
+        }
+    }
+}

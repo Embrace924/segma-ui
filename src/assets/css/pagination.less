@@ -1,0 +1,53 @@
+/* 分页按钮开始 */
+.el-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+    span:not([class*=suffix]), button {
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .el-pager {
+        li {
+            &.number {
+                margin: 0 10px;
+                font-weight: normal;
+
+                &:hover, &.active {
+                    border-radius: 2px;
+                    color: @white;
+                    background-color: @primary;
+                }
+            }
+
+            &.btn-quicknext, &.btn-quickprev {
+                color: @text-content;
+            }
+        }
+
+        .more {
+            line-height: 20px;
+
+            &::before {
+                line-height: 20px;
+            }
+        }
+    }
+
+    .btn-next, .btn-prev {
+        color: @text-title;
+    }
+}
+
+.el-pagination button:disabled {
+    background-color: transparent;
+}
+
+.el-pagination__editor.el-input .el-input__inner {
+    height: 28px;
+}
+
+/* 分页按钮结束 */

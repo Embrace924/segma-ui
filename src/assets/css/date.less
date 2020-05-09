@@ -1,0 +1,368 @@
+/* 日期时间选择器开始 */
+.el-time-panel {
+    border: none;
+    width: 152px;
+
+    .el-time-spinner__wrapper {
+        &.el-scrollbar {
+            .el-scrollbar__thumb {
+                background-color: #b6bece;
+            }
+        }
+    }
+
+    .el-time-panel__content {
+        &::after {
+            margin-top: -84px;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        &::before {
+            margin: -84px 0 0 0;
+            border-top: none;
+            border-bottom: none;
+            background-color: #f0f7ff;
+        }
+    }
+
+    .el-time-spinner__list {
+        border-right: 1px solid @border-color-base;
+
+        &::after {
+            height: 10px;
+        }
+
+        &::before {
+            height: 10px;
+        }
+
+        .el-time-spinner__item {
+            font-size: 14px;
+
+            &:hover:not(.disabled):not(.active) {
+                color: @primary;
+                background-color: transparent;
+            }
+
+            &.active {
+                color: @primary;
+            }
+        }
+    }
+
+    .el-time-panel__footer {
+        border-top: 1px solid @border-color-base;
+        height: 32px;
+        text-align: center;
+    }
+}
+
+.el-picker-panel {
+    border: none;
+    color: @text-title;
+    box-shadow: 0 4px 12px 0 rgba(82, 92, 108, 0.16);
+
+    .el-picker-panel__body-wrapper {
+        padding: 16px;
+    }
+
+    .el-date-picker__header {
+        margin: 0;
+
+        .el-date-picker__header-label {
+            color: @text-title;
+        }
+
+        .el-picker-panel__icon-btn {
+            color: #828992;
+        }
+    }
+
+    .el-picker-panel__content {
+        margin: 0;
+        padding: 0;
+        color: @text-title;
+
+        .el-year-table {
+            td {
+                .cell {
+                    width: 58px;
+                    height: 28px;
+                    line-height: 28px;
+                    color: @text-title;
+                }
+
+                &:hover {
+                    .cell {
+                        border-radius: 4px;
+                        color: #5374c0;
+                        background-color: #f0f7ff;
+                    }
+                }
+            }
+
+            .available {
+                &.current:not(.disabled) {
+                    .cell {
+                        border-radius: 4px;
+                        color: #ffffff;
+                        background-color: #5374c0;
+                    }
+                }
+
+                &.today {
+                    .cell {
+                        border-radius: 4px;
+                        font-weight: normal;
+                        color: #5374c0;
+                        background-color: #f0f7ff;
+                    }
+                }
+            }
+        }
+
+        .el-month-table {
+            td {
+                .cell {
+                    width: 58px;
+                    height: 28px;
+                    line-height: 28px;
+                    color: @text-title;
+                }
+
+                &:hover {
+                    .cell {
+                        border-radius: 4px;
+                        color: #5374c0;
+                        background-color: #f0f7ff;
+                    }
+                }
+            }
+
+            .current:not(.disabled) {
+                .cell {
+                    border-radius: 4px;
+                    color: #ffffff;
+                    background-color: #5374c0;
+                }
+            }
+
+            .today {
+                .cell {
+                    border-radius: 4px;
+                    font-weight: normal;
+                    color: #5374c0;
+                    background-color: #f0f7ff;
+                }
+            }
+        }
+
+        .el-date-table {
+            .el-range-input {
+                color: @text-title;
+            }
+
+            th {
+                border-bottom: none;
+                padding: 5px 15px;
+                font-weight: 500;
+                color: @text-title;
+            }
+
+            td {
+                height: 32px;
+
+                .disabled {
+                    > div {
+                        background-color: #f3f4f6;
+                    }
+                }
+
+                > div {
+                    padding: 0;
+                    height: 32px;
+                }
+
+                span {
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                }
+
+                &:hover:not(.disabled) {
+                    span {
+                        background-color: #f0f7ff;
+                    }
+                }
+            }
+
+            .available {
+                &.current:not(.disabled) {
+                    &:hover {
+                        span {
+                            color: #ffffff;
+                            background-color: #5374c0;
+                        }
+                    }
+                }
+
+                &.end-date, &.start-date {
+                    span {
+                        color: #ffffff;
+                        background-color: #5374c0;
+                    }
+
+                    &:hover {
+                        span {
+                            color: #ffffff;
+                            background-color: #5374c0;
+                        }
+                    }
+                }
+            }
+
+            .today {
+                span {
+                    font-weight: 500;
+                    background-color: #f0f7ff;
+                }
+            }
+
+            &.is-week-mode {
+                .el-date-table__row {
+                    &:hover {
+                        .available {
+                            span {
+                                border-radius: 50%;
+                                color: #5374c0;
+                                background-color: #f0f7ff;
+                            }
+                        }
+                    }
+
+                    &.current {
+                        &:hover {
+                            span {
+                                border-radius: 50%;
+                                color: #ffffff;
+                                background-color: #5374c0;
+                            }
+                        }
+
+                        td {
+                            &:hover {
+                                span {
+                                    color: #ffffff;
+                                    background-color: #5374c0;
+                                }
+                            }
+                        }
+
+                        .available, .next-month {
+                            &.today {
+                                span {
+                                    color: #ffffff;
+                                    background-color: #5374c0;
+                                }
+                            }
+
+                            > div {
+                                color: #ffffff;
+                                background-color: #5374c0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.has-sidebar {
+        &.el-date-picker {
+            padding-bottom: 32px;
+            width: 320px;
+        }
+
+        &.el-date-range-picker {
+            padding-bottom: 40px;
+            width: 646px;
+        }
+
+        .el-picker-panel__sidebar {
+            display: flex;
+            top: 340px;
+            left: 0;
+            border-right: none;
+            padding-top: 0;
+            justify-content: space-between;
+            width: 100%;
+            height: 40px;
+            background-color: #f9fafd;
+
+            .el-picker-panel__shortcut {
+                line-height: 32px;
+                text-align: center;
+            }
+        }
+
+        .el-picker-panel__body {
+            margin-left: 0;
+        }
+    }
+}
+
+//处理时间日历图标和清空图标的位置
+.el-date-editor {
+    &.el-input--suffix {
+        .el-input__suffix {
+            margin-top: 2px;
+            height: calc(100% - 4px);
+            background-color: #ffffff;
+
+            .el-icon-circle-close {
+                &::before {
+                    content: "\E79D";
+                }
+            }
+        }
+    }
+
+    &.el-input--prefix {
+        .el-input__inner {
+            padding-left: 12px;
+        }
+
+        .el-input__prefix {
+            right: 5px;
+            left: auto;
+        }
+    }
+}
+
+//处理时间范围日历图标和清空图标的位置
+.el-range-editor {
+    .el-icon-date {
+        position: absolute;
+        right: 5px;
+        left: auto;
+        margin-top: 2px;
+        height: calc(100% - 4px);
+    }
+
+    .el-range__close-icon {
+        position: absolute;
+        right: 5px;
+        left: auto;
+        margin-top: 2px;
+        height: calc(100% - 4px);
+
+        &.el-icon-circle-close {
+            background-color: #ffffff;
+
+            &::before {
+                content: "\E79D";
+            }
+        }
+    }
+}

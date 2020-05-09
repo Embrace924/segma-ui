@@ -1,0 +1,51 @@
+///* 弹窗开始 */
+.el-dialog__wrapper {
+    text-align: center;
+}
+
+.el-dialog__wrapper::after {
+    display: inline-block;
+    width: 0;
+    vertical-align: middle;
+    content: "";
+}
+
+.el-dialog {
+    display: inline-block;
+    border-radius: 4px;
+    max-width: calc(100% - 98px);
+    text-align: left;
+    background-color: #ffffff;
+
+    .el-dialog__header {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 11px 16px;
+        text-align: left;
+        background-color: @header-bg;
+
+        .el-dialog__title {
+            font-weight: bold;
+            color: @text-title;
+        }
+
+        .el-dialog__headerbtn {
+            i {
+                font-size: 20px;
+                font-weight: bold;
+                color: @text-title;
+            }
+        }
+    }
+
+    .el-dialog__body {
+        padding: 0;
+    }
+
+    .el-dialog__footer {
+        padding: 0 24px 12px 24px;
+        height: 42px;
+        color: @text-title;
+    }
+}
+

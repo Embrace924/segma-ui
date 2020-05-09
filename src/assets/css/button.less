@@ -1,0 +1,83 @@
+/* 按钮样式开始 */
+.el-button {
+    &--default {
+        min-width: 76px;
+
+        &:hover, &:focus {
+            border-color: @primary;
+            color: @primary;
+            background-color: transparent;
+        }
+
+        &.is-disabled {
+            background-color: @disabled-bg;
+
+            &:hover, &:focus {
+                border-color: @border-disabled-color;
+                color: @disabled-font-color;
+                background-color: @disabled-bg;
+            }
+        }
+    }
+
+    &--primary {
+        min-width: 60px;
+
+        &:hover, &:focus, &:active {
+            border-color: @primary-hover;
+            color: @white;
+            background-color: @primary-hover;
+        }
+
+        &.is-disabled {
+            border-color: #e9ebf0;
+            color: @disabled-font-color;
+            background-color: #e9ebf0;
+
+            &:hover, &:focus, &:active {
+                border-color: #e9ebf0;
+                color: @disabled-font-color;
+                background-color: #e9ebf0;
+            }
+        }
+
+        &.is-loading {
+            border-color: #869dd3;
+            color: @white;
+            background: #869dd3;
+        }
+    }
+
+    &--info {
+        &:hover, &:focus, &:active {
+            border-color: #e9ebf0;
+            color: @text-title;
+            background-color: #e9ebf0;
+        }
+
+        &.is-disabled {
+            border-color: #e9ebf0;
+            color: @disabled-font-color;
+            background-color: #e9ebf0;
+
+            &:hover, &:focus, &:active {
+                border-color: #e9ebf0;
+                color: @disabled-font-color;
+                background-color: #e9ebf0;
+            }
+        }
+
+        &.is-loading {
+            border-color: #e9ebf0;
+            color: @text-title;
+            background: #e9ebf0;
+        }
+    }
+
+    //icon与文字的间距
+    [class*=el-icon-] + span {
+        margin-left: 8px;
+    }
+}
+
+/* 按钮样式结束 */

@@ -33,7 +33,7 @@ let Arr = [
     // 'TimeSelect',
     // 'TimePicker',
     // Popover,
-    // Tooltip,
+    'Tooltip',
     // Breadcrumb,
     // BreadcrumbItem,
     // Form,

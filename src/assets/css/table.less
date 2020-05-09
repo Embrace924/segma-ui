@@ -1,0 +1,126 @@
+//* 表格样式开始 */
+
+.el-table {
+    border-radius: 4px;
+
+    th {
+        padding: 12px 0;
+        font-weight: bold;
+
+        &.is-sortable .cell {
+            position: relative;
+        }
+    }
+
+    .cell, th > .cell, th:first-child .cell, td:first-child .cell {
+        padding: 0 12px;
+    }
+
+    td {
+        padding: 12px 0;
+    }
+
+    &.slide-border.el-table--border {
+        th, td {
+            border-right: none;
+        }
+    }
+
+    &.stripe-col {
+        tr {
+            td {
+                &:nth-child(2n-1) {
+                    background-color: rgba(245, 246, 250, 0.4);
+                }
+            }
+
+            &:hover > td {
+                background-color: #f0f4ff;
+            }
+        }
+    }
+
+    &.el-table--striped .el-table__body tr {
+        &.el-table__row--striped td {
+            background-color: rgba(245, 246, 250, 0.4);
+        }
+
+        &:hover > td {
+            background-color: #f0f4ff;
+        }
+    }
+
+    /* hover tooltip手势 */
+    .el-tooltip {
+        cursor: pointer;
+    }
+
+    /* 无数据的展示 */
+    .el-table__empty-text {
+        display: block;
+        padding: 61px 0 20px 0;
+        text-align: center;
+        color: rgba(204, 204, 204, 1);
+        background-image: url('../images/table/tableNoData.png');
+        background-repeat: no-repeat;
+        background-position: center 42px;
+        background-size: 28px 32px;
+    }
+
+    .el-table--border {
+        th, td {
+            border-right: none;
+        }
+    }
+
+    /* 排序 */
+    .caret-wrapper {
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .sort-caret {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        border: none;
+        width: 10px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 30px 20px;
+
+        &.ascending {
+            top: 1px;
+            left: 0;
+            border-bottom-color: transparent;
+            background-image: url("../images/table/sortUp.svg");
+        }
+
+        &.descending {
+            top: 1px;
+            left: 10px;
+            border-top-color: transparent;
+            background-image: url("../images/table/sortDown.svg");
+        }
+    }
+
+    .ascending {
+        .sort-caret {
+            &.ascending {
+                border-bottom-color: transparent;
+                background-image: url("../images/table/sortUpActive.svg");
+            }
+        }
+    }
+
+    .descending {
+        .sort-caret {
+            &.descending {
+                border-top-color: transparent;
+                background-image: url("../images/table/sortDownActive.svg");
+            }
+        }
+    }
+}

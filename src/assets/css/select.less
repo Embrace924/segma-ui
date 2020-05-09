@@ -1,0 +1,69 @@
+/* 下拉框样式开始 */
+
+.el-select {
+    width: 100%;
+
+    .el-input.is-disabled {
+        .el-input__inner {
+            &:hover {
+                border-color: @border-color-base;
+            }
+        }
+    }
+
+    .el-tag {
+        &.el-tag--info {
+            border-color: @border-color-base;
+            color: @text-title;
+            background-color: #f9fafd;
+
+            .el-icon-close {
+                top: -1px;
+                right: -4px;
+                font-size: 14px;
+                font-weight: bold;
+                color: @text-title;
+            }
+
+            .el-tag__close {
+                &.el-icon-close {
+                    background-color: transparent;
+
+                    &:hover {
+                        color: @primary;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .el-tag--mini {
+        height: 22px;
+        line-height: 22px;
+    }
+
+    .el-input .el-input__inner {
+        padding: 0 30px 0 12px;
+    }
+}
+
+.el-select-dropdown__item {
+    &.selected {
+        font-weight: normal;
+
+        &::after {
+            font-size: 14px;
+        }
+    }
+
+    &.is-disabled {
+        &:hover {
+            color: @disabled-font-color;
+        }
+    }
+
+    &:hover {
+        color: @primary;
+    }
+}

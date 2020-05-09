@@ -1,0 +1,23 @@
+/* 单选框开始 */
+
+.el-radio {
+    &.is-disabled {
+        &.is-bordered {
+            border-color: @border-disabled-color;
+
+            &.is-checked {
+                background-color: @disabled-bg;
+            }
+        }
+    }
+}
+
+.el-radio-group {
+    .el-radio-button {
+        &.is-disabled {
+            .el-radio-button__inner {
+                background-color: @disabled-bg;
+            }
+        }
+    }
+}

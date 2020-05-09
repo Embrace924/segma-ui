@@ -1,25 +1,37 @@
 /**
  * Created by cld on 2020/2/7.
  */
+    // vue-cli参考教程：https://cli.vuejs.org/zh/config/
+const path = require('path');
+const resolve = dir => path.join(__dirname, dir);
+
+function addStyleResource(rule) {
+    rule.use('style-resource')
+        .loader('style-resources-loader')
+        .options({
+            patterns: [
+                resolve('src/assets/css/var.less')
+            ]
+        });
+}
+
 const antDesign = require('@ant-design/colors')
 module.exports = {
-    css: {
-        loaderOptions: {
-            scss: {
-                prependData: `$primary: ${antDesign.generate('#225BF6').reverse()};
-                $danger:${antDesign.generate('#FF3D3D').reverse()};
-                $warning:${antDesign.generate('#F68C22').reverse()};
-                $success:${antDesign.generate('#1EDB4E').reverse()};`
-            },
-            less: {
-                globalVars: {
-                    primary: antDesign.generate('#225BF6').reverse(),//colors是antDesign生成的全局数组文件
-                    danger: antDesign.generate('#FF3D3D').reverse(),
-                    warning: antDesign.generate('#F68C22').reverse(),
-                    success: antDesign.generate('#1EDB4E').reverse()
-                }
-            },
-        },
+    // 在htmlWebpackPlugin中增加环境变量，在index.html中使用
+    chainWebpack: config => {
+        // 添加别名
+        config.resolve.alias
+            .set('@', resolve('src'))
+            .set('@assets', resolve('src/assets'))
+            .set('@components', resolve('src/components'));
 
+        // 自动注入less变量、函数等
+        const types = [
+            'vue-modules',
+            'vue',
+            'normal-modules',
+            'normal'
+        ];
+        types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));
     },
 }

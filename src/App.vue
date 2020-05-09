@@ -47,7 +47,7 @@ export default {
                 // 'TimeSelect',
                 // 'TimePicker',
                 // Popover,
-                // Tooltip,
+               'Tooltip',
                 // Breadcrumb,
                 // BreadcrumbItem,
                 // Form,
