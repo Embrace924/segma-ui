@@ -1,12 +1,13 @@
 <!--Tooltip-->
 <template>
-    <div class="Tooltip">
+    <div class="tooltip">
         <div class="box">
             <div class="top">
                 <el-tooltip class="item"
                             effect="dark"
                             content="Top Left 提示文字"
-                            placement="top-start">
+                            placement="top-start"
+                            :hide-after="0">
                     <el-button size="small">上左</el-button>
                 </el-tooltip>
                 <el-tooltip class="item"
@@ -33,7 +34,7 @@
                             effect="dark"
                             content="Left Center 提示文字"
                             placement="left">
-                    <el-button>左边</el-button>
+                    <el-button size="small">左边</el-button>
                 </el-tooltip>
                 <el-tooltip class="item"
                             effect="dark"
@@ -109,36 +110,43 @@ export default {
 
 <style lang="less"
        scoped>
-.box {
-    margin: 0 auto;
-    width: 400px;
+.tooltip {
+    width: 100%;
+    height: 100%;
+    background-color: #dddddd;
 
-    .top {
-        text-align: center;
-    }
+    .box {
+        margin: 0 auto;
+        width: 400px;
 
-    .left {
-        float: left;
-        width: 60px;
-    }
+        .top {
+            text-align: center;
+        }
 
-    .right {
-        float: right;
-        width: 60px;
-    }
+        .left {
+            float: left;
+            width: 60px;
+        }
 
-    .bottom {
-        clear: both;
-        text-align: center;
-    }
+        .right {
+            float: right;
+            width: 60px;
+        }
 
-    .item {
-        margin: 4px;
-    }
+        .bottom {
+            clear: both;
+            text-align: center;
+        }
 
-    .left .el-tooltip__popper, .right .el-tooltip__popper {
-        padding: 8px 10px;
+        .item {
+            margin: 4px;
+        }
+
+        .left .el-tooltip__popper, .right .el-tooltip__popper {
+            padding: 8px 10px;
+        }
     }
 }
+
 </style>
  

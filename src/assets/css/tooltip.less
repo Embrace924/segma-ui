@@ -1,0 +1,34 @@
+.el-tooltip__popper {
+    padding: 8px;
+    font-size: 14px;
+
+    &.is-dark {
+        border-radius: 2px;
+        background: rgba(0, 0, 0, 0.75);
+        box-shadow: 0 4px 12px rgba(#525C6C, 0.12);
+    }
+
+    &[x-placement^="bottom"] {
+        .popper__arrow {
+            border-bottom-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    &[x-placement^="right"] {
+        .popper__arrow {
+            border-right-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    &[x-placement^="top"] {
+        .popper__arrow {
+            border-top-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    &[x-placement^="left"] {
+        .popper__arrow {
+            border-left-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+}
