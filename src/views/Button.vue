@@ -7,6 +7,10 @@
                    size="small"
                    icon="el-icon-search">主按钮带icon
         </el-button>
+        <el-button type="primary"
+                   size="small"
+                   icon="el-icon-search">
+        </el-button>
         <el-button disabled
                    type="primary"
                    size="small">主按钮disabled
@@ -23,6 +27,10 @@
                    size="small"
                    icon="el-icon-search">次按钮带icon
         </el-button>
+        <el-button type="info"
+                   size="small"
+                   icon="el-icon-search">
+        </el-button>
         <el-button disabled
                    type="info"
                    size="small">次按钮disabled
@@ -37,6 +45,9 @@
         <el-button size="small"
                    icon="el-icon-search">普通按钮带icon
         </el-button>
+        <el-button size="small"
+                   icon="el-icon-search">
+        </el-button>
         <el-button disabled
                    size="small">普通按钮disable
         </el-button>
@@ -46,11 +57,24 @@
         <br>
 
 
-        <!--<el-button size="small"-->
-        <!--icon="el-icon-search"-->
-        <!--disabled>带icon按钮-->
-        <!--</el-button>-->
-
+        <el-button size="small"
+                   type="text">下载
+            <i class="el-icon-download"></i>
+        </el-button>
+        <el-button size="small"
+                   type="text"
+                   disabled>下载
+            <i class="el-icon-download"></i>
+        </el-button>
+        <el-button size="small"
+                   type="text">展开
+            <i class="el-icon-arrow-down"></i>
+        </el-button>
+        <el-button size="small"
+                   type="text"
+                   disabled>收起
+            <i class="el-icon-arrow-up"></i>
+        </el-button>
 
     </div>
 </template>
