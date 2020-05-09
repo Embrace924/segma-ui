@@ -2,6 +2,7 @@
     <div class="input">
         <el-input placeholder="请输入内容"
                   size="small"
+                  clearable
                   v-model="segmaInput.value1">
         </el-input>
         <el-input placeholder="请输入内容"
@@ -17,6 +18,7 @@
         <el-input size="small"
                   placeholder="请输入内容"
                   suffix-icon="el-icon-search"
+                  clearable
                   v-model="segmaInput.value1">
         </el-input>
         <el-input placeholder="请输入内容"

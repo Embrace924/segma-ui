@@ -137,6 +137,34 @@
             }
         }
     }
+
+    .el-input__suffix {
+        margin-top: 2px;
+
+        .el-input__suffix-inner {
+            .el-input__icon {
+                position: absolute;
+                right: 5px;
+                height: calc(100% - 4px);
+            }
+
+            .el-icon-circle-close {
+                background-color: #ffffff;
+
+                &::before {
+                    content: "\E79D";
+                }
+            }
+        }
+    }
+
+    &.el-input--small {
+        .el-input__suffix {
+            .el-input__icon {
+                line-height: 28px;
+            }
+        }
+    }
 }
 
 .el-textarea {
@@ -474,6 +502,10 @@
         }
 
         .el-date-table {
+            .el-range-input {
+                color: @text-title;
+            }
+
             th {
                 border-bottom: none;
                 padding: 5px 15px;
@@ -570,7 +602,7 @@
                             }
                         }
 
-                        .available {
+                        .available, .next-month {
                             &.today {
                                 span {
                                     color: #ffffff;
@@ -619,6 +651,61 @@
 
         .el-picker-panel__body {
             margin-left: 0;
+        }
+    }
+}
+
+//处理时间日历图标和清空图标的位置
+.el-date-editor {
+    &.el-input--suffix {
+        .el-input__suffix {
+            margin-top: 2px;
+            height: calc(100% - 4px);
+            background-color: #ffffff;
+
+            .el-icon-circle-close {
+                &::before {
+                    content: "\E79D";
+                }
+            }
+        }
+    }
+
+    &.el-input--prefix {
+        .el-input__inner {
+            padding-left: 12px;
+        }
+
+        .el-input__prefix {
+            right: 5px;
+            left: auto;
+        }
+    }
+}
+
+//处理时间范围日历图标和清空图标的位置
+.el-range-editor {
+    .el-icon-date {
+        position: absolute;
+        right: 5px;
+        left: auto;
+        margin-top: 2px;
+        height: calc(100% - 4px);
+    }
+
+    .el-range__close-icon {
+        position: absolute;
+        right: 5px;
+        left: auto;
+        margin-top: 2px;
+        height: calc(100% - 4px);
+
+        &.el-icon-circle-close {
+            background-color: #ffffff;
+
+            &::before {
+                content: "\E79D";
+            }
         }
     }
 }
