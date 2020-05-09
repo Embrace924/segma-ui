@@ -1,14 +1,18 @@
 /* 常用滚动条样式 */
-.scroll-bar(@width: 5px) {
+.scroll-bar(@width: 8px,@color:@scroll-bar-bg) {
     &::-webkit-scrollbar-thumb {
         z-index: 999;
         border-radius: 20px;
-        background-color: #dddddd;
+        background-color: @color;
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(136, 136, 136, 0.5);
+            background-color: rgba(@color, 0.8);
         }
+    }
+
+    &::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+        background-color: @scroll-bg;
     }
 
     &::-webkit-scrollbar {

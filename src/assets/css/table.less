@@ -3,6 +3,26 @@
 .el-table {
     border-radius: 4px;
 
+    &.el-table--scrollable-x, &.el-table--scrollable-y {
+        .is-scrolling-right, .is-scrolling-left, .is-scrolling-middle, .is-scrolling-none {
+            .scroll-bar();
+        }
+
+        .el-table__fixed, .el-table__fixed-right {
+            height: 100% !important;
+        }
+    }
+
+    &.el-table--scrollable-y {
+        .is-scrolling-none {
+            .scroll-bar();
+        }
+
+        .el-table__body {
+            width: 100%;
+        }
+    }
+
     th {
         padding: 12px 0;
         font-weight: bold;

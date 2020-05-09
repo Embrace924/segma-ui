@@ -10,7 +10,9 @@ function addStyleResource(rule) {
         .loader('style-resources-loader')
         .options({
             patterns: [
-                resolve('src/assets/css/var.less')
+                resolve('src/assets/css/var.less'),
+                resolve('src/assets/css/scroll.less')
+
             ]
         });
 }
