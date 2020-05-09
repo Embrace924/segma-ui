@@ -121,7 +121,6 @@
                   border
                   stripe>
             <el-table-column prop="date"
-                             sortable
                              label="日期">
             </el-table-column>
 
@@ -144,7 +143,6 @@
                   border
                   class="stripe-col">
             <el-table-column prop="date"
-                             sortable
                              label="日期">
             </el-table-column>
             <el-table-column prop="name"
