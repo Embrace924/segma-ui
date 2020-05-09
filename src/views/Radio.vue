@@ -80,7 +80,6 @@ export default {
 </script>
 <style lang="less">
 .radio {
-    padding: 0 20px;
     text-align: center;
 
     > label {

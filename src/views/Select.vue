@@ -86,7 +86,6 @@ export default {
 <style lang="less"
        scoped>
 .select {
-    margin: 0 auto;
     width: 300px;
 
     > div {

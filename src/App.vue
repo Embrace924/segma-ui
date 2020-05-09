@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Home|</router-link>
             <router-link :to="`/${item}`"
                          :key="item"
                          v-for=" item in arr"> {{item}}|
@@ -113,6 +112,10 @@ export default {
 @import "./assets/css/segma_ui.less";
 
 #app {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -121,15 +124,25 @@ export default {
 }
 
 #nav {
-    padding: 30px;
+    padding: 50px 30px;
+    width: 100px;
+    height: 100%;
 
     a {
+        display: block;
+        margin: 5px 0;
         font-weight: bold;
+        text-align: right;
         color: #2c3e50;
 
         &.router-link-exact-active {
             color: #42b983;
         }
     }
+}
+
+.segma-ui {
+    margin: 50px auto 10px auto;
+    width: calc(100% - 100px - 20px);
 }
 </style>

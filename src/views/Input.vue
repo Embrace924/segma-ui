@@ -71,7 +71,6 @@ export default {
 
 <style lang="less">
 .input {
-    margin: 0 auto;
     width: 500px;
 
     > div {

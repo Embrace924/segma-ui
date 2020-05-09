@@ -111,9 +111,6 @@ export default {
 <style lang="less"
        scoped>
 .tooltip {
-    width: 100%;
-    height: 100%;
-
     .box {
         margin: 0 auto;
         width: 400px;
