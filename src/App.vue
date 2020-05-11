@@ -60,6 +60,7 @@ export default {
                 // Tabs,
                 // TabPane,
                 'Tag',
+                'DropMenu',
                 // Tree,
                 // Alert,
                 // Slider,

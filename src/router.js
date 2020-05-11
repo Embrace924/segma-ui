@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 let Arr = [
-    'Pagination',
-    'Dialog',
+
     // Autocomplete,
     // Dropdown,
     // DropdownMenu,
@@ -33,6 +32,8 @@ let Arr = [
     // 'TimeSelect',
     // 'TimePicker',
     // Popover,
+    'Pagination',
+    'Dialog',
     'Tooltip',
     'Toast',
     // Breadcrumb,
@@ -42,6 +43,7 @@ let Arr = [
     // Tabs,
     // TabPane,
     'Tag',
+    'DropMenu',
     // Tree,
     // Alert,
     // Slider,
@@ -86,19 +88,20 @@ let Arr = [
 let elementRoutes = Arr.map(e => {
     return {
         path: `/${e}`,
-        name: `${e}`, component: () => import(/* webpackChunkName: "about" */ `./views/${e}.vue`)
+        name: `${e}`,
+        component: () => import(/* webpackChunkName: "about" */ `./views/${e}.vue`)
     }
 })
 Vue.use(Router)
-
+console.log(elementRoutes)
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
         {
             path: '/',
-            name: 'home',
-            component: Home,
+            name: elementRoutes[0].name,
+            component: elementRoutes[0].component,
             childrens: []
         },
         ...elementRoutes,
@@ -110,12 +113,6 @@ export default new Router({
             // which is lazy-loaded when the route is visited.
             component: () => import(/* webpackChunkName: "about" */ './views/color.vue')
         },
-
-        {
-            path: '/InputNumber',
-            name: 'InputNumber', component: () => import(/* webpackChunkName: "about" */ './views/InputNumber.vue')
-        },
-
 
     ]
 })

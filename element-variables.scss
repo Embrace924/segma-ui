@@ -273,7 +273,7 @@ $--link-hover-color: $--color-primary !default;
 $--border-radius-zero: 0 !default;
 // Box-shadow
 $--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
-$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$--box-shadow-light: 0 4px 12px 0 rgba(82, 92, 108, 0.16) !default;
 
 /* Fill
 -------------------------- */
@@ -740,8 +740,8 @@ $--tree-expand-icon-color: $--color-text-placeholder !default;
 /* Dropdown
 -------------------------- */
 $--dropdown-menu-box-shadow: $--box-shadow-light !default;
-$--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
-$--dropdown-menuItem-hover-color: $--link-color !default;
+$--dropdown-menuItem-hover-fill: #f0f7ff !default;
+$--dropdown-menuItem-hover-color: $primary !default;
 
 /* Badge
 -------------------------- */

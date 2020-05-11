@@ -1,0 +1,32 @@
+.el-dropdown-menu {
+    border: none;
+    padding: 6px 0;
+    box-shadow: @box-shadow;
+
+    .el-dropdown-menu__item {
+        &:not(.is-disabled) {
+            padding: 0 16px;
+            height: 34px;
+            line-height: 34px;
+            color: @text-title;
+
+            &:hover, &:focus {
+                color: @primary;
+            }
+        }
+    }
+
+    .el-dropdown-menu__item--divided {
+        &:not(.is-disabled) {
+            height: calc(100% + 6px);
+        }
+
+        &::before {
+            margin: 0 -16px;
+        }
+    }
+
+    .popper__arrow {
+        display: none;
+    }
+}
