@@ -44,6 +44,7 @@ let Arr = [
     // TabPane,
     'Tag',
     'DropMenu',
+    'Popconfirm',
     // Tree,
     // Alert,
     // Slider,

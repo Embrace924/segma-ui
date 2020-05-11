@@ -79,7 +79,8 @@ import {
     MessageBox,
     Message,
     Notification,
-    InfiniteScroll
+    InfiniteScroll,
+    Popconfirm
 } from 'element-ui';
 import { $alert, $confirm } from '../component/prototype';
 
@@ -159,6 +160,7 @@ export default {
         Vue.use(PageHeader);
         Vue.use(CascaderPanel);
         Vue.use(InfiniteScroll);
+        Vue.use(Popconfirm);
         Vue.use(Loading.directive);
 
         Vue.prototype.$loading = Loading.service;
