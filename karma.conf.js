@@ -7,7 +7,7 @@ module.exports = function (config) {
             'sinon-chai'
         ],
         files: [
-            'tests/**/*.spec.js' //tests目录下，所有.spce.js结尾的测试文件
+            'tests/radio.spec.js' //tests目录下，所有.spce.js结尾的测试文件
         ],
         preprocessors: {
             '**/*.spec.js': [

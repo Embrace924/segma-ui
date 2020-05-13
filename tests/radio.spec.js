@@ -1,4 +1,5 @@
 import { createVue, destroyVM, triggerKeyDown } from './util';
+import Vue from 'vue';
 
 describe('Radio', () => {
     let vm;
@@ -259,6 +260,8 @@ describe('Radio', () => {
             }, 10);
         });
         it('keyboard event', done => {
+
+            Vue.config.errorHandler = done
             vm = createVue({
                 template: `
           <el-radio-group v-model="radio">
@@ -289,7 +292,7 @@ describe('Radio', () => {
                     triggerKeyDown(vm.$refs.radio1.$el, 39);
                     expect(vm.radio).to.be.equal(6);
 
-                    vm.$nextTick(() => {
+                    Vue.$nextTick(() => {
                         triggerKeyDown(vm.$refs.radio1.$el, 13);
                         expect(vm.radio).to.be.equal(6);
 
