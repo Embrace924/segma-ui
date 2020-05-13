@@ -3,7 +3,8 @@ module.exports = function (config) {
     config.set({
         frameworks: [
             'mocha',
-            'chai'
+            'chai',
+            'sinon-chai'
         ],
         files: [
             'tests/**/*.spec.js' //tests目录下，所有.spce.js结尾的测试文件
