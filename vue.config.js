@@ -19,6 +19,7 @@ function addStyleResource(rule) {
 
 const antDesign = require('@ant-design/colors')
 module.exports = {
+     runtimeCompiler: true,
     // 在htmlWebpackPlugin中增加环境变量，在index.html中使用
     chainWebpack: config => {
         // 添加别名

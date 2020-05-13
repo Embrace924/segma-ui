@@ -1,56 +1,69 @@
 {
-    "name": "segma-ui",
-    "version": "2.1.3",
-    "private": false,
-    "main": "lib/segma-ui.common.js",
-    "files": [
-        "lib"
-    ],
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lib": "vue-cli-service build --target lib --name segma-ui --dest lib src/index.js",
-        "stylelint": "stylelint {src,public}/**/*.{html,vue,css,less}",
-        "stylelint:fix": "stylelint {src,public}/**/*.{html,vue,css,less} --fix"
-    },
-    "dependencies": {
-        "@ant-design/colors": "^3.2.2",
-        "element-ui": "^2.13.1",
-        "segma-directives": "^1.1.2",
-        "vue": "^2.6.10",
-        "vue-router": "^3.0.3",
-        "vuex": "^3.0.1"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.9.0",
-        "@vue/cli-service": "^3.9.0",
-        "element-theme-chalk": "^2.13.0",
-        "less": "^3.0.4",
-        "less-loader": "^4.1.0",
-        "node-sass": "^4.12.0",
-        "sass-loader": "^8.0.2",
-        "stylelint": "^10.1.0",
-        "stylelint-config-standard": "^18.3.0",
-        "stylelint-order": "^3.0.1",
-        "uglifyjs-webpack-plugin": "^2.2.0",
-        "vue-template-compiler": "^2.6.10"
-    },
-    "description": "```\r npm install\r ```",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Embrace924/segma-ui.git"
-    },
-    "keywords": [
-        "element-ui",
-        "vue",
-        "javascript",
-        "scss",
-        "less"
-    ],
-    "author": "cld",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Embrace924/segma-ui/issues"
-    },
-    "homepage": "https://github.com/Embrace924/segma-ui#readme"
+  "name": "segma-ui",
+  "version": "2.1.3",
+  "private": false,
+  "main": "lib/segma-ui.common.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "mocha": "mocha tests/**.spec.js",
+    "karma": "karma start karma.conf.js",
+    "lib": "vue-cli-service build --target lib --name segma-ui --dest lib src/index.js",
+    "stylelint": "stylelint {src,public}/**/*.{html,vue,css,less}",
+    "stylelint:fix": "stylelint {src,public}/**/*.{html,vue,css,less} --fix"
+  },
+  "dependencies": {
+    "@ant-design/colors": "^3.2.2",
+    "element-ui": "^2.13.1",
+    "segma-directives": "^1.1.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "@vue/test-utils": "^1.0.2",
+    "chai": "^4.2.0",
+    "element-theme-chalk": "^2.13.0",
+    "karma": "^5.0.5",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.2",
+    "karma-mocha": "^2.0.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^4.0.2",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "mocha": "^7.1.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "description": "```\r npm install\r ```",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Embrace924/segma-ui.git"
+  },
+  "keywords": [
+    "element-ui",
+    "vue",
+    "javascript",
+    "scss",
+    "less"
+  ],
+  "author": "cld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Embrace924/segma-ui/issues"
+  },
+  "homepage": "https://github.com/Embrace924/segma-ui#readme"
 }
