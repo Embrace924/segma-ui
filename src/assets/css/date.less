@@ -6,7 +6,7 @@
     .el-time-spinner__wrapper {
         &.el-scrollbar {
             .el-scrollbar__thumb {
-                background-color: #b6bece;
+                background-color: @border-color-deep;
             }
         }
     }
@@ -55,27 +55,42 @@
         border-top: 1px solid @border-color-base;
         height: 32px;
         text-align: center;
+
+        .el-time-panel__btn.cancel {
+            color: @text-content;
+        }
     }
 }
 
 .el-picker-panel {
     border: none;
     color: @text-title;
-    box-shadow: 0 4px 12px 0 rgba(82, 92, 108, 0.16);
+    box-shadow: @box-shadow;
 
     .el-picker-panel__body-wrapper {
         padding: 16px;
     }
 
     .el-date-picker__header {
-        margin: 0;
+        margin: 0 0 10px 0;
+
+        &.el-date-picker__header--bordered {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
 
         .el-date-picker__header-label {
             color: @text-title;
         }
 
         .el-picker-panel__icon-btn {
-            color: #828992;
+            margin-top: 7px;
+            font-size: 14px;
+            color: @input-icon-color;
+
+            &:hover {
+                color: @primary;
+            }
         }
     }
 
@@ -96,7 +111,7 @@
                 &:hover {
                     .cell {
                         border-radius: 4px;
-                        color: #5374c0;
+                        color: @primary;
                         background-color: @theme-bg-hover;
                     }
                 }
@@ -106,8 +121,8 @@
                 &.current:not(.disabled) {
                     .cell {
                         border-radius: 4px;
-                        color: #ffffff;
-                        background-color: #5374c0;
+                        color: @white;
+                        background-color: @primary;
                     }
                 }
 
@@ -115,7 +130,7 @@
                     .cell {
                         border-radius: 4px;
                         font-weight: normal;
-                        color: #5374c0;
+                        color: @primary;
                         background-color: @theme-bg-hover;
                     }
                 }
@@ -134,7 +149,7 @@
                 &:hover {
                     .cell {
                         border-radius: 4px;
-                        color: #5374c0;
+                        color: @primary;
                         background-color: @theme-bg-hover;
                     }
                 }
@@ -143,8 +158,8 @@
             .current:not(.disabled) {
                 .cell {
                     border-radius: 4px;
-                    color: #ffffff;
-                    background-color: #5374c0;
+                    color: @white;
+                    background-color: @primary;
                 }
             }
 
@@ -152,7 +167,7 @@
                 .cell {
                     border-radius: 4px;
                     font-weight: normal;
-                    color: #5374c0;
+                    color: @primary;
                     background-color: @theme-bg-hover;
                 }
             }
@@ -175,7 +190,7 @@
 
                 .disabled {
                     > div {
-                        background-color: #f3f4f6;
+                        background-color: @disabled-bg;
                     }
                 }
 
@@ -202,7 +217,7 @@
                     &:hover {
                         span {
                             color: #ffffff;
-                            background-color: #5374c0;
+                            background-color: @primary;
                         }
                     }
                 }
@@ -210,13 +225,13 @@
                 &.end-date, &.start-date {
                     span {
                         color: #ffffff;
-                        background-color: #5374c0;
+                        background-color: @primary;
                     }
 
                     &:hover {
                         span {
                             color: #ffffff;
-                            background-color: #5374c0;
+                            background-color: @primary;
                         }
                     }
                 }
@@ -235,7 +250,7 @@
                         .available {
                             span {
                                 border-radius: 50%;
-                                color: #5374c0;
+                                color: @primary;
                                 background-color: @theme-bg-hover;
                             }
                         }
@@ -246,7 +261,7 @@
                             span {
                                 border-radius: 50%;
                                 color: #ffffff;
-                                background-color: #5374c0;
+                                background-color: @primary;
                             }
                         }
 
@@ -254,7 +269,7 @@
                             &:hover {
                                 span {
                                     color: #ffffff;
-                                    background-color: #5374c0;
+                                    background-color: @primary;
                                 }
                             }
                         }
@@ -263,13 +278,13 @@
                             &.today {
                                 span {
                                     color: #ffffff;
-                                    background-color: #5374c0;
+                                    background-color: @primary;
                                 }
                             }
 
                             > div {
                                 color: #ffffff;
-                                background-color: #5374c0;
+                                background-color: @primary;
                             }
                         }
                     }
@@ -291,7 +306,7 @@
 
         .el-picker-panel__sidebar {
             display: flex;
-            top: 340px;
+            top: 350px;
             left: 0;
             border-right: none;
             padding-top: 0;
@@ -316,7 +331,7 @@
 .el-date-editor {
     &.el-input--suffix {
         .el-input__suffix {
-            right: 0;
+            right: 5px;
             margin-top: 2px;
             height: calc(100% - 4px);
             background-color: #ffffff;
@@ -366,4 +381,8 @@
             }
         }
     }
+}
+
+.el-popper[x-placement^="bottom"] .popper__arrow {
+    display: none;
 }
