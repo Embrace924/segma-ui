@@ -1,6 +1,50 @@
 /* 单选框开始 */
 
 .el-radio {
+    &:not(.is-disabled) {
+        &:hover {
+            .el-radio__label {
+                color: @primary;
+            }
+
+            .el-radio__inner {
+                border-color: @primary;
+            }
+        }
+
+        &.is-bordered {
+            &:hover {
+                border: 1px solid @primary;
+
+                .el-radio__inner {
+                    border-color: @primary;
+                }
+
+                .el-radio__label {
+                    color: @primary;
+                }
+            }
+        }
+    }
+
+    &.el-radio--small {
+        &.is-bordered {
+            .el-radio__inner {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    .el-radio__input {
+        line-height: 1;
+
+        .el-radio__original {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     &.is-disabled {
         &.is-bordered {
             border-color: @border-disabled-color;
@@ -13,15 +57,27 @@
 }
 
 .el-radio-group {
-    .el-radio-button {
-        &.is-disabled {
+    .el-radio-button:not(.is-disabled) {
+        &:hover {
             .el-radio-button__inner {
-                background-color: @disabled-bg;
+                border-color: @primary;
             }
         }
+    }
 
-        &:focus:not(.is-focus):not(:active):not(.is-disabled) {
-            box-shadow: none;
+    &.is-disabled {
+        .el-radio-button__inner {
+            background-color: @disabled-bg;
         }
+    }
+
+    .el-radio-button__orig-radio {
+        &:disabled:checked + .el-radio-button__inner {
+            background-color: @disabled-bg;
+        }
+    }
+
+    &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+        box-shadow: none;
     }
 }

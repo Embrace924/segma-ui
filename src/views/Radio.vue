@@ -7,11 +7,11 @@
         <el-radio v-model="radio"
                   label="2">备选项
         </el-radio>
-        <el-radio v-model="radio2"
+        <el-radio v-model="radio"
                   label="1"
                   disabled>备选项
         </el-radio>
-        <el-radio v-model="radio2"
+        <el-radio v-model="radio"
                   label="2"
                   disabled>备选项
         </el-radio>
@@ -19,6 +19,7 @@
             <el-radio v-model="radio"
                       label="1"
                       border
+                      disabled
                       size="small">备选项1
             </el-radio>
             <el-radio v-model="radio"
@@ -28,23 +29,23 @@
             </el-radio>
         </div>
         <div>
-            <el-radio v-model="radio"
-                      label="1"
-                      border
-                      disabled
-                      size="small">备选项2
-            </el-radio>
-            <el-radio v-model="radio"
-                      label="2"
-                      border
-                      disabled
-                      size="small">备选项2
-            </el-radio>
+            <el-radio-group v-model="radio2"
+                            size="small">
+                <el-radio label="1"
+                          border>备选项2
+                </el-radio>
+                <el-radio label="2"
+                          disabled
+                          border>备选项2
+                </el-radio>
+            </el-radio-group>
+
         </div>
 
         <el-radio-group v-model="radio3"
                         size="small">
-            <el-radio-button label="上海"></el-radio-button>
+            <el-radio-button label="上海"
+                             disabled></el-radio-button>
             <el-radio-button label="北京"
                              disabled></el-radio-button>
             <el-radio-button label="广州"></el-radio-button>
