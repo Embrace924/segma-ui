@@ -1,7 +1,34 @@
 /* 多选框开始 */
 
 .el-checkbox {
+
+    .el-checkbox__label {
+        line-height: 14px;
+    }
+
+    &:hover:not(.is-disabled) {
+        .el-checkbox__inner {
+            border-color: @primary;
+        }
+
+        .el-checkbox__label {
+            color: @primary;
+        }
+    }
+
     &.is-bordered {
+        &:hover:not(.is-disabled) {
+            border-color: @primary;
+
+            .el-checkbox__inner {
+                border-color: @primary;
+            }
+
+            .el-checkbox__label {
+                color: @primary;
+            }
+        }
+
         &.el-checkbox--small {
             border-radius: 4px;
             padding: 7px 16px 7px 10px;
