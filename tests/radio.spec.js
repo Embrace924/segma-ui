@@ -260,8 +260,7 @@ describe('Radio', () => {
             }, 10);
         });
         it('keyboard event', done => {
-
-            Vue.config.errorHandler = done
+            Vue.config.errorHandler = done;
             vm = createVue({
                 template: `
           <el-radio-group v-model="radio">
@@ -281,22 +280,21 @@ describe('Radio', () => {
             vm.$nextTick(() => {
                 triggerKeyDown(vm.$refs.radio2.$el, 37);
                 expect(vm.radio).to.be.equal(3);
-
-                triggerKeyDown(vm.$refs.radio1.$el, 37);
-                expect(vm.radio).to.be.equal(9);
-
                 vm.$nextTick(() => {
-                    triggerKeyDown(vm.$refs.radio3.$el, 39);
-                    expect(vm.radio).to.be.equal(3);
-
-                    triggerKeyDown(vm.$refs.radio1.$el, 39);
-                    expect(vm.radio).to.be.equal(6);
-
-                    Vue.$nextTick(() => {
-                        triggerKeyDown(vm.$refs.radio1.$el, 13);
-                        expect(vm.radio).to.be.equal(6);
-
-                        done();
+                    triggerKeyDown(vm.$refs.radio1.$el, 37);
+                    expect(vm.radio).to.be.equal(9);
+                    vm.$nextTick(() => {
+                        triggerKeyDown(vm.$refs.radio3.$el, 39);
+                        expect(vm.radio).to.be.equal(3);
+                        vm.$nextTick(() => {
+                            triggerKeyDown(vm.$refs.radio1.$el, 39);
+                            expect(vm.radio).to.be.equal(6);
+                            vm.$nextTick(() => {
+                                triggerKeyDown(vm.$refs.radio1.$el, 13);
+                                expect(vm.radio).to.be.equal(6);
+                                done();
+                            });
+                        })
                     });
                 });
             });
