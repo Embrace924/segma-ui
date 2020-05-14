@@ -3,13 +3,14 @@
     padding: 0 12px;
 
     &.is-active, &:focus {
-        box-shadow: 0 0 4px 0 rgba(117, 162, 255, 0.7);
+        box-shadow: @box-primary-shadow;
     }
 }
 
 .el-input {
     .el-input-group__prepend, .el-input-group__append {
         color: @text-title;
+        background-color: @header-bg;
 
         .el-input--prefix {
             .el-input__inner {
@@ -32,12 +33,12 @@
         .el-input__suffix-inner {
             .el-input__icon {
                 position: absolute;
-                right: 5px;
+                right: 0;
                 height: calc(100% - 4px);
             }
 
             .el-icon-circle-close {
-                background-color: #ffffff;
+                background-color: @white;
 
                 &::before {
                     content: "\E79D";
@@ -53,6 +54,12 @@
             }
         }
     }
+
+    &.is-disabled {
+        .el-input__prefix, .el-input__suffix {
+            color: @disabled-font-color;
+        }
+    }
 }
 
 .el-textarea {
@@ -61,26 +68,11 @@
     }
 
     .el-textarea__inner {
+        padding: 5px 12px;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
         &:focus {
-            box-shadow: 0 0 4px 0 rgba(117, 162, 255, 0.7);
-        }
-    }
-
-    .el-input {
-        &.el-input--prefix {
-            .el-input__inner {
-                padding-left: 30px;
-            }
-        }
-
-        &.el-input--suffix {
-            .el-input__inner {
-                padding-right: 30px;
-            }
-        }
-
-        .el-input__inner {
-            padding: 0 12px;
+            box-shadow: @box-primary-shadow;
         }
     }
 }

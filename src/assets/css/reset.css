@@ -72,4 +72,17 @@ button {
 /* 布局(grids)(.g-) */
 
 /* 页面 */
+::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: 14px;
+    color: #aaafb5;
+}
 
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 14px;
+    color: #aaafb5;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size: 14px;
+    color: #aaafb5;
+}

@@ -19,5 +19,9 @@
                 background-color: @disabled-bg;
             }
         }
+
+        &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+            box-shadow: none;
+        }
     }
 }
