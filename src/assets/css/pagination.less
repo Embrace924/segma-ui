@@ -46,8 +46,38 @@
     background-color: transparent;
 }
 
-.el-pagination__editor.el-input .el-input__inner {
-    height: 28px;
+.el-pagination__sizes {
+    .el-select .el-input {
+        .el-input__inner {
+            text-align: left;
+
+            &:hover {
+                border-color: @border-color-deep;
+            }
+
+            &:focus {
+                border-color: @primary;
+            }
+        }
+
+        &.el-input--mini {
+            .el-input__icon {
+                right: 12px;
+                height: calc(100% - 6px);
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.el-pagination__jump {
+    .el-pagination__editor {
+        &.el-input {
+            .el-input__inner {
+                height: 28px;
+            }
+        }
+    }
 }
 
 /* 分页按钮结束 */
