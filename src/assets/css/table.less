@@ -8,9 +8,22 @@
             .scroll-bar();
         }
 
-        .el-table__fixed, .el-table__fixed-right {
+        .el-table__fixed {
             height: calc(100% - 8px) !important;
             box-shadow: 4px 2px 10px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .el-table__body-wrapper.is-scrolling-left ~ .el-table__fixed {
+            box-shadow: none;
+        }
+
+        .el-table__fixed-right {
+            height: calc(100% - 8px) !important;
+            box-shadow: -4px 2px 10px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .el-table__body-wrapper.is-scrolling-right ~ .el-table__fixed-right {
+            box-shadow: none;
         }
     }
 
