@@ -24,8 +24,7 @@
                    size="small">次按钮normal
         </el-button>
         <el-button type="info"
-                   size="small"
-                   icon="el-icon-search">次按钮带icon
+                   size="small"><i class="el-icon-arrow-up el-icon--left"></i>次按钮带icon
         </el-button>
         <el-button type="info"
                    size="small"
@@ -42,8 +41,7 @@
         <br>
         <el-button size="small">普通按钮normal</el-button>
 
-        <el-button size="small"
-                   icon="el-icon-search">普通按钮带icon
+        <el-button size="small">普通按钮带icon <i class="el-icon-download  el-icon--right"></i>
         </el-button>
         <el-button size="small"
                    icon="el-icon-search">

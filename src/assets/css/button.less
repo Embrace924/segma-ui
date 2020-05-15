@@ -70,6 +70,24 @@
         }
     }
 
+    &--text {
+        color: @text-main;
+
+        &:hover, &:focus {
+            color: @primary;
+        }
+    }
+    //icon与文字的间距
+    span {
+        [class*=el-icon--right] {
+            margin-left: 3px;
+        }
+
+        [class*=el-icon--left] {
+            margin-right: 8px;
+        }
+    }
+
     //icon与文字的间距
     [class*=el-icon-] + span {
         margin-left: 8px;

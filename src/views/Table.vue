@@ -117,6 +117,28 @@
                 </template>
             </el-table-column>
         </el-table>
+        <el-table :data="tableData2"
+                  border
+                  stripe>
+            <el-table-column prop="date"
+                             label="日期">
+            </el-table-column>
+
+            <el-table-column prop="name"
+                             label="姓名">
+            </el-table-column>
+            <el-table-column prop="address"
+                             label="地址">
+                <template slot-scope="scope">
+                    <el-tooltip class="item"
+                                effect="dark"
+                                :content="scope.row.address"
+                                placement="top-start">
+                        <div class="popover">{{scope.row.address}}</div>
+                    </el-tooltip>
+                </template>
+            </el-table-column>
+        </el-table>
         <el-table :data="tableData"
                   border
                   stripe>
@@ -203,7 +225,8 @@ export default {
                     name: '王小虎',
                     address: '上海市普陀区金沙江路 '
                 }
-            ]
+            ],
+            tableData2: []
         }
     }
 }
