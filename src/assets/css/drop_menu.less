@@ -1,14 +1,14 @@
 .el-dropdown-menu {
     border: none;
     padding: 6px 0;
-    box-shadow: @box-shadow;
+    box-shadow: @menu-box-shadow;
 
     .el-dropdown-menu__item {
         &:not(.is-disabled) {
             padding: 0 16px;
             height: 34px;
             line-height: 34px;
-            color: @text-title;
+            color: @text-main;
 
             &:hover, &:focus {
                 color: @primary;
@@ -16,7 +16,7 @@
         }
 
         &.is-disabled {
-            color: @disabled-font-color;
+            color: @disabled-text-color;
         }
     }
 

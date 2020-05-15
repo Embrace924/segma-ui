@@ -3,15 +3,15 @@
     padding: 0 12px;
 
     &.is-active, &:focus {
-        box-shadow: @box-primary-shadow;
+        box-shadow: @input-focus-box-shadow;
     }
 }
 
 .el-input {
     .el-input-group__prepend, .el-input-group__append {
         padding: 0 12px;
-        color: @text-title;
-        background-color: @header-bg;
+        color: @text-main;
+        background-color: @box-header-bg;
 
         .el-input--prefix {
             .el-input__inner {
@@ -38,7 +38,7 @@
                 position: absolute;
                 right: 0;
                 height: calc(100% - 4px);
-                color: @input-icon-color;
+                color: @icon-color;
             }
 
             .el-icon-circle-close {
@@ -61,14 +61,14 @@
 
     &.is-disabled {
         .el-input__prefix, .el-input__suffix {
-            color: @disabled-font-color;
+            color: @disabled-text-color;
         }
     }
 }
 
 .el-textarea {
     .el-input__count {
-        color: @input-icon-color;
+        color: @text-aider;
     }
 
     .el-textarea__inner {
@@ -76,7 +76,7 @@
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
 
         &:focus {
-            box-shadow: @box-primary-shadow;
+            box-shadow: @input-focus-box-shadow;
         }
     }
 }
