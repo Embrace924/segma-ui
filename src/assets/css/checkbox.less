@@ -1,6 +1,19 @@
 /* 多选框开始 */
 
 .el-checkbox {
+    &-button {
+        &.is-checked&.is-focus {
+            .el-checkbox-button__inner {
+                border-color: @primary;
+            }
+        }
+
+        &.is-focus {
+            .el-checkbox-button__inner {
+                border-color: #e0e5f0;
+            }
+        }
+    }
 
     .el-checkbox__label {
         line-height: 14px;

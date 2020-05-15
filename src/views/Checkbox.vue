@@ -9,6 +9,7 @@
         <el-checkbox v-model="checked"
                      disabled>备选项1
         </el-checkbox>
+        <br>
         <el-checkbox label="备选项1"
                      v-model="checked"
                      size="small"
@@ -18,6 +19,15 @@
                      border
                      size="small"
                      disabled></el-checkbox>
+
+        <el-checkbox-group v-model="checkboxGroup3"
+                           size="small">
+            <el-checkbox-button v-for="city in cities"
+                                :label="city"
+                                :disabled="city === '北京'"
+                                :key="city">{{city}}
+            </el-checkbox-button>
+        </el-checkbox-group>
     </div>
 </template>
 
@@ -32,7 +42,14 @@ export default {
     data() {
         return {
             checked1: false,
-            checked: true
+            checked: true,
+            cities: [
+                '上海',
+                '北京',
+                '广州',
+                '深圳'
+            ],
+            checkboxGroup3: ['上海'],
 
         }
     },
@@ -46,3 +63,8 @@ export default {
     // methods: {},
 };
 </script>
+<style lang="less">
+.el-checkbox, .checkbox-group {
+    margin-bottom: 20px;
+}
+</style>
