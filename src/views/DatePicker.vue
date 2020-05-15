@@ -10,7 +10,7 @@
                           }"
                         placeholder="选择时间">
         </el-time-select>
-
+        <br>
         <el-time-picker v-model="value1"
                         size="small"
                         placeholder="任意时间点">
@@ -50,26 +50,8 @@
                         end-placeholder="结束日期"
                         :picker-options="pickerOptionsRange">
         </el-date-picker>
+        <br>
 
-        <el-time-select size="small"
-                        placeholder="起始时间"
-                        v-model="startTime"
-                        :picker-options="{
-      start: '08:30',
-      step: '00:15',
-      end: '18:30'
-    }">
-        </el-time-select>
-        <el-time-select size="small"
-                        placeholder="结束时间"
-                        v-model="endTime"
-                        :picker-options="{
-      start: '08:30',
-      step: '00:15',
-      end: '18:30',
-      minTime: startTime
-    }">
-        </el-time-select>
     </div>
 </template>
 
@@ -90,7 +72,35 @@ export default {
             value5: '',
             value6: '',
             startTime: '',
-            endTime: '',
+            endTime: '', pickerOptions: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                },
+                shortcuts: [
+                    {
+                        text: '今天',
+                        onClick(picker) {
+                            picker.$emit('pick', new Date());
+                        }
+                    },
+                    {
+                        text: '昨天',
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24);
+                            picker.$emit('pick', date);
+                        }
+                    },
+                    {
+                        text: '一周后',
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() + 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', date);
+                        }
+                    }
+                ]
+            },
             pickerOptionsData: {
                 shortcuts: [
                     {

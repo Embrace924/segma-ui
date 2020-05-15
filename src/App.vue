@@ -61,7 +61,7 @@ export default {
                 // TabPane,
                 // 'Tag',
                 'DropMenu',
-                'Popconfirm',
+                // 'Popconfirm',
                 // Tree,
                 // Alert,
                 // Slider,

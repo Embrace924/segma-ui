@@ -214,9 +214,15 @@
             td {
                 height: 32px;
 
-                .disabled {
+                &.disabled {
                     > div {
                         background-color: @disabled-bg;
+                    }
+                }
+
+                &.current.disabled {
+                    > div {
+                        color: @primary;
                     }
                 }
 
@@ -231,7 +237,7 @@
                     line-height: 32px;
                 }
 
-                &:hover:not(.disabled) {
+                &:hover:not(.disabled):not(.selected) {
                     span {
                         background-color: @theme-bg-hover;
                     }
@@ -266,6 +272,7 @@
             .today {
                 span {
                     font-weight: 500;
+                    color: @primary;
                     background-color: @theme-bg-hover;
                 }
             }
@@ -410,5 +417,9 @@
 }
 
 .el-popper[x-placement^="bottom"] .popper__arrow {
+    display: none;
+}
+
+.el-popper[x-placement^="top"] .popper__arrow {
     display: none;
 }
