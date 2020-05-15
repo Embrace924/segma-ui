@@ -70,10 +70,22 @@
 
     //el-time-select
     .time-select-item {
+        &.disabled {
+            font-weight: normal;
+            color: @disabled-text-color;
+            background-color: @white;
+            cursor: not-allowed;
+
+            &:hover {
+                font-weight: normal;
+                background-color: @white;
+            }
+        }
+
         &:hover:not(.disabled) {
             font-weight: normal;
             color: #5374c0;
-            background-color: #f0f7ff;
+            background-color: @theme-bg-hover;
         }
 
         &.selected:not(.disabled) {
