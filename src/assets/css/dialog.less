@@ -18,9 +18,11 @@
     background-color: #ffffff;
 
     .el-dialog__header {
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        padding: 11px 16px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 0 20px;
+        height: 46px;
+        line-height: 46px;
         text-align: left;
         background-color: @header-bg;
 
@@ -33,7 +35,7 @@
             i {
                 font-size: 20px;
                 font-weight: bold;
-                color: @text-title;
+                color: @input-icon-color;
             }
         }
     }
@@ -43,9 +45,12 @@
     }
 
     .el-dialog__footer {
-        padding: 0 24px 12px 24px;
-        height: 42px;
+        padding: 12px 20px;
         color: @text-title;
+
+        .dialog-footer {
+            display: inline-block;
+            height: 30px;
+        }
     }
 }
-

@@ -85,6 +85,6 @@ export default {
 <style lang="less"
        scoped>
 /deep/ .el-dialog .el-dialog__body {
-    padding: 30px 30px 8px 30px;
+    padding: 20px 20px 0 20px;
 }
 </style>
