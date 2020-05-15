@@ -46,6 +46,7 @@
             }
 
             &.active {
+                font-weight: normal;
                 color: @primary;
             }
         }
@@ -66,6 +67,19 @@
     border: none;
     color: @text-main;
     box-shadow: @menu-box-shadow;
+
+    //el-time-select
+    .time-select-item {
+        &:hover:not(.disabled) {
+            font-weight: normal;
+            color: #5374c0;
+            background-color: #f0f7ff;
+        }
+
+        &.selected:not(.disabled) {
+            font-weight: normal;
+        }
+    }
 
     .el-picker-panel__body-wrapper {
         padding: 16px;
