@@ -29,8 +29,7 @@
             <el-option v-for="item in segmaSelect.value2Options"
                        :key="item.value"
                        :label="item.label"
-                       :value="item.value"
-                       :disabled="item.value==='选项2'">
+                       :value="item.value">
             </el-option>
         </el-select>
     </div>

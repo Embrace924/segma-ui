@@ -46,6 +46,7 @@
         <el-button size="small"
                    icon="el-icon-search">
         </el-button>
+        <!---->
         <el-button disabled
                    size="small">普通按钮disable
         </el-button>
