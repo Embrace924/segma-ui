@@ -2,7 +2,7 @@
 <template>
     <div class="DatePicker">
         <el-time-select size="small"
-                        v-model="value1"
+                        v-model="value"
                         :picker-options="{
                             start: '08:30',
                             step: '00:15',
@@ -65,6 +65,7 @@ export default {
     // props: [],
     data() {
         return {
+            value: '',
             value1: '',
             value2: '',
             value3: '',

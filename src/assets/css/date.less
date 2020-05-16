@@ -266,6 +266,15 @@
                             background-color: @primary;
                         }
                     }
+
+                    &.in-range {
+                        &:hover {
+                            span {
+                                color: #ffffff;
+                                background-color: @primary;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -289,7 +298,20 @@
                         }
                     }
 
+                    .start-date, .end-date {
+                        div {
+                            background-color: @primary;
+                        }
+                    }
+
                     &.current {
+                        .prev-month, .next-month {
+                            div {
+                                color: #ffffff;
+                                background-color: @primary;
+                            }
+                        }
+
                         &:hover {
                             span {
                                 border-radius: 50%;
@@ -305,9 +327,13 @@
                                     background-color: @primary;
                                 }
                             }
+
+                            &.pre-month {
+                                background-color: @primary;
+                            }
                         }
 
-                        .available, .next-month {
+                        .available, .next-month, .prev-month {
                             &.today {
                                 span {
                                     color: #ffffff;
@@ -315,7 +341,7 @@
                                 }
                             }
 
-                            > div {
+                            div {
                                 color: #ffffff;
                                 background-color: @primary;
                             }
