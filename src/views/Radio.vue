@@ -19,7 +19,6 @@
             <el-radio v-model="radio"
                       label="1"
                       border
-                      disabled
                       size="small">备选项1
             </el-radio>
             <el-radio v-model="radio"
@@ -31,8 +30,16 @@
         <div>
             <el-radio-group v-model="radio2"
                             size="small">
+                <el-radio label="1">备选项1</el-radio>
+                <el-radio label="2">备选项2</el-radio>
+                <el-radio label="3">备选项3</el-radio>
+            </el-radio-group>
+            <br><br><br>
+            <el-radio-group v-model="radio2"
+                            size="small">
                 <el-radio label="1"
-                          border>备选项2
+                          disabled
+                          border>备选项1
                 </el-radio>
                 <el-radio label="2"
                           disabled
@@ -44,6 +51,14 @@
 
         <el-radio-group v-model="radio3"
                         size="small">
+            <el-radio-button label="上海"></el-radio-button>
+            <el-radio-button label="北京"></el-radio-button>
+            <el-radio-button label="广州"></el-radio-button>
+            <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+        <br>
+        <el-radio-group v-model="radio3"
+                        size="small">
             <el-radio-button label="上海"
                              disabled></el-radio-button>
             <el-radio-button label="北京"
@@ -51,6 +66,7 @@
             <el-radio-button label="广州"></el-radio-button>
             <el-radio-button label="深圳"></el-radio-button>
         </el-radio-group>
+
     </div>
 </template>
 
@@ -64,8 +80,8 @@ export default {
     // props: [],
     data() {
         return {
-            radio: false,
-            radio2: true,
+            radio: "1",
+            radio2: "1",
             radio3: '上海'
         }
     },

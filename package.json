@@ -27,6 +27,7 @@
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "@vue/test-utils": "^1.0.2",
+    "babel-plugin-istanbul": "^6.0.0",
     "chai": "^4.2.0",
     "element-theme-chalk": "^2.13.0",
     "karma": "^5.0.5",

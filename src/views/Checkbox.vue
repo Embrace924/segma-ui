@@ -17,16 +17,58 @@
         <el-checkbox label="备选项2"
                      v-model="checked1"
                      border
+                     size="small"></el-checkbox>
+        <el-checkbox label="备选项1"
+                     v-model="checked"
                      size="small"
-                     disabled></el-checkbox>
-
+                     disabled
+                     border></el-checkbox>
+        <el-checkbox label="备选项2"
+                     v-model="checked1"
+                     border
+                     disabled
+                     size="small"></el-checkbox>
         <el-checkbox-group v-model="checkboxGroup3"
                            size="small">
             <el-checkbox-button v-for="city in cities"
                                 :label="city"
-                                :disabled="city === '北京'"
+                                :disabled="city==='北京'"
                                 :key="city">{{city}}
             </el-checkbox-button>
+        </el-checkbox-group>
+        <br>
+        <br>
+        <el-checkbox-group v-model="checkboxGroup3"
+                           :min="1"
+                           :max="2">
+            <el-checkbox v-for="city in cities"
+                         :label="city"
+                         :key="city">{{city}}
+            </el-checkbox>
+        </el-checkbox-group>
+
+
+        <el-checkbox :indeterminate="isIndeterminate"
+                     v-model="checkAll"
+                     @change="handleCheckAllChange">全选
+        </el-checkbox>
+        <div style="margin: 15px 0;"></div>
+        <el-checkbox-group v-model="checkedCities"
+                           @change="handleCheckedCitiesChange">
+            <el-checkbox v-for="city in cities"
+                         :label="city"
+                         :key="city">{{city}}
+            </el-checkbox>
+        </el-checkbox-group>
+
+        <el-checkbox-group v-model="checkList">
+            <el-checkbox label="复选框 A"></el-checkbox>
+            <el-checkbox label="复选框 B"></el-checkbox>
+            <el-checkbox label="复选框 C"></el-checkbox>
+            <el-checkbox label="禁用"
+                         disabled></el-checkbox>
+            <el-checkbox label="选中且禁用"
+                         disabled></el-checkbox>
         </el-checkbox-group>
     </div>
 </template>
@@ -50,9 +92,24 @@ export default {
                 '深圳'
             ],
             checkboxGroup3: ['上海'],
-
+            checkAll: false,
+            isIndeterminate: true,
+            checkedCities: [],
+            checkList: ['选中且禁用', '复选框 A']
         }
     },
+
+    methods: {
+        handleCheckAllChange(val) {
+            this.checkedCities = val ? this.cities : [];
+            this.isIndeterminate = false;
+        },
+        handleCheckedCitiesChange(value) {
+            let checkedCount = value.length;
+            this.checkAll = checkedCount === this.cities.length;
+            this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+        }
+    }
     // computed: {},
     // watch: {},
     // mounted() {},
