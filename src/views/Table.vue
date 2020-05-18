@@ -1,8 +1,19 @@
 <template>
     <div class="over">
         <el-table :data="tableData"
-                  width="100%"
-                  height="150px">
+                  width="100%">
+            <el-table-column prop="date"
+                             label="日期">
+            </el-table-column>
+            <el-table-column prop="name"
+                             label="姓名">
+            </el-table-column>
+            <el-table-column prop="address"
+                             label="地址">
+            </el-table-column>
+        </el-table>
+        <el-table :data="tableData"
+                  width="100%">
             <el-table-column prop="date"
                              sortable
                              label="日期">
@@ -196,6 +207,8 @@
                 </template>
             </el-table-column>
         </el-table>
+
+
     </div>
 </template>
 
@@ -226,7 +239,8 @@ export default {
                     address: '上海市普陀区金沙江路 '
                 }
             ],
-            tableData2: []
+            tableData2: [],
+
         }
     }
 }

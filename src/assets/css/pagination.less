@@ -10,16 +10,32 @@
         line-height: 28px;
     }
 
+    &.is-background {
+        .el-pager {
+            li {
+                min-width: auto;
+
+                &.number {
+                    &:hover, &.active {
+                        border-radius: 2px;
+                        color: @white;
+                        background-color: @primary;
+                    }
+                }
+            }
+        }
+    }
+
     .el-pager {
         li {
+            font-weight: normal;
+
             &.number {
                 margin: 0 10px;
                 font-weight: normal;
 
                 &:hover, &.active {
-                    border-radius: 2px;
-                    color: @white;
-                    background-color: @primary;
+                    color: @primary;
                 }
             }
 
