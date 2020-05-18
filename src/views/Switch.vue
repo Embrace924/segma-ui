@@ -1,9 +1,11 @@
 <!--Switch-->
 <template>
     <div class="switch">
+        <el-switch v-model="value1"></el-switch>
+        <br>
         <el-switch v-model="value1"
-                   active-text="开启可选"
-                   inactive-text="开启可选">
+                   active-text="开启"
+                   inactive-text="关闭">
         </el-switch>
         <br>
         <el-switch v-model="value2"
@@ -13,8 +15,8 @@
         </el-switch>
         <br>
         <el-switch v-model="value3"
-                   active-text="关闭可选"
-                   inactive-text="关闭可选">
+                   active-text="开启"
+                   inactive-text="关闭">
         </el-switch>
         <br>
         <el-switch v-model="value4"
@@ -26,8 +28,8 @@
         <el-switch v-model="value5"
                    active-color="#13ce66"
                    inactive-color="#222222"
-                   active-text="自定义颜色"
-                   inactive-text="自定义颜色">
+                   active-text="自定义颜色开启"
+                   inactive-text="自定义颜色关闭">
         </el-switch>
 
     </div>

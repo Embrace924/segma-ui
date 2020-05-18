@@ -1,6 +1,8 @@
 <!--DatePicker-->
 <template>
     <div class="DatePicker">
+        <!-- 使用 el-time-select 标签，
+        分别通过start、end和step指定可选的起始时间、结束时间和步长 -->
         <el-time-select size="small"
                         v-model="value"
                         :picker-options="{
@@ -11,10 +13,22 @@
                         placeholder="选择时间">
         </el-time-select>
         <br>
-        <el-time-picker v-model="value1"
-                        size="small"
-                        placeholder="任意时间点">
+        <el-time-picker
+            v-model="value1"
+            size="small"
+            placeholder="任意时间点">
         </el-time-picker>
+        <br>
+        <el-time-picker
+            is-range
+            size="small"
+            v-model="value1"
+            range-separator="至"
+            start-placeholder="开始时间"
+            end-placeholder="结束时间"
+            placeholder="选择时间范围">
+        </el-time-picker>
+
         <br>
         <el-date-picker v-model="value2"
                         type="date"

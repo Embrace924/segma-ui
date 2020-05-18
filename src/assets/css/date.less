@@ -30,7 +30,7 @@
         border-right: 1px solid @border-color-base;
 
         &::after {
-            height: 10px;
+            height: 131px;
         }
 
         &::before {
@@ -69,6 +69,10 @@
     box-shadow: @menu-box-shadow;
 
     //el-time-select
+    .el-time-spinner {
+        height: 186px;
+    }
+
     .time-select-item {
         &.disabled {
             font-weight: normal;
@@ -383,6 +387,70 @@
         .el-picker-panel__body {
             margin-left: 0;
         }
+    }
+}
+
+.el-time-range-picker {
+    width: 320px;
+
+    .el-time-range-picker__content {
+        padding: 10px 0 0 0;
+        height: 222px;
+    }
+
+    .el-time-range-picker__cell {
+        padding: 0;
+
+        &:first-child {
+            border-right: 1px solid @border-color-base;
+        }
+
+        .el-time-spinner__wrapper {
+            border-right: 1px solid @border-color-base;
+        }
+    }
+
+    .el-time-range-picker__body {
+        border: none;
+
+        &::after {
+            margin-top: -93px;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        &::before {
+            margin: -93px 0 0 0;
+            border-top: none;
+            border-bottom: none;
+            background-color: @theme-bg-hover;
+        }
+
+        .el-time-spinner__item {
+            &:hover:not(.disabled):not(.active) {
+                color: @primary;
+                background-color: transparent;
+            }
+
+            &.active:not(.disabled) {
+                color: @primary;
+            }
+        }
+
+        .el-time-spinner__list {
+            &::after {
+                height: 140px;
+            }
+
+            &::before {
+                height: 0;
+            }
+        }
+    }
+
+    .el-time-panel__footer {
+        height: 32px;
+        text-align: center;
     }
 }
 
