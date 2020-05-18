@@ -4,7 +4,7 @@
     npm install --save segma-ui
 
 ## Set
-    2.0.9版本只抛出样式文件
+    2.2.0版本只抛出样式文件
     只需在引入element-ui的文件中引入改样式文件即可
     例如：
     element.js文件中
@@ -15,4 +15,8 @@
         Autocomplete,
         Dropdown,
         ......
+        }
+## Link
+    [SegmaUI组件库使用文档](https://docs.qq.com/doc/DYU5Hd3RYRnpqYnly)
+    [SegmaUI规范](https://docs.qq.com/doc/DYWxuZGtEWFhMVW5o)
 
