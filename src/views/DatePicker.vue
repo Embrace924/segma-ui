@@ -56,6 +56,13 @@
                         placeholder="选择周">
         </el-date-picker>
         <br>
+        <el-date-picker
+            type="dates"
+            size="small"
+            v-model="value4"
+            placeholder="选择一个或多个日期">
+        </el-date-picker>
+        <br>
         <el-date-picker v-model="value6"
                         type="daterange"
                         size="small"
@@ -87,7 +94,8 @@ export default {
             value5: '',
             value6: '',
             startTime: '',
-            endTime: '', pickerOptions: {
+            endTime: '',
+            pickerOptions: {
                 disabledDate(time) {
                     return time.getTime() > Date.now();
                 },
