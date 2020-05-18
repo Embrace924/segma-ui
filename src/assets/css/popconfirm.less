@@ -1,8 +1,23 @@
 
 .el-popover {
+    border: none;
     padding: 16px 20px;
+    min-width: 220px;
+
+    .el-popconfirm__main {
+        padding-bottom: 4px;
+        color: @text-main;
+    }
 
     .el-popconfirm__action {
         padding: 16px 0 0 0;
+
+        .el-button + .el-button {
+            margin-left: 12px;
+        }
+    }
+
+    &.el-popper[x-placement^="bottom"] .popper__arrow {
+        display: inline-block;
     }
 }
