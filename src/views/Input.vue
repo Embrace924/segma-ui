@@ -4,11 +4,9 @@
                   size="small"
                   show-word-limit
                   maxlength="10"
-                  clearable
                   v-model="segmaInput.value1">
         </el-input>
         <el-input placeholder="请输入内容"
-
                   prefix-icon="el-icon-search"
                   suffix-icon="el-icon-s-promotion"
                   size="small"
@@ -23,7 +21,6 @@
         </el-input>
         <el-input size="small"
                   placeholder="请输入内容"
-                  clearable
                   disabled
                   prefix-icon="el-icon-search"
                   v-model="segmaInput.value1">
@@ -55,7 +52,8 @@
                   placeholder="请输入内容"
                   v-model="segmaInput.value1"
                   rows="3"
-                  maxlength="300"></el-input>
+                  show-word-limit
+                  maxlength="30"></el-input>
     </div>
 </template>
 

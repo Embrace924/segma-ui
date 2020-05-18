@@ -32,12 +32,13 @@
 
     .el-input__suffix {
         margin-top: 2px;
+        height: calc(100% - 4px);
 
         .el-input__suffix-inner {
             .el-input__icon {
                 position: absolute;
                 right: 0;
-                height: calc(100% - 4px);
+                height: 100%;
                 color: @icon-color;
             }
 
@@ -65,6 +66,17 @@
         }
     }
 
+    &.is-exceed {
+        .el-input__inner {
+            padding-right: 50px;
+            background-color: rgba(234, 94, 85, 0.04);
+        }
+
+        .el-input__count-inner {
+            background-color: transparent;
+        }
+    }
+
     .el-input__count {
         color: @text-aider;
     }
@@ -81,6 +93,16 @@
 
         &:focus {
             box-shadow: @input-focus-box-shadow;
+        }
+    }
+
+    &.is-exceed {
+        .el-textarea__inner {
+            background-color: rgba(234, 94, 85, 0.04);
+        }
+
+        .el-input__count {
+            background-color: transparent;
         }
     }
 }
