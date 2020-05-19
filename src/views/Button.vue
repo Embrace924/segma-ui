@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <div v-segma-loading="true"
+         segma-loading-text="ss"
+         segma-loading-background="rgba(0,0,0,0.2)">
         <el-button type="primary"
                    size="small">主按钮normal
         </el-button>

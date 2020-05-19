@@ -111,7 +111,6 @@ export default {
 </script>
 
 <style lang="less">
-@import "./assets/css/segma_ui.less";
 
 #app {
     display: flex;

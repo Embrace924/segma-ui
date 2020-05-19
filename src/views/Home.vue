@@ -24,35 +24,4 @@ export default {
     }
 }
 </script>
-<style lang="less"
-       scoped>
 
-@green: #3a70df;
-
-.box {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    color: #383838;
-    background-color: extract(@primary, 2);
-}
-
-//定义
-.box-loop(@n, @i:1) when (@i <= @n) {
-    .box@{i} {
-        margin: 0 20px;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        color: #383838;
-        background-color: extract(@primary, @i);
-    }
-
-    .box-loop(@n, (@i + 1));
-}
-
-.about {
-    display: flex;
-    .box-loop(10);
-}
-</style>

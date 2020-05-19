@@ -24,52 +24,7 @@ export default {
     //props: [],
     // propsData: {},
     // computed: {},
-    methods: {
-        async openConfirm() {
-            let result = await this.$confirm('此操作将永久Confirm, 是否继续?', 'Confirm提示', {})
-            console.log(result)//true/false
-        },
-        async openAlert() {
-            let result = await this.$alert('确定删除Alert？', '删除', {})
-            console.log(result)//true/false
-        },
-        open1() {
-            this.$message({
-                showClose: true,
-                message: '这是一条消息提示', duration: 0
-
-            });
-        },
-
-        open2() {
-            this.$message({
-                showClose: true,
-                message: '恭喜你，这是一条成功消息',
-                type: 'success',
-                duration: 0
-            });
-        },
-
-        open3() {
-            this.$message({
-                showClose: true,
-                message: '警告哦，这是一条警告消息',
-                type: 'warning',
-                duration: 0
-
-            });
-        },
-
-        open4() {
-            this.$message({
-                showClose: true,
-                message: '错了哦，这是一条错误消息',
-                type: 'error',
-                duration: 0
-
-            });
-        }
-    },
+    methods: {},
     // watch: {},
     // Options / DOM
     // el () {},

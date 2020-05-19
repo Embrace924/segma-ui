@@ -1,6 +1,3 @@
-// import '@/assets/css/index.css';
-
-
 import {
     Pagination,
     Dialog,
@@ -82,7 +79,6 @@ import {
     InfiniteScroll,
     Popconfirm
 } from 'element-ui';
-import { $alert, $confirm } from '../component/prototype';
 
 export default {
     install(Vue) {
@@ -165,8 +161,8 @@ export default {
 
         Vue.prototype.$loading = Loading.service;
         Vue.prototype.$msgbox = MessageBox;
-        Vue.prototype.$alert = $alert
-        Vue.prototype.$confirm = $confirm
+        Vue.prototype.$alert = MessageBox.alert
+        Vue.prototype.$confirm = MessageBox.confirm
         Vue.prototype.$prompt = MessageBox.prompt;
         Vue.prototype.$notify = Notification;
         Vue.prototype.$message = Message;
