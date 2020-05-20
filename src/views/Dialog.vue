@@ -3,6 +3,7 @@
         <el-button type="text"
                    @click="dialogVisible = true">点击打开 Dialog
         </el-button>
+       
         <el-dialog title="新增商品分类"
                    :visible.sync="dialogVisible"
                    width="550px">

@@ -25,6 +25,7 @@
         <el-select v-model="segmaSelect.value2"
                    size="small"
                    multiple
+                   filterable
                    placeholder="请选择">
             <el-option v-for="item in segmaSelect.value2Options"
                        :key="item.value"

@@ -45,6 +45,7 @@ let Arr = [
     // 'Tag',
     'DropMenu',
     'Popconfirm',
+    'Confirm'
     // Tree,
     // Alert,
     // Slider,

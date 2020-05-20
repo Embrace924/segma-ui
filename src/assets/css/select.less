@@ -3,10 +3,18 @@
 .el-select {
     width: 100%;
 
-    .el-input.is-disabled {
-        .el-input__inner {
-            &:hover {
-                border-color: @border-color-base;
+    .el-input {
+        &.is-disabled {
+            .el-input__inner {
+                &:hover {
+                    border-color: @border-color-base;
+                }
+            }
+        }
+
+        &.is-focus {
+            .el-input__inner {
+                box-shadow: @input-focus-box-shadow;
             }
         }
     }

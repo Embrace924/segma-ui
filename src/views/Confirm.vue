@@ -26,7 +26,7 @@ export default {
     // computed: {},
     methods: {
         async openConfirm() {
-            let result = await this.$confirm('此操作将永久Confirm, 是否继续?', 'Confirm提示', {})
+            let result = await this.$confirm('此操作将永久Confirm, 是否继续?', 'Confirm提示', { cancelButtonClass: ' el-button--info' })
             console.log(result)//true/false
         },
         async openAlert() {
