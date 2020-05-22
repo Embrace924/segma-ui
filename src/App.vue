@@ -57,11 +57,11 @@ export default {
                 // BreadcrumbItem,
                 // Form,
                 // FormItem,
-                // Tabs,
                 // TabPane,
                 'Tag',
                 'DropMenu',
                 'Popconfirm',
+                'Tabs'
                 // Tree,
                 // Alert,
                 // Slider,

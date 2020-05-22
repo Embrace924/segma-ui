@@ -40,12 +40,12 @@ let Arr = [
     // BreadcrumbItem,
     // Form,
     // FormItem,
-    // Tabs,
     // TabPane,
     'Tag',
     'DropMenu',
     'Popconfirm',
     'Confirm'
+    'Tabs'
     // Tree,
     // Alert,
     // Slider,
