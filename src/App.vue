@@ -61,7 +61,7 @@ export default {
                 'Tag',
                 'DropMenu',
                 'Popconfirm',
-                'Tabs'
+                'Tabs',
                 // Tree,
                 // Alert,
                 // Slider,
@@ -74,7 +74,7 @@ export default {
                 // Badge,
                 // Card,
                 // Rate,
-                // Steps,
+                'Steps',
                 // Step,
                 // Carousel,
                 // CarouselItem,

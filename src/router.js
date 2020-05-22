@@ -44,6 +44,7 @@ let Arr = [
     'Tag',
     'DropMenu',
     'Popconfirm',
+    'Tabs',
     'Confirm'
     'Tabs'
     // Tree,
@@ -58,7 +59,7 @@ let Arr = [
     // Badge,
     // Card,
     // Rate,
-    // Steps,
+    'Steps',
     // Step,
     // Carousel,
     // CarouselItem,

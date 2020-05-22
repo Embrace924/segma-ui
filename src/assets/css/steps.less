@@ -1,0 +1,119 @@
+.el-steps {
+    &--simple {
+        .el-step {
+            &.is-simple {
+                .el-step__title {
+                    line-height: 6px;
+                }
+
+                .el-step__arrow {
+                    margin: 0 10px;
+                    height: 2px;
+                    background-color: @border-color-base;
+
+                    &::after, &::before {
+                        height: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &--horizontal {
+        .el-step {
+            font-size: 14px;
+            font-weight: normal;
+
+            &:last-child {
+                width: calc(100px + 30px);
+            }
+
+            .el-step__head {
+                text-align: left;
+
+                &.is-process {
+                    border-color: @primary;
+                    color: @white;
+
+                    .el-step__icon {
+                        background-color: @primary;
+
+                        .el-step__icon-inner {
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                &.is-success {
+                    border-color: @primary;
+                    color: @primary;
+
+                    .el-step__line {
+                        background-color: @primary;
+                    }
+
+                    .el-step__icon {
+                        font-size: 14px;
+                    }
+
+                    .el-step__icon-inner {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .el-step__main {
+                position: absolute;
+                top: 0;
+                left: 30px;
+                padding: 0 10px 0 5px;
+                background-color: #ffffff;
+
+                .el-step__title {
+                    line-height: 24px;
+
+                    &.is-process {
+                        font-weight: normal;
+                    }
+
+                    &.is-success {
+                        font-weight: normal;
+                        color: @primary;
+                    }
+                }
+            }
+
+            .el-step__line {
+                top: 11px;
+                right: 20px;
+                left: 40px;
+                height: 2px;
+            }
+        }
+
+        &.step-plus {
+            height: 32px;
+
+            .el-step__head {
+                &.is-success {
+                    .el-step__icon {
+                        font-size: 18px;
+                    }
+                }
+
+                .el-step__icon {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .el-step__main {
+                padding: 0 8px;
+
+                .el-step__title {
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
