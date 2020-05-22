@@ -42,7 +42,7 @@ let Arr = [
     // FormItem,
     // Tabs,
     // TabPane,
-    // 'Tag',
+    'Tag',
     'DropMenu',
     'Popconfirm',
     'Confirm'

@@ -59,7 +59,7 @@ export default {
                 // FormItem,
                 // Tabs,
                 // TabPane,
-                // 'Tag',
+                'Tag',
                 'DropMenu',
                 'Popconfirm',
                 // Tree,
