@@ -105,33 +105,74 @@
     }
 }
 
-.input-new-tag.tag-medium {
+.input-new-tag {
     width: 90px;
     vertical-align: top;
 
-    .el-input__inner {
-        height: 28px;
-        line-height: 28px;
+    &.tag-medium {
+        .el-input__inner {
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+
+    &.tag-small {
+        .el-input__inner {
+            height: 22px;
+            line-height: 22px;
+        }
+    }
+
+    &.tag-mini {
+        .el-input__inner {
+            height: 20px;
+            line-height: 20px;
+        }
     }
 }
 
-.button-light-tag.tag-medium {
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 28px;
-    font-size: 12px;
-    line-height: 28px;
-    vertical-align: top;
+.button-light-tag {
+    &.tag-medium {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 28px;
+        font-size: 12px;
+        line-height: 28px;
+        vertical-align: top;
+    }
+
+    &.tag-small {
+        height: 22px;
+        line-height: 22px;
+    }
+
+    &.tag-mini {
+        height: 20px;
+        line-height: 20px;
+    }
 }
 
-.button-plain-tag.tag-medium {
+.button-plain-tag {
     border: 1px dashed @border-color-base;
     padding-top: 0;
     padding-bottom: 0;
-    height: 28px;
     font-size: 12px;
-    line-height: 28px;
     vertical-align: top;
+
+    &.tag-medium {
+        height: 28px;
+        line-height: 28px;
+    }
+
+    &.tag-small {
+        height: 22px;
+        line-height: 22px;
+    }
+
+    &.tag-mini {
+        height: 20px;
+        line-height: 20px;
+    }
 
     &:hover {
         border: 1px dashed @primary;
