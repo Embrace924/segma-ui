@@ -56,22 +56,20 @@
                 :key="`border-${index}`"
                 closable
                 effect="plain"
-                size="medium"
+                size="small"
                 :disable-transitions="true"
                 @close="handleClose(tag)">
             {{tag}}
         </el-tag>
-        <el-input class="input-new-tag tag-medium tag-border"
+        <el-input class="input-new-tag tag-small tag-border"
                   v-if="inputVisible"
                   v-model="inputValue"
                   ref="saveTagInput"
-                  size="small"
                   @keyup.enter.native="handleInputConfirm"
                   @blur="handleInputConfirm">
         </el-input>
         <el-button v-else
-                   class="button-plain-tag tag-medium"
-                   size="small"
+                   class="button-plain-tag tag-small"
                    @click="showInput"><i class="el-icon-plus"></i> New Tag
         </el-button>
         <el-divider></el-divider>
@@ -113,7 +111,7 @@ export default {
                 '标签二',
                 '标签三'
             ],
-            inputVisible: true,
+            inputVisible: false,
             inputValue: ''
 
         }
