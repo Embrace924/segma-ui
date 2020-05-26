@@ -62,7 +62,7 @@ export default {
                 'DropMenu',
                 'Popconfirm',
                 'Tabs',
-                // Tree,
+                  'Tree',
                 // Alert,
                 // Slider,
                 // Icon,

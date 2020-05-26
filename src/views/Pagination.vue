@@ -24,8 +24,6 @@
                        :hide-on-single-page="true"
                        layout="total, sizes, prev, pager, next, jumper">
         </el-pagination>
-
-
         <el-pagination :hide-on-single-page="false"
                        :total="5"
                        background
