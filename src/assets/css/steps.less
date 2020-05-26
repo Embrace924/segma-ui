@@ -5,6 +5,10 @@
 
         .el-step {
             &.is-simple {
+                .el-step__icon-inner[class*=el-icon]:not(.is-status) {
+                    font-size: 20px;
+                }
+
                 .el-step__head {
                     &.is-process, &.is-finish {
                         .el-step__icon {
