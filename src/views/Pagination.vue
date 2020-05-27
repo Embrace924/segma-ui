@@ -1,6 +1,14 @@
 <template>
     <div>
 
+        <el-pagination small
+                       page-size.sync="1"
+                       :current-page="10"
+                       :total="1000"
+                       background
+                       :hide-on-single-page="true"
+                       layout="prev, pager, next,total, jumper">
+        </el-pagination>
         <el-pagination page-size.sync="1"
                        :current-page="10"
                        :total="1000"

@@ -10,6 +10,18 @@
         line-height: 28px;
     }
 
+    &.is-background.el-pagination--small {
+        .el-pager {
+            height: 16px;
+
+            li {
+                min-width: 16px;
+                height: auto;
+                line-height: 16px;
+            }
+        }
+    }
+
     &.is-background {
         .el-pager {
             li {
@@ -17,7 +29,6 @@
 
                 &.number {
                     &:hover, &.active {
-                        border-radius: 2px;
                         color: @white;
                         background-color: @primary;
                     }
@@ -28,6 +39,7 @@
 
     .el-pager {
         li {
+            border-radius: 2px;
             font-weight: normal;
 
             &.number {
@@ -78,9 +90,15 @@
 
         &.el-input--mini {
             .el-input__icon {
+                top: 4px;
                 right: 12px;
-                height: calc(100% - 6px);
-                line-height: 20px;
+                height: 16px;
+                font-size: 16px;
+                line-height: 16px;
+
+                &::before {
+                    content: "\e78f";
+                }
             }
         }
     }
