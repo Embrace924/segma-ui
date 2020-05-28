@@ -1,0 +1,34 @@
+
+.el-breadcrumb {
+    .el-breadcrumb__item {
+        cursor: not-allowed;
+
+        .el-breadcrumb__inner {
+            font-weight: normal;
+            color: @text-main;
+
+            &.is-link {
+                color: @text-aider;
+                cursor: pointer;
+
+                &:hover {
+                    color: @primary;
+                }
+            }
+        }
+
+        &:last-child {
+            .el-breadcrumb__inner {
+                cursor: not-allowed;
+
+                &:hover {
+                    color: @text-main;
+                }
+            }
+        }
+
+        .el-breadcrumb__separator {
+            margin: 0 8px;
+        }
+    }
+}
