@@ -46,8 +46,7 @@ let Arr = [
     'Popconfirm',
     'Tabs',
     'Tree',
-    'Confirm'
-    'Tabs'
+    'Confirm',
     // Tree,
     // Alert,
     // Slider,

@@ -1,46 +1,69 @@
 <template>
     <div>
-
         <el-pagination small
-                       page-size.sync="1"
-                       :current-page="10"
-                       :total="1000"
                        background
+                       :current-page="currPage"
+                       :page-size="pageSize"
+                       :total="total"
                        :hide-on-single-page="true"
                        layout="prev, pager, next,total, jumper">
         </el-pagination>
-        <el-pagination page-size.sync="1"
-                       :current-page="10"
-                       :total="1000"
-                       background
+        <el-pagination background
+                       :current-page="currPage"
+                       :page-size="pageSize"
+                       :total="total"
                        :hide-on-single-page="true"
                        layout="prev, pager, next,total, jumper">
         </el-pagination>
 
-        <el-pagination page-size.sync="1"
-                       :current-page="10"
-                       :total="1000"
+        <el-pagination :current-page="currPage"
+                       :page-size="pageSize"
+                       :total="total"
                        background
                        :hide-on-single-page="true"
                        layout="total, sizes, prev, pager, next, jumper">
         </el-pagination>
-        <el-pagination :hide-on-single-page="false"
-                       :total="5"
+
+        <el-pagination :current-page="currPage"
+                       :page-size="pageSize"
+                       :total="total"
                        background
-                       :pager-count="5"
+                       :hide-on-single-page="false"
                        layout="prev, pager, next">
         </el-pagination>
+
+        <el-pagination class="simple"
+                       :current-page="currPage"
+                       :page-size="pageSize"
+                       :total="total"
+                       :hide-on-single-page="false"
+                       @size-change="handleSizeChange"
+                       layout="sizes,prev, pager, next,slot">
+            <span class="total-pager"> / {{totalPage}}</span>
+        </el-pagination>
+
     </div>
 </template>
 <script>
 export default {
-    // Options / Data
-    // components: {},
-    //data() {},
-    //props: [],
-    // propsData: {},
-    // computed: {},
-    // methods: {},
+    data() {
+        return {
+            currPage: 1,
+            pageSize: 10,
+            total: 100,
+        }
+    },
+    computed: {
+        totalPage() {
+            return Math.ceil(this.total / this.pageSize)
+        },
+    },
+    methods: {
+        handleSizeChange(val) {
+            this.pageSize = val
+            console.log(`每页 ${val} 条`);
+        },
+    },
     // watch: {},
     // Options / DOM
     // el () {},
