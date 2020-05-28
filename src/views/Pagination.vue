@@ -48,9 +48,9 @@
 export default {
     data() {
         return {
-            currPage: 1,
+            currPage: 100,
             pageSize: 10,
-            total: 100,
+            total: 1000,
         }
     },
     computed: {
