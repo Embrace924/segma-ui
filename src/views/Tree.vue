@@ -1,22 +1,26 @@
 <!--Tree-->
 <template>
     <div class="tree">
-        <p> 基础用法 </p>
+        <p> 基础用法 accordion:只展开一个菜单</p>
         <br>
         <el-tree :data="data"
-                 accordion
                  :props="defaultProps"
-                 @node-click="handleNodeClick"></el-tree>
-        <p> 可选择(适用于需要选择层级时使用。) </p>
+                 accordion
+                 @node-click="handleNodeClick">
+        </el-tree>
         <br>
+        <el-divider></el-divider>
+
+        <p>可选择(适用于需要选择层级时使用。) </p>
         <el-tree :props="props2"
                  :load="loadNode"
                  lazy
                  show-checkbox
                  @check-change="handleCheckChange">
         </el-tree>
-        <p> 默认展开和默认选中(可将 Tree 的某些节点设置为默认展开或默认选中 ) </p>
         <br>
+        <p> 默认展开和默认选中(可将 Tree 的某些节点设置为默认展开或默认选中 ) </p>
+
         <el-tree :data="data3"
                  show-checkbox
                  node-key="id"
@@ -24,6 +28,32 @@
                  :default-checked-keys="[5]"
                  :props="defaultProps">
         </el-tree>
+        <el-divider></el-divider>
+
+        <p> 追加操作按钮用法</p>
+        <br>
+        <el-tree :data="data"
+                 :props="defaultProps"
+                 @node-click="handleNodeClick">
+            <span class="custom-tree-node"
+                  slot-scope="{ node, data }"
+                  @mouseenter="handleShowMore(node,true)"
+                  @mouseleave="handleShowMore(node,false)">
+                <span>{{ node.label }}</span>
+                <el-dropdown v-show="showMore[node.id]"
+                             @command="handleCommand"
+                             @visible-change="visibleChange(showMore[node.id])"
+                             trigger="click">
+                    <span @click.stop="() => handleMore(data)"><i class="el-icon-more"></i></span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item command="edit">编辑</el-dropdown-item>
+                    <el-dropdown-item command="del">删除</el-dropdown-item>
+                  </el-dropdown-menu>
+            </el-dropdown>
+            </span>
+        </el-tree>
+        <el-divider></el-divider>
+
         <p> 可拖拽节点(通过 draggable 属性可让节点变为可拖拽。) </p>
         <br>
         <el-tree :data="data4"
@@ -52,6 +82,7 @@ export default {
     // props: [],
     data() {
         return {
+            showMore: {},
             data: [
                 {
                     label: '中冶赛迪集团1',
@@ -311,7 +342,19 @@ export default {
         },
         allowDrag(draggingNode) {
             return draggingNode.data.label.indexOf('三级 3-2-2') === -1;
-        }
+        },
+        handleShowMore(data, bool) {
+            this.$set(this.showMore, data.id, bool)
+        },
+        handleMore(data) {
+            console.log(data)
+        },
+        handleCommand(command) {
+            this.$message.success('click on item ' + command);
+        },
+        visibleChange(data) {
+
+        },
     }
     // computed: {},
     // watch: {},
@@ -328,6 +371,20 @@ export default {
        scoped>
 .tree {
     width: 300px;
+
+    .custom-tree-node {
+        flex: 1;
+        display: flex;
+        padding-right: 12px;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+
+        .el-icon-more {
+            transform: rotate(90deg);
+        }
+    }
 }
 </style>
  
