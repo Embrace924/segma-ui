@@ -28,7 +28,7 @@ export default {
                 // Dropdown,
                 // DropdownMenu,
                 // DropdownItem,
-                // Menu,
+                 'Menu',
                 // Submenu,
                 // MenuItem,
                 // MenuItemGroup,

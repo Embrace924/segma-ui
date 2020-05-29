@@ -36,13 +36,9 @@
                  :props="defaultProps"
                  @node-click="handleNodeClick">
             <span class="custom-tree-node"
-                  slot-scope="{ node, data }"
-                  @mouseenter="handleShowMore(node,true)"
-                  @mouseleave="handleShowMore(node,false)">
+                  slot-scope="{ node, data }">
                 <span>{{ node.label }}</span>
-                <el-dropdown v-show="showMore[node.id]"
-                             @command="handleCommand"
-                             @visible-change="visibleChange(showMore[node.id])"
+                <el-dropdown @command="handleCommand"
                              trigger="click">
                     <span @click.stop="() => handleMore(data)"><i class="el-icon-more"></i></span>
                   <el-dropdown-menu slot="dropdown">
