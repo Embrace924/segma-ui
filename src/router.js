@@ -50,7 +50,7 @@ let Arr = [
     // Tree,
     // Alert,
     // Slider,
-    // Icon,
+     'Icon',
     // Row,
     // Col,
     // Upload,

@@ -65,7 +65,7 @@ export default {
                 'Tree',
                 // Alert,
                 // Slider,
-                // Icon,
+               'Icon',
                 // Row,
                 // Col,
                 // Upload,
