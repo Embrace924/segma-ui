@@ -12,30 +12,25 @@
                 color: @primary;
                 background-color: transparent;
 
-                [class^="el-icon-"] {
+                [class^="el-icon-"], .el-submenu__icon-arrow {
                     color: @primary;
                 }
             }
         }
+
         //层级2
-        > .el-menu--inline {
+        .el-menu--inline {
             .el-menu-item {
                 padding-left: calc(12px + 12px) !important;
             }
 
-            > .el-submenu {
-                > .el-submenu__title {
+            .el-submenu {
+                .el-submenu__title {
                     padding-left: calc(12px + 12px) !important;
                 }
-            }
-            //层级3
-            > .el-menu--inline {
-                > .el-menu-item {
-                    padding-left: calc(12px + 12px + 12px) !important;
-                }
 
-                > .el-submenu {
-                    .el-submenu__title {
+                .el-menu--inline {
+                    .el-menu-item {
                         padding-left: calc(12px + 12px + 12px) !important;
                     }
                 }
@@ -56,6 +51,15 @@
 
     .el-menu-item {
         padding-left: 12px !important;
+
+        &:hover:not(.is-disabled) {
+            color: @primary;
+            background-color: transparent;
+
+            [class^="el-icon-"], .el-submenu__icon-arrow {
+                color: @primary;
+            }
+        }
     }
 
     &-item {
@@ -75,35 +79,21 @@
 
     &.el-menu-has-icon {
         //层级2
-        > .el-menu--inline {
-            .el-submenu__title {
-                padding-left: calc(20px + 16px + 12px) !important;
+        .el-menu--inline {
+            .el-menu-item {
+                padding-left: calc(12px + 16px + 12px) !important;
             }
 
-            .el-menu-item {
-                padding-left: calc(20px + 16px + 12px) !important;
-            }
-            //层级3
-            > .el-submenu {
-                > &__title {
-                    padding-left: calc(20px + 16px + 12px) !important;
+            .el-submenu {
+                .el-submenu__title {
+                    padding-left: calc(12px + 16px + 12px) !important;
                 }
 
                 &.el-menu-has-icon {
-                    .el-submenu__title {
-                        padding-left: calc(20px + 16px + 12px) !important;
-                    }
-
                     .el-menu--inline {
                         .el-menu-item {
-                            padding-left: calc(20px + 16px + 12px + 12px + 16px) !important;
+                            padding-left: calc(12px + 16px + 12px + 16px + 12px) !important;
                         }
-                    }
-                }
-
-                > .el-menu--inline {
-                    .el-menu-item {
-                        padding-left: calc(20px + 16px + 12px + 12px) !important;
                     }
                 }
             }

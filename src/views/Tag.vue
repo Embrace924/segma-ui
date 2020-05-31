@@ -2,16 +2,14 @@
     <div class="tag">
         <p>普通标签</p>
         <br> <br>
+        <!--mini20px  small22px  medium28px-->
         <el-tag size="mini"
-                effect="light"
                 closable>mini标签
         </el-tag>
         <el-tag size="small"
-                effect="light"
                 closable>small标签
         </el-tag>
         <el-tag size="medium"
-                effect="light"
                 closable>medium标签
         </el-tag>
         <br> <br>

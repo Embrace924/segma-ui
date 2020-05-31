@@ -61,6 +61,7 @@
             </el-menu-item>
         </el-menu>
         <el-divider></el-divider>
+
         <el-menu default-active="1"
                  @open="handleOpen"
                  @close="handleClose">
@@ -83,7 +84,6 @@
                         <span>选项3</span>
                     </template>
                 </el-menu-item>
-                <!--注意第二层可点开的情况 有icon 需要加  class="el-menu-has-icon"-->
                 <el-submenu index="1-4">
                     <template slot="title">
                         <span>选项4</span>
@@ -141,4 +141,3 @@ export default {
     width: 200px;
 }
 </style>
- 

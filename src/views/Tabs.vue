@@ -18,8 +18,7 @@
             </el-tab-pane>
         </el-tabs>
         <br><br>
-        <el-tabs type="border-card"
-                 editable>
+        <el-tabs type="border-card">
             <el-tab-pane>
                 <span slot="label"><i class="el-icon-date el-icon--left"></i> 我的行程</span>
                 我的行程用户管理
@@ -34,7 +33,6 @@
         <br><br>
 
         <el-tabs v-model="activeName"
-                 editable
                  type="card"
                  @tab-click="handleClick">
             <el-tab-pane label="editable"
@@ -147,6 +145,34 @@ export default {
 
             this.editableTabsValue = activeName;
             this.editableTabs = tabs.filter(tab => tab.name !== targetName);
+        },
+        handleTabsEdit(targetName, action) {
+            if (action === 'add') {
+                let newTabName = ++this.tabIndex + '';
+                this.editableTabs.push({
+                    title: 'New Tab',
+                    name: newTabName,
+                    content: 'New Tab content'
+                });
+                this.editableTabsValue = newTabName;
+            }
+            if (action === 'remove') {
+                let tabs = this.editableTabs;
+                let activeName = this.editableTabsValue;
+                if (activeName === targetName) {
+                    tabs.forEach((tab, index) => {
+                        if (tab.name === targetName) {
+                            let nextTab = tabs[index + 1] || tabs[index - 1];
+                            if (nextTab) {
+                                activeName = nextTab.name;
+                            }
+                        }
+                    });
+                }
+
+                this.editableTabsValue = activeName;
+                this.editableTabs = tabs.filter(tab => tab.name !== targetName);
+            }
         }
     }
     // computed: {},
@@ -166,4 +192,3 @@ export default {
     width: 800px;
 }
 </style>
- 

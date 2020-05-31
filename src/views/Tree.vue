@@ -5,7 +5,6 @@
         <br>
         <el-tree :data="data"
                  :props="defaultProps"
-                 accordion
                  @node-click="handleNodeClick">
         </el-tree>
         <br>
@@ -41,11 +40,11 @@
                 <el-dropdown @command="handleCommand"
                              trigger="click">
                     <span @click.stop="() => handleMore(data)"><i class="el-icon-more"></i></span>
-                  <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="edit">编辑</el-dropdown-item>
-                    <el-dropdown-item command="del">删除</el-dropdown-item>
-                  </el-dropdown-menu>
-            </el-dropdown>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="edit">编辑</el-dropdown-item>
+                        <el-dropdown-item command="del">删除</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
             </span>
         </el-tree>
         <el-divider></el-divider>
@@ -383,4 +382,3 @@ export default {
     }
 }
 </style>
- 

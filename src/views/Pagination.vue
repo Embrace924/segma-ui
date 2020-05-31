@@ -32,6 +32,9 @@
                        layout="prev, pager, next">
         </el-pagination>
 
+        <!--class="simple"
+            :hide-on-single-page="false"
+            layout是必要的内容-->
         <el-pagination class="simple"
                        :current-page="currPage"
                        :page-size="pageSize"
@@ -39,6 +42,7 @@
                        :hide-on-single-page="false"
                        @size-change="handleSizeChange"
                        layout="sizes,prev, pager, next,slot">
+            <!--必要的内容-->
             <span class="total-pager"> / {{totalPage}}</span>
         </el-pagination>
 
@@ -48,7 +52,7 @@
 export default {
     data() {
         return {
-            currPage: 100,
+            currPage: 10,
             pageSize: 10,
             total: 1000,
         }
