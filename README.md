@@ -1,7 +1,7 @@
 # 欢迎使用 segma_ui
 
 ## Install
-    npm install --save segma-ui
+    npm i @segma/segma-ui
 
 ## Set
     2.2.0以上版本只抛出样式文件
