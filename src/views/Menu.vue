@@ -8,7 +8,7 @@
                  @close="handleClose">
             <el-submenu index="1">
                 <template slot="title">
-                    <i class="el-icon-user-solid"></i>
+                    <i class="iconfont se-icon-f-check"></i>
                     <span>导航一</span>
                 </template>
                 <el-menu-item index="1-1">
@@ -131,7 +131,14 @@ export default {
     // activated() {},
     // beforeDestroy() {},
     // destroyed() {},
-    // methods: {},
+    methods: {
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath);
+        }
+    }
 };
 </script>
 

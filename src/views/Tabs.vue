@@ -20,7 +20,7 @@
         <br><br>
         <el-tabs type="border-card">
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date el-icon--left"></i> 我的行程</span>
+                <span slot="label"><i class="iconfont se-icon-circle-pause el-icon--left"></i> 我的行程</span>
                 我的行程用户管理
             </el-tab-pane>
             <el-tab-pane>
