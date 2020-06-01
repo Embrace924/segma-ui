@@ -1,0 +1,114 @@
+.el-menu {
+    border-right: none;
+    text-align: left;
+    //层级1
+    .el-submenu {
+        > .el-submenu__title {
+            padding-left: 12px !important;
+            height: 50px;
+            line-height: 50px;
+
+            &:hover:not(.is-disabled) {
+                color: @primary;
+                background-color: transparent;
+
+                [class^="iconfont"], [class^="el-icon-"], .el-submenu__icon-arrow {
+                    color: @primary;
+                }
+            }
+        }
+
+        //层级2
+        .el-menu--inline {
+            .el-menu-item {
+                padding-left: calc(12px + 12px) !important;
+            }
+
+            .el-submenu {
+                .el-submenu__title {
+                    padding-left: calc(12px + 12px) !important;
+                }
+
+                .el-menu--inline {
+                    .el-menu-item {
+                        padding-left: calc(12px + 12px + 12px) !important;
+                    }
+                }
+            }
+        }
+
+        &.is-active {
+            > .el-submenu__title {
+                color: @primary;
+                background-color: transparent;
+
+                i {
+                    color: @primary;
+                }
+            }
+        }
+    }
+
+    .el-menu-item {
+        padding-left: 12px !important;
+
+        &:hover:not(.is-disabled) {
+            color: @primary;
+            background-color: transparent;
+
+            [class^="iconfont"], [class^="el-icon-"], .el-submenu__icon-arrow {
+                color: @primary;
+            }
+        }
+    }
+
+    &-item {
+        border-right: 0 solid #ffffff;
+
+        &:hover:not(.is-disabled) {
+            color: @primary;
+            background-color: transparent;
+        }
+
+        &.is-active {
+            border-right: 4px solid #5374c0;
+            background: linear-gradient(to right, #ffffff, #f0f4ff);
+            transition: all 0.3s;
+        }
+    }
+
+    &.el-menu-has-icon {
+        //层级2
+        .el-menu--inline {
+            .el-menu-item {
+                padding-left: calc(12px + 16px + 12px) !important;
+            }
+
+            .el-submenu {
+                .el-submenu__title {
+                    padding-left: calc(12px + 16px + 12px) !important;
+                }
+
+                &.el-menu-has-icon {
+                    .el-menu--inline {
+                        .el-menu-item {
+                            padding-left: calc(12px + 16px + 12px + 16px + 12px) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .el-submenu, .el-menu-item {
+            [class^="iconfont"], [class^="el-icon-"] {
+                margin-right: 8px;
+                width: 16px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .el-submenu__icon-arrow {
+        font-weight: bold;
+    }
+}

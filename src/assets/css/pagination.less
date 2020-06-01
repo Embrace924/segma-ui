@@ -68,6 +68,40 @@
     .btn-next, .btn-prev {
         color: @text-main;
     }
+
+    &.simple {
+        .el-pager {
+            overflow: hidden;
+            width: 60px;
+            text-align: left;
+
+            li {
+                padding: 0;
+                width: 24px;
+
+                &.number {
+                    display: none;
+                    margin: 0;
+
+                    &.active {
+                        display: inline-block;
+                        text-align: center;
+                        color: @text-main;
+                    }
+                }
+
+                &.el-icon-more {
+                    display: none;
+                }
+            }
+        }
+
+        .total-pager {
+            margin-left: -60px;
+            font-weight: normal;
+            color: @text-main;
+        }
+    }
 }
 
 .el-pagination button:disabled {

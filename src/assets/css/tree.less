@@ -1,0 +1,31 @@
+.el-tree {
+    color: @text-main;
+
+    .el-tree-node {
+        &.is-current {
+            > .el-tree-node__content {
+                color: @primary;
+                background-color: @theme-bg-hover;
+            }
+        }
+
+        .el-tree-node__content {
+            height: 40px;
+            background-color: transparent;
+
+            &:hover {
+                background-color: @theme-bg-hover;
+            }
+
+            .el-tree-node__expand-icon {
+                margin-left: 9px;
+                font-size: 18px;
+                color: @icon-color;
+
+                &.is-leaf {
+                    color: transparent;
+                }
+            }
+        }
+    }
+}

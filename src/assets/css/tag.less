@@ -1,0 +1,200 @@
+@tag-blue: @primary;
+@tag-blue-bg: #f0f7ff;
+@tag-red: #fe6a49;
+@tag-red-bg: #fef0ec;
+@tag-yellow: #ffbf47;
+@tag-yellow-bg: #fef3e0;
+@tag-green: #48c68c;
+@tag-green-bg: #ecf9f3;
+@tag-bright-blue: #3176ff;
+@tag-bright-blue-bg: #f0f4ff;
+@tag-purple: #775dde;
+@tag-purple-bg: #f1eefb;
+@tag-filling: @white;
+@tag-filling-bg: @primary;
+
+@colorList: @tag-blue, @tag-red, @tag-yellow, @tag-green, @tag-bright-blue, @tag-purple, @tag-filling;
+@colorNameList: blue, red, yellow, green, bright-blue, purple, filling;
+@colorBgList: @tag-blue-bg, @tag-red-bg, @tag-yellow-bg, @tag-green-bg, @tag-bright-blue-bg, @tag-purple-bg, @tag-filling-bg;
+
+.el-tag {
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    width: auto;
+    color: @text-main;
+    background-color: @box-header-bg;
+    cursor: pointer;
+
+    &--light {
+        &:hover {
+            background-color: @theme-bg-hover;
+
+            .el-icon-close {
+                display: block;
+                color: #ffffff;
+                background-color: @icon-color;
+            }
+        }
+
+        .el-icon-close {
+            display: none;
+            position: absolute;
+            top: -8px;
+            right: -5px;
+            width: 16px;
+            height: 16px;
+            transform: scale(0.8);
+
+            &::before {
+                font-size: 12px;
+                line-height: 16px;
+                transform: scale(0.9);
+            }
+        }
+    }
+
+    &--plain {
+        overflow: hidden;
+        border: 1px solid @border-color-base;
+        border-radius: 2px;
+        background-color: @box-some-bg;
+
+        &:hover {
+            border: 1px solid @primary;
+            background-color: @theme-bg-hover;
+
+            .el-icon-close {
+                right: -5px;
+                width: 12px;
+                height: 12px;
+                color: @primary;
+                background-color: transparent;
+
+                &::before {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+
+        .el-icon-close {
+            right: -10px;
+            width: 0;
+            transition: width 0.2s;
+            transform: none;
+        }
+    }
+
+    &--medium {
+        padding: 0 10px;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    &--small {
+        padding: 0 8px;
+        height: 22px;
+        line-height: 22px;
+    }
+
+    &--mini {
+        padding: 0 6px;
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.input-new-tag {
+    width: 90px;
+    vertical-align: top;
+
+    &.tag-medium {
+        .el-input__inner {
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+
+    &.tag-small {
+        .el-input__inner {
+            height: 22px;
+            line-height: 22px;
+        }
+    }
+
+    &.tag-mini {
+        .el-input__inner {
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+}
+
+.button-light-tag {
+    &.tag-medium {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 28px;
+        font-size: 12px;
+        line-height: 28px;
+        vertical-align: top;
+    }
+
+    &.tag-small {
+        height: 22px;
+        line-height: 22px;
+    }
+
+    &.tag-mini {
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.button-plain-tag {
+    border: 1px dashed @border-color-base;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 12px;
+    vertical-align: top;
+
+    &.tag-medium {
+        height: 28px;
+        line-height: 28px;
+    }
+
+    &.tag-small {
+        height: 22px;
+        line-height: 22px;
+    }
+
+    &.tag-mini {
+        height: 20px;
+        line-height: 20px;
+    }
+
+    &:hover {
+        border: 1px dashed @primary;
+    }
+}
+
+.setTagColor(@type,@color,@bg) {
+    .tag-@{type} {
+        color: @color;
+        background-color: @bg;
+        cursor: default;
+
+        &:hover {
+            color: @color;
+            background-color: @bg;
+        }
+    }
+}
+
+.loopColor(@i) when (@i < (length(@colorList)+1)) {
+    .setTagColor(extract(@colorNameList, @i), extract(@colorList, @i), extract(@colorBgList, @i));
+    .loopColor(@i+1);
+}
+
+.loopColor(1);

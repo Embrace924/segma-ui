@@ -4,7 +4,7 @@
     npm install --save segma-ui
 
 ## Set
-    2.2.0版本只抛出样式文件
+    2.2.0以上版本只抛出样式文件
     只需在引入element-ui的文件中引入改样式文件即可
     例如：
     element.js文件中
