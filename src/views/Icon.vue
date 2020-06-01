@@ -137,6 +137,7 @@ export default {
        scoped>
 .icon {
     width: 300px;
+
     i {
         margin: 0 10px;
     }
