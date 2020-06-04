@@ -1,5 +1,28 @@
 <template>
     <div class="input">
+        <el-form ref="form"
+                 size="small"
+                 inline>
+            <el-form-item prop="name"
+                          label="模板名称：">
+                <el-input v-model="query.name"
+                          size="small"
+                          prefix-icon="el-icon-search"
+                          maxlength="20"
+                          show-word-limit
+                          clearable></el-input>
+            </el-form-item>
+            <el-form-item prop="user"
+                          label="创建人：">
+                <el-select v-model="query.user"
+                           size="small"></el-select>
+            </el-form-item>
+            <el-form-item class="right">
+                <el-button type="primary"
+                           size="small">新增模板
+                </el-button>
+            </el-form-item>
+        </el-form>
         <el-input placeholder="请输入内容"
                   size="small"
                   show-word-limit
@@ -62,6 +85,10 @@ export default {
     name: "Input",
     data() {
         return {
+            query: {
+                name: '',
+                user: '',
+            },
             segmaInput: {
                 value1: ''
             },
