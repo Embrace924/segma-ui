@@ -41,9 +41,10 @@
                        :total="total"
                        :hide-on-single-page="false"
                        @size-change="handleSizeChange"
-                       layout="sizes,prev, pager, next,slot">
+                       @current-change="handleCurrentChange"
+                       layout="sizes,prev,slot, next">
             <!--必要的内容-->
-            <span class="total-pager"> / {{totalPage}}</span>
+            <span>{{pagerText}}</span>
         </el-pagination>
 
     </div>
@@ -58,15 +59,22 @@ export default {
         }
     },
     computed: {
-        totalPage() {
-            return Math.ceil(this.total / this.pageSize)
+        pagerText() {
+            return `${this.currPage} /${ Math.ceil(this.total / this.pageSize)}`
         },
     },
     methods: {
         handleSizeChange(val) {
             this.pageSize = val
-            console.log(`每页 ${val} 条`);
+            console.log(`
+            每页
+            ${val}
+            条`);
         },
+        handleCurrentChange(val) {
+            this.currPage = val
+            console.log(`当前页: ${val}`);
+        }
     },
     // watch: {},
     // Options / DOM
