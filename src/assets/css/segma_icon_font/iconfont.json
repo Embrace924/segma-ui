@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15125260",
+      "name": "se-icon-circle-f-add",
+      "font_class": "se-icon-circle-f-add",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "15124146",
+      "name": "se-icon-add",
+      "font_class": "se-icon-add",
+      "unicode": "e75b",
+      "unicode_decimal": 59227
+    },
+    {
+      "icon_id": "15124147",
+      "name": "se-icon-circle-add",
+      "font_class": "se-icon-circle-add",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "15123312",
+      "name": "se-icon-f-describe",
+      "font_class": "se-icon-f-describe",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
+      "icon_id": "15123234",
+      "name": "se-icon-f-item",
+      "font_class": "se-icon-f-item",
+      "unicode": "e759",
+      "unicode_decimal": 59225
+    },
+    {
+      "icon_id": "15113840",
+      "name": "se-icon-f-barchart",
+      "font_class": "se-icon-f-barchart",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "15113841",
+      "name": "se-icon-f-user",
+      "font_class": "se-icon-f-user",
+      "unicode": "e754",
+      "unicode_decimal": 59220
+    },
+    {
+      "icon_id": "15113842",
+      "name": "se-icon-table",
+      "font_class": "se-icon-table",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "15113843",
+      "name": "se-icon-f-lock",
+      "font_class": "se-icon-f-lock",
+      "unicode": "e756",
+      "unicode_decimal": 59222
+    },
+    {
+      "icon_id": "15113844",
+      "name": "se-icon-database",
+      "font_class": "se-icon-database",
+      "unicode": "e757",
+      "unicode_decimal": 59223
+    },
+    {
+      "icon_id": "15113845",
+      "name": "se-icon-intel",
+      "font_class": "se-icon-intel",
+      "unicode": "e758",
+      "unicode_decimal": 59224
+    },
+    {
       "icon_id": "15008141",
       "name": "se-icon-caret-left",
       "font_class": "se-icon-caret-left",
