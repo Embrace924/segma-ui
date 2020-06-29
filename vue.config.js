@@ -18,6 +18,7 @@ function addStyleResource(rule) {
 }
 
 module.exports = {
+    productionSourceMap: false,
     runtimeCompiler: true,
     // 在htmlWebpackPlugin中增加环境变量，在index.html中使用
     chainWebpack: config => {
