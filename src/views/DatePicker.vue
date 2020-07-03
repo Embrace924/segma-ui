@@ -71,8 +71,41 @@
                         end-placeholder="结束日期"
                         :picker-options="pickerOptionsRange">
         </el-date-picker>
-        <br>
 
+
+        <br>
+        <el-date-picker v-model="value"
+                        type="datetime"
+                        size="small"
+                        placeholder="选择日期时间">
+        </el-date-picker>
+
+        <el-date-picker v-model="value2"
+                        type="datetime"
+                        placeholder="选择日期时间"
+                        align="right"
+                        size="small"
+                        :picker-options="pickerOptionsData">
+        </el-date-picker>
+
+        <el-date-picker v-model="value1"
+                        type="datetimerange"
+                        range-separator="至"
+                        size="small"
+                        start-placeholder="开始日期"
+                        end-placeholder="结束日期">
+        </el-date-picker>
+
+        <el-date-picker
+            v-model="value2"
+            type="datetimerange"
+            size="small"
+            :picker-options="pickerOptions"
+            range-separator="至"
+            start-placeholder="开始日期"
+            end-placeholder="结束日期"
+            align="right">
+        </el-date-picker>
     </div>
 </template>
 
