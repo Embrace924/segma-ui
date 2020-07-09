@@ -34,6 +34,24 @@
             <ul class="icon_lists dib-box">
 
                 <li class="dib">
+                    <span class="icon iconfont se-icon-f-manuallocation"></span>
+                    <div class="name">
+                        se-icon-f-manuallocation
+                    </div>
+                    <div class="code-name">.se-icon-f-manuallocation
+                    </div>
+                </li>
+
+                <li class="dib">
+                    <span class="icon iconfont se-icon-f-autolocation"></span>
+                    <div class="name">
+                        se-icon-f-autolocation
+                    </div>
+                    <div class="code-name">.se-icon-f-autolocation
+                    </div>
+                </li>
+
+                <li class="dib">
                     <span class="icon iconfont se-icon-f-change"></span>
                     <div class="name">
                         se-icon-f-change
@@ -1018,10 +1036,26 @@
             <div class="article markdown">
                 <h2 id="font-class-">font-class 引用</h2>
                 <hr>
+
+                <p>font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。</p>
+                <p>与 Unicode 使用方式相比，具有如下特点：</p>
+                <ul>
+                    <li>兼容性良好，支持 IE8+，及所有现代浏览器。</li>
+                    <li>相比于 Unicode 语意明确，书写更直观。可以很容易分辨这个 icon 是什么。</li>
+                    <li>因为使用 class 来定义图标，所以当要替换图标时，只需要修改 class 里面的 Unicode 引用。</li>
+                    <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+                </ul>
                 <p>使用步骤如下：</p>
-                <h3 id="-"> 挑选相应图标并获取类名，应用于页面：</h3>
-                <pre><code class="language-html">&lt;i class="iconfont  se-icon-caret-left"&gt;&lt;/i&gt;
+                <h3 id="-fontclass-">第一步：引入项目下面生成的 fontclass 代码：</h3>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="./iconfont.css"&gt;
 </code></pre>
+                <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+                <pre><code class="language-html">&lt;span class="iconfont xxx"&gt;&lt;/span&gt;
+</code></pre>
+                <blockquote>
+                    <p>"
+                        iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。</p>
+                </blockquote>
             </div>
         </div>
     </div>
@@ -1029,6 +1063,7 @@
 <script>
 $(document).ready(function () {
     $('.tab-container .content:first').show()
+
 })
 </script>
 </body>
