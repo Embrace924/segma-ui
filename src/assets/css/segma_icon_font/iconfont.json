@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15794127",
+      "name": "se-icon-f-change",
+      "font_class": "se-icon-f-change",
+      "unicode": "e768",
+      "unicode_decimal": 59240
+    },
+    {
+      "icon_id": "15794013",
+      "name": "se-icon-analyse",
+      "font_class": "se-icon-analyse",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "15793590",
+      "name": "se-icon-f-viewrectangle",
+      "font_class": "se-icon-f-viewrectangle",
+      "unicode": "e765",
+      "unicode_decimal": 59237
+    },
+    {
+      "icon_id": "15792694",
+      "name": "se-icon-pause",
+      "font_class": "se-icon-pause",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "15792695",
+      "name": "se-icon-start",
+      "font_class": "se-icon-start",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    },
+    {
+      "icon_id": "15792696",
+      "name": "se-icon-mark",
+      "font_class": "se-icon-mark",
+      "unicode": "e763",
+      "unicode_decimal": 59235
+    },
+    {
+      "icon_id": "15792715",
+      "name": "se-icon-circle-more",
+      "font_class": "se-icon-circle-more",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    },
+    {
+      "icon_id": "15792378",
+      "name": "se-icon-f-monitor",
+      "font_class": "se-icon-f-monitor1",
+      "unicode": "e760",
+      "unicode_decimal": 59232
+    },
+    {
+      "icon_id": "15792153",
+      "name": "se-icon-f-enterprise",
+      "font_class": "se-icon-f-enterprise",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "15792336",
+      "name": "se-icon-f-production line",
+      "font_class": "se-icon-f-productionline",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
       "icon_id": "15125260",
       "name": "se-icon-circle-f-add",
       "font_class": "se-icon-circle-f-add",
