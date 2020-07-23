@@ -29,6 +29,6 @@ npm i @segma/segma-ui
         }
 ```
 ### 3.参考文件
-[SegmaUI组件库使用文档](https://docs.qq.com/doc/DYU5Hd3RYRnpqYnly)
-[SegmaUI规范](https://docs.qq.com/doc/DYWxuZGtEWFhMVW5o)
+[SegmaUI组件库使用文档](http://blog.dev.segma.tech/pages/71e517/#%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
+
 
