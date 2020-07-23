@@ -71,7 +71,7 @@
     {
       "icon_id": "15792378",
       "name": "se-icon-f-monitor",
-      "font_class": "se-icon-f-monitor1",
+      "font_class": "se-icon-f-monitor",
       "unicode": "e760",
       "unicode_decimal": 59232
     },
@@ -477,7 +477,7 @@
     {
       "icon_id": "15008620",
       "name": "se-icon-f-monitor",
-      "font_class": "se-icon-f-monitor",
+      "font_class": "se-icon-f-camera1",
       "unicode": "e727",
       "unicode_decimal": 59175
     },
