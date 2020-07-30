@@ -12,8 +12,14 @@
 
 .el-dialog {
     display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 !important;
     border-radius: 10px;
-    max-width: calc(100% - 98px);
+    max-width: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+    transform: translate(-50%, -50%);
     text-align: left;
     background-color: #ffffff;
 
@@ -42,7 +48,9 @@
     }
 
     .el-dialog__body {
+        overflow: auto;
         padding: 0;
+        max-height: calc(100vh - 40px * 2 - 54px - 46px - 20px);
     }
 
     .el-dialog__footer {
