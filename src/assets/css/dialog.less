@@ -19,14 +19,13 @@
     border-radius: 10px;
     max-width: calc(100% - 80px);
     max-height: calc(100% - 80px);
-    transform: translate(-50%, -50%);
     text-align: left;
     background-color: #ffffff;
+    transform: translate(-50%, -50%);
 
     .el-dialog__header {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        //固定高度46px 上下居中即可 因为16px的文字高度为17px 加上上下15px的高度超过了46px
         padding: 0 20px;
         height: 46px;
         line-height: 46px;
@@ -51,6 +50,7 @@
         overflow: auto;
         padding: 0;
         max-height: calc(100vh - 40px * 2 - 54px - 46px - 20px);
+        .scroll-bar(6px);
     }
 
     .el-dialog__footer {
