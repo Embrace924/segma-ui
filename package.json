@@ -1,6 +1,6 @@
 {
     "name": "@segma/segma-ui",
-    "version": "2.3.12",
+    "version": "2.3.13",
     "private": false,
     "main": "lib/segma-ui.css",
     "files": [
