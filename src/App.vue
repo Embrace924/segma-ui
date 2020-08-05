@@ -28,7 +28,7 @@ export default {
                 // Dropdown,
                 // DropdownMenu,
                 // DropdownItem,
-                 'Menu',
+                'Menu',
                 // Submenu,
                 // MenuItem,
                 // MenuItemGroup,
@@ -65,7 +65,7 @@ export default {
                 'Tree',
                 // Alert,
                 // Slider,
-               'Icon',
+                'Icon',
                 // Row,
                 // Col,
                 // Upload,
@@ -80,7 +80,7 @@ export default {
                 // CarouselItem,
                 // Collapse,
                 // CollapseItem,
-                // Cascader,
+                'Cascader',
                 // ColorPicker,
                 // Transfer,
                 // Container,
@@ -101,7 +101,8 @@ export default {
                 // MessageBox,
                 // Message,
                 // Notification,
-                // InfiniteScroll
+                // InfiniteScroll,
+                'Drawer'
             ]
 
         }

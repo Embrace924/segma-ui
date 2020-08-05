@@ -80,9 +80,9 @@ import {
     Message,
     Notification,
     InfiniteScroll,
-    Popconfirm
+    Popconfirm,
+    Drawer
 } from 'element-ui';
-import { $alert, $confirm } from '../component/prototype';
 
 export default {
     install(Vue) {
@@ -162,6 +162,7 @@ export default {
         Vue.use(InfiniteScroll);
         Vue.use(Popconfirm);
         Vue.use(Loading.directive);
+        Vue.use(Drawer);
 
         Vue.prototype.$loading = Loading.service;
         Vue.prototype.$msgbox = MessageBox;

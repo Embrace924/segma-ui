@@ -50,7 +50,7 @@ let Arr = [
     // Tree,
     // Alert,
     // Slider,
-     'Icon',
+    'Icon',
     // Row,
     // Col,
     // Upload,
@@ -65,7 +65,7 @@ let Arr = [
     // CarouselItem,
     // Collapse,
     // CollapseItem,
-    // Cascader,
+    'Cascader',
     // ColorPicker,
     // Transfer,
     // Container,
@@ -87,6 +87,7 @@ let Arr = [
     // Message,
     // Notification,
     // InfiniteScroll
+    'Drawer'
 ]
 let elementRoutes = Arr.map(e => {
     return {

@@ -1,0 +1,29 @@
+.el-cascader__dropdown {
+    .el-cascader-menu {
+        min-width: 160px;
+
+        .el-cascader-node {
+            padding: 0 10px 0 16px;
+
+            &:not(.is-disabled) {
+                &:hover {
+                    background: @theme-bg-hover;
+                }
+
+                &:focus {
+                    background: @theme-bg-hover;
+                }
+            }
+
+            .el-cascader-node__label {
+                padding: 0;
+            }
+
+            .is-active {
+                .el-cascader-node__prefix {
+                    display: none;
+                }
+            }
+        }
+    }
+}
