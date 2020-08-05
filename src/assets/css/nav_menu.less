@@ -9,8 +9,7 @@
             line-height: 50px;
 
             &:hover:not(.is-disabled) {
-                color: @primary;
-                background-color: transparent;
+                background-color: @theme-bg-hover;
 
                 [class^="iconfont"], [class^="el-icon-"], .el-submenu__icon-arrow {
                     color: @primary;
@@ -39,7 +38,6 @@
 
         &.is-active {
             > .el-submenu__title {
-                color: @primary;
                 background-color: transparent;
 
                 i {
@@ -53,8 +51,7 @@
         padding-left: 12px !important;
 
         &:hover:not(.is-disabled) {
-            color: @primary;
-            background-color: transparent;
+            background-color: @theme-bg-hover;
 
             [class^="iconfont"], [class^="el-icon-"], .el-submenu__icon-arrow {
                 color: @primary;
@@ -66,13 +63,11 @@
         border-right: 0 solid #ffffff;
 
         &:hover:not(.is-disabled) {
-            color: @primary;
-            background-color: transparent;
+            background-color: @theme-bg-hover;
         }
 
         &.is-active {
-            border-right: 4px solid #5374c0;
-            background: linear-gradient(to right, #ffffff, #f0f4ff);
+            background: @theme-bg-hover;
             transition: all 0.3s;
         }
     }

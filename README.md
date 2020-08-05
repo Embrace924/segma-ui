@@ -19,7 +19,7 @@ npm i @segma/segma-ui
  例如：element.js文件中
 
 ```js
-    import 'segma-ui/lib/segma-ui.css';//引入样式文件
+    import '@segma/segma-ui';//引入样式文件
     import {
         Pagination,
         Dialog,
