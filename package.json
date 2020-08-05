@@ -1,6 +1,6 @@
 {
     "name": "@segma/segma-ui",
-    "version": "2.3.14",
+    "version": "2.3.15",
     "private": false,
     "main": "lib/segma-ui.css",
     "files": [
@@ -16,7 +16,7 @@
         "stylelint:fix": "stylelint {src,public}/**/*.{html,vue,css,less} --fix"
     },
     "dependencies": {
-        "element-ui": "^2.13.1",
+        "element-ui": "^2.13.2",
         "vue": "^2.6.10",
         "vue-router": "^3.0.3"
     },
