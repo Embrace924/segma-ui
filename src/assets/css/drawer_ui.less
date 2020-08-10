@@ -1,9 +1,23 @@
 .el-drawer {
+    box-shadow: @menu-box-shadow;
+
     &:focus {
         outline: none;
     }
 
     .el-drawer__header {
+        margin-bottom: 0;
+        border-bottom: 1px solid #eaedf1;
+        padding: 11px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+        color: @text-main;
+
+        .el-icon-close {
+            color: @text-main;
+        }
+
         > span {
             outline: none;
 
@@ -11,5 +25,9 @@
                 outline: none;
             }
         }
+    }
+
+    .el-drawer__body {
+        padding: 20px;
     }
 }
