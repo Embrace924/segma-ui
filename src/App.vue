@@ -102,6 +102,7 @@ export default {
                 // Message,
                 // Notification,
                 // InfiniteScroll,
+                'Scrollbar',
                 'Drawer'
             ]
 

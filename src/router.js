@@ -87,7 +87,8 @@ let Arr = [
     // Message,
     // Notification,
     // InfiniteScroll
-    'Drawer'
+    'Drawer',
+    'Scrollbar'
 ]
 let elementRoutes = Arr.map(e => {
     return {

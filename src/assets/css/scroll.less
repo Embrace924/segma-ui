@@ -1,5 +1,7 @@
 /* 常用滚动条样式 */
-.scroll-bar(@width: 8px,@color:@scroll-bar-bg) {
+.scroll-bar(@width: 12px,@color:@scroll-bar-bg) {
+    overflow: auto;
+
     &::-webkit-scrollbar-thumb {
         z-index: 999;
         border-radius: 20px;
@@ -25,37 +27,15 @@
     }
 }
 
-.scroll-small-bar, .scroll-bar {
-    overflow: auto;
-
-    &::-webkit-scrollbar-thumb {
-        z-index: 999;
-        border-radius: 20px;
-        background-color: @scroll-bar-bg;
-        cursor: pointer;
-
-        &:hover {
-            background-color: @icon-color;
-        }
-    }
-
-    &::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
-        background-color: @scroll-bg;
-    }
-
-    &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-        border-radius: 20px;
-    }
+.scroll-bar {
+    .scroll-bar(@width:12px);
 }
 
-.scroll-bar {
-    &::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
-    }
+.scroll-small-bar {
+    overflow: auto;
+    .scroll-bar(@width: 8px);
+}
+
+.scroll-min-bar {
+    .scroll-bar(@width: 6px);
 }
