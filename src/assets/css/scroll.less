@@ -4,7 +4,8 @@
 
     &::-webkit-scrollbar-thumb {
         z-index: 999;
-        border-radius: 20px;
+        border: 1px solid @scroll-bg;
+        border-radius: @width;
         background-color: @color;
         cursor: pointer;
 
@@ -23,7 +24,7 @@
     }
 
     &::-webkit-scrollbar-track {
-        border-radius: 20px;
+        border-radius: 0;
     }
 }
 
@@ -32,7 +33,6 @@
 }
 
 .scroll-small-bar {
-    overflow: auto;
     .scroll-bar(@width: 8px);
 }
 

@@ -1,6 +1,6 @@
 <!--Scrollbar-->
 <template>
-    <div class="scrollbar scroll-min-bar">
+    <div class="scrollbar scroll-bar">
         ADVERTISEMENT
         As names are of utmost importance, we should not hurry and choose fancy names which don’t have a deeper meaning. The name for a baby
         girl should signify elegance and femininity. A good name always makes an immediate good impression, so to make sure your daughter
